@@ -35,12 +35,12 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
-#defaults:
- # -
-  #  scope:
-   #   path:"docs"
-    #values:
-     # layout:docwithnav
-      #showedit:true
+defaults:
+  -
+    scope:
+      path: "docs"
+    values:
+      layout: docwithnav
+      showedit: true
 tocs:
   - docs-home

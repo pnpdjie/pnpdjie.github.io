@@ -21,12 +21,12 @@
       <div class="wrapper">
         <nav class="site-nav">
           <div class="trigger">
-          <a href="docs/home" class="page-link {% if toc.bigheader == "ONAP Documentation" %}highlight{% endif %}">HOME</a>
-          <a href="docs/setup/" class="page-link {% if toc.bigheader == "Setup" %}highlight{% endif %}">SETUP</a>
-          <a href="docs/user-guide/" class="page-link {% if toc.bigheader == "Guides" %}highlight{% endif %}">GUIDES</a>
-          <a href="docs/tasks/" class="page-link {% if toc.bigheader == "Tasks" %}highlight{% endif %}">TASKS</a>
-          <a href="docs/tutorials/" class="page-link {% if toc.bigheader == "Tutorials" %}highlight{% endif %}">TUTORIALS</a>
-          <a href="docs/concepts/" class="page-link {% if toc.bigheader == "Concepts" %}highlight{% endif %}">CONCEPTS</a>
+          <a href="/docs/home" class="page-link {% if toc.bigheader == "ONAP Documentation" %}highlight{% endif %}">HOME</a>
+          <a href="/docs/setup/" class="page-link {% if toc.bigheader == "Setup" %}highlight{% endif %}">SETUP</a>
+          <a href="/docs/user-guide/" class="page-link {% if toc.bigheader == "Guides" %}highlight{% endif %}">GUIDES</a>
+          <a href="/docs/tasks/" class="page-link {% if toc.bigheader == "Tasks" %}highlight{% endif %}">TASKS</a>
+          <a href="/docs/tutorials/" class="page-link {% if toc.bigheader == "Tutorials" %}highlight{% endif %}">TUTORIALS</a>
+          <a href="/docs/concepts/" class="page-link {% if toc.bigheader == "Concepts" %}highlight{% endif %}">CONCEPTS</a>
         </div>
         </nav>
       </div>
@@ -39,27 +39,17 @@
   </div>
 
   <div>
-* aaa
-{:toc}
 
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
 {% unless page.notitle %}
           <h1>{{ page.title }}</h1>
         {% endunless %}
-* aaa
-{:toc}
         {{ content }}
       </div>
 
     </div>
 </section>
-
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </main>
 
     {% include footer.html %}
 
