@@ -23,17 +23,24 @@ github_username:  ONAP
 
 # Build settings
 markdown: kramdown
+
+#incremental: true
 #theme: minima
 gems:
+  - jekyll-redirect-from
   - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-include-cache
 exclude:
   - Gemfile
   - Gemfile.lock
-defaults:
-  - scope:
-      path:"docs"
-    values:
-      layout:docwithnav
-      showedit:true
+#defaults:
+ # -
+  #  scope:
+   #   path:"docs"
+    #values:
+     # layout:docwithnav
+      #showedit:true
 tocs:
   - docs-home

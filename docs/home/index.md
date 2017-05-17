@@ -1,5 +1,6 @@
 ---
 title: ONAP Documentation
+layout: docwithnav
 redirect_from:
 - "/docs/"
 - "/docs/index.html"
