@@ -16,7 +16,7 @@
 title: ONAP
 email: master@onap.com
 description: ONAP Documentation
-baseurl: /ONAP
+baseurl: ""
 url: ""
 twitter_username: ONAP
 github_username:  ONAP
