@@ -46,17 +46,17 @@ title: 在一张图片上添加多个热点链接
 ![8](http://a3.qpic.cn/psb?/V13f2fdp4IPomM/PzWOnnI7qwbhQaa.qTVUNry0tdUXugW4mRoKrOWghCk!/b/dBkBAAAAAAAA&bo=LgNdAi4DXQIDACU!&rf=viewer_4)
 
 
----
+********
 
 
-下图为已经添加好热点链接的实例，左上角的4个头像分别添加了不同的热点链接，可以点击查看。
+#### 下图为已经添加好热点链接的实例，左上角的4个头像分别添加了不同的热点链接，可以点击查看。
 
-<img src="http://a2.qpic.cn/psb?/V13f2fdp4IPomM/2Py2RgL.0KfQkkbWNWAqFG9ePALPkLukltgzSd82Kx8!/b/dBgBAAAAAAAA&bo=mQONApkDjQIDACU!&rf=viewer_4" width="921" height="653" usemap="#Map" border="0">
+<img src="http://a3.qpic.cn/psb?/V13f2fdp4IPomM/QLqAgn1mvNf7OVISB7qCsitXsKjhqkrhrcCcqhhcdzs!/b/dBkBAAAAAAAA&bo=sARUA7AEVAMRADc!&rf=viewer_4" width="600" height="426" usemap="#Map" border="0">
 <map name="Map">
-  <area shape="rect" coords="58,50,163,180" href="http://baike.baidu.com/link?url=mZqQWxs8IekPJV9Z0xQS60FX75ZUpWMyO3tpA9JHFOdg6E3egJ1FUhtH-Iv9qdEcEkI_-tfXnzOG_ulDBHKv7Gwnttm1PhFrBGlx18X3E5R2g_-3cj5Za4oeU17o-jtw9AvI3SxyYXedccO0Uy3Sla" target="_blank">
-  <area shape="rect" coords="175,51,279,181" href="http://baike.baidu.com/link?url=F7cgzXdip5hlrOLKUjVOUjq79J7g4EPB5oATDfuTZZac4ucnFWNlPYQcKhh7mC0Ip_BP6pIzLXDuivhBZSsQ0UsNUQ4Oz0ozXqLpDQIEf4JfCiI2i8zTYSB4tpTe1Lan" target="_blank">
-  <area shape="rect" coords="58,192,164,323" href="http://baike.baidu.com/link?url=w7x5BFxzHcmQtfMfP2kR-Wp6TxCQ5zRIqW96bCzlufgrLDVWY_fFl8Piq21L6VEfUfy11oiFHNUYDjmt2seU40OjkzOPL-N9bBmeuagCpA5LePJLlmCqVIYCgsaGV8P-" target="_blank">
-  <area shape="rect" coords="174,192,282,323" href="http://baike.baidu.com/link?url=k0PRrBcG8H__VF6bwtREomzGE-C-reGM8rxP6yeJ4HbWiz8ngtjpTCn62sopPORFR4EVmDtUeFwCJP89MyywoC0Otds5u68OzMitu-xso2Vxx4A1Zl_xKxZ828WVQ6vQ" target="_blank">
+  <area shape="rect" coords="38,33,107,119" href="http://baike.baidu.com/link?url=mZqQWxs8IekPJV9Z0xQS60FX75ZUpWMyO3tpA9JHFOdg6E3egJ1FUhtH-Iv9qdEcEkI_-tfXnzOG_ulDBHKv7Gwnttm1PhFrBGlx18X3E5R2g_-3cj5Za4oeU17o-jtw9AvI3SxyYXedccO0Uy3Sla" target="_blank">
+  <area shape="rect" coords="114,32,184,118" href="http://baike.baidu.com/link?url=F7cgzXdip5hlrOLKUjVOUjq79J7g4EPB5oATDfuTZZac4ucnFWNlPYQcKhh7mC0Ip_BP6pIzLXDuivhBZSsQ0UsNUQ4Oz0ozXqLpDQIEf4JfCiI2i8zTYSB4tpTe1Lan" target="_blank">
+  <area shape="rect" coords="36,125,106,209" href="http://baike.baidu.com/link?url=w7x5BFxzHcmQtfMfP2kR-Wp6TxCQ5zRIqW96bCzlufgrLDVWY_fFl8Piq21L6VEfUfy11oiFHNUYDjmt2seU40OjkzOPL-N9bBmeuagCpA5LePJLlmCqVIYCgsaGV8P-" target="_blank">
+  <area shape="rect" coords="113,124,184,210" href="http://baike.baidu.com/link?url=k0PRrBcG8H__VF6bwtREomzGE-C-reGM8rxP6yeJ4HbWiz8ngtjpTCn62sopPORFR4EVmDtUeFwCJP89MyywoC0Otds5u68OzMitu-xso2Vxx4A1Zl_xKxZ828WVQ6vQ" target="_blank">
 </map>
 
 {% endcapture %}
