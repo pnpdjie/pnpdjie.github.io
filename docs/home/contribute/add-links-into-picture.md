@@ -48,7 +48,7 @@ title: 在一张图片上添加多个热点链接
 ---
 下图为已经添加好热点链接的实例，左上角的4个头像分别添加了不同的热点链接，可以点击查看。
 
-<img src="http://a3.qpic.cn/psb?/V13f2fdp4IPomM/QLqAgn1mvNf7OVISB7qCsitXsKjhqkrhrcCcqhhcdzs!/b/dBkBAAAAAAAA&bo=sARUA7AEVAMRADc!&rf=viewer_4" width="1200" height="852" usemap="#Map" border="0">
+<img src="http://a3.qpic.cn/psb?/V13f2fdp4IPomM/QLqAgn1mvNf7OVISB7qCsitXsKjhqkrhrcCcqhhcdzs!/b/dBkBAAAAAAAA&bo=sARUA7AEVAMRADc!&rf=viewer_4" width="100%" usemap="#Map" border="0">
 <map name="Map">
   <area shape="rect" coords="76,67,215,236" href="http://baike.baidu.com/link?url=mZqQWxs8IekPJV9Z0xQS60FX75ZUpWMyO3tpA9JHFOdg6E3egJ1FUhtH-Iv9qdEcEkI_-tfXnzOG_ulDBHKv7Gwnttm1PhFrBGlx18X3E5R2g_-3cj5Za4oeU17o-jtw9AvI3SxyYXedccO0Uy3Sla" target="_blank">
   <area shape="rect" coords="230,67,366,237" href="http://baike.baidu.com/link?url=F7cgzXdip5hlrOLKUjVOUjq79J7g4EPB5oATDfuTZZac4ucnFWNlPYQcKhh7mC0Ip_BP6pIzLXDuivhBZSsQ0UsNUQ4Oz0ozXqLpDQIEf4JfCiI2i8zTYSB4tpTe1Lan" target="_blank">
