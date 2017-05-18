@@ -39,7 +39,7 @@ windows64位的安装安装Ruby2.3.3(x64)
 
 ## _include
 
-存放一些组件，可以通过{% include file.xx %}引用。常用于header.html footer.html的引用。
+存放一些组件，可以通过{% raw %}{% include file.xx %}{% endraw %}引用。常用于header.html footer.html的引用。
 
 ## _data
 
@@ -76,15 +76,18 @@ jekyll支持从位于_data的yaml,json,csv文件中加载数据，（csv必须�
 例子：
 比如定义一个文件_data/members.yml
 
+	{% raw %}
 	- name: Tom Preston-Werner
 	  github: mojombo
 	- name: Parker Moore
 	  github: parkr
 	- name: Liu Fengyun
 	  github: liufengyun
+	{% endraw %}
 
 然后可以通过site.data.members访问该文件（文件名决定了字段名）
 
+	{% raw %}
 	<ul>
 	{% for member in site.data.members %}
 	  <li>
@@ -94,10 +97,12 @@ jekyll支持从位于_data的yaml,json,csv文件中加载数据，（csv必须�
 	  </li>
 	{% endfor %}
 	</ul>
+	{% endraw %}
 
 定义组织（包含子文件）
 _data/orgs/jekyll.yml中：
 
+	{% raw %}
 	username: jekyll
 	name: Jekyll
 	members:
@@ -112,9 +117,11 @@ _data/orgs/jekyll.yml中：
 	members:
 	  - name: John Doe
 	    github: jdoe
+	{% endraw %}
 
 使用：
 
+	{% raw %}
 	<ul>
 	{% for org_hash in site.data.orgs %}
 	{% assign org = org_hash[1] %}
@@ -126,15 +133,18 @@ _data/orgs/jekyll.yml中：
 	  </li>
 	{% endfor %}
 	</ul>
-
+	{% endraw %}
+	
 ## Front Matter
 
 通过这个可以设置一些页面变量（甚至可以自定义变量），比如title
 
+	{% raw %}
 	---
 	layout: post
 	title: Blogging Like a Hacker
 	---
+	{% endraw %}
 	
 设置好变量以后，
 你就可以在当前页面或者你的页面依赖的\_layouts或者_includes
@@ -148,10 +158,12 @@ _data/orgs/jekyll.yml中：
 输出标记需要的过滤器。过滤器是简单的方法。第一个参数在过滤器的左侧就是过滤器的输入，即需要过滤的内容。过滤器的返回值将是过滤器运行时过滤后的左侧的参数。当没有更多的过滤器，模板会收到结果字符串。
 代码示例：
 
+	{% raw %}
 	Hello {{ 'tobi' | upcase }}
 	Hello tobi has {{ 'tobi' | size }} letters!
 	Hello {{ '*tobi*' | textilize | upcase }}
 	Hello {{ 'now' | date: "%Y %h" }}
+	{% endraw %}
 
 Standard Filters标准过滤器：
 
@@ -185,49 +197,78 @@ strip_newlines -从字符串中去除所有换行符（\ n）的
 
 newline_to_br-用HTML标记替换每个换行符（\ n）
 
-replace-替换，例如：{{ 'foofoo' | replace:'foo','bar' }} #=> 'barbar'
+	{% raw %}
+
+	replace-替换，例如：
+
+	{{ 'foofoo' | replace:'foo','bar' }} #=> 'barbar'
 
 
-replace_first-替换第一个，例如： '{{barbar' | replace_first:'bar','foo' }} #=> 'foobar'
+	replace_first-替换第一个，例如： 
+
+	{{barbar' | replace_first:'bar','foo' }} #=> 'foobar'
 
 
-remove-删除，例如：{{'foobarfoobar' | remove:'foo' }} #=> 'barbar'
+	remove-删除，例如：
+	
+	{{'foobarfoobar' | remove:'foo' }} #=> 'barbar'
 
 
-remove_first-删除第一个，例如：{{ 'barbar' | remove_first:'bar' }} #=> 'bar'
+	remove_first-删除第一个，例如：
+
+	{{ 'barbar' | remove_first:'bar' }} #=> 'bar'
 
 
-truncate-截取字符串到第x个字符
+	truncate-截取字符串到第x个字符
 
-truncatewords-截取字符串到第x个词
+	truncatewords-截取字符串到第x个词
 
-prepend-前置添加字符串，例如：{{ 'bar' | prepend:'foo' }} #=> 'foobar'
-
-
-append-后置追加字符串，例如：{{'foo' | append:'bar' }} #=> 'foobar'
-
-
-minus-减法，例如：{{ 4 | minus:2 }} #=> 2
+	prepend-前置添加字符串，例如：
+	
+	{{ 'bar' | prepend:'foo' }} #=> 'foobar'
 
 
-plus-加法，例如：{{'1' | plus:'1' }} #=> '11', {{ 1 | plus:1 }} #=> 2
+	append-后置追加字符串，例如：
+
+	{{'foo' | append:'bar' }} #=> 'foobar'
 
 
-times-乘法，例如：{{ 5 | times:4 }} #=> 20
+	minus-减法，例如：
+
+	{{ 4 | minus:2 }} #=> 2
 
 
-divided_by-除法，例如：{{ 10 | divided_by:2 }} #=> 5
+	plus-加法，例如：
+
+	{{'1' | plus:'1' }} #=> '11', {{ 1 | plus:1 }} #=> 2
 
 
-split-通过正则表达式切分字符串为数组，例如：{{"a~b" | split:"~" }} #=> ['a','b']
+	times-乘法，例如：
+
+	{{ 5 | times:4 }} #=> 20
 
 
-modulo-取模，例如：{{ 3 | modulo:2 }} #=> 1
+	divided_by-除法，例如：
 
+	{{ 10 | divided_by:2 }} #=> 5
+
+
+	split-通过正则表达式切分字符串为数组，例如：
+
+	{{"a~b" | split:"~" }} #=> ['a','b']
+
+
+	modulo-取模，例如：
+
+	{{ 3 | modulo:2 }} #=> 1
+
+	{% endraw %}
 
 
 ## If/Else
 
+ 	{% raw %}
+ 
 	{% if user %}
 	  Hello {{ user.name }}
 	{% endif %}
@@ -273,7 +314,11 @@ modulo-取模，例如：{{ 3 | modulo:2 }} #=> 1
 	{% if string contains 'hello' %}
 	   string includes 'hello'
 	{% endif %}
-	## Case Statement
+	{% endraw %}
+	
+## Case Statement
+	
+	{% raw %}
 	{% case condition %}
 	{% when 1 %}
 	hit 1
@@ -291,22 +336,28 @@ modulo-取模，例如：{{ 3 | modulo:2 }} #=> 1
 	{% else %}
 	     // {{page_title}}
 	{% endcase %}
-
+	
+	{% endraw %}
+	
 ## For loops 
 
 ### Liquid for遍历循环
 	
+	{% raw %}
 	{% for item in array %}
 	  {{ item }}
 	{% endfor %}
+	{% endraw %}
 
 ### 当遍历一个键值对集合
 
 item[0]是key的值，item[1]则是value的值。
 
+	{% raw %}
 	{% for item in hash %}
 	  {{ item[0] }}: {{ item[1] }}
 	{% endfor %}
+	{% endraw %}
 
 ### 辅助变量
 
@@ -338,6 +389,7 @@ Limit限制循环次数
 
 offset:int可以让你从第n项开始遍历。
 
+	{% raw %}
 	# array = [1,2,3,4,5,6]
 	{% for item in array limit:2 offset:2 %}
 	 {{ item }}
@@ -347,12 +399,14 @@ offset:int可以让你从第n项开始遍历。
 	{% for item in collection reversed %} 
 	    {{item}} 
 	{% endfor %}
+	{% endraw %}
 
 
 ## Variable Assinmengt
 
 将数据存储在自定义的变量，输出或在其他标记中随意使用。用assign标签创建。
 
+	{% raw %}
 	{% assign name = 'freestyle' %}
 	
 	{% for t in collections.tags %}
@@ -372,6 +426,7 @@ offset:int可以让你从第n项开始遍历。
 	{% if freestyle %}
 	   Freestyle!
 	{% endif %}
+	{% endraw %}
 
 # ONAP demo修改
 
@@ -390,6 +445,8 @@ offset:int可以让你从第n项开始遍历。
 
 文档模板位于_includes\templates文件夹，目前只有home.md。以下介绍仅基于此模板。home.md如下：
 
+	{% raw %}
+	
 	* TOC
 	{: toc}
 	
@@ -398,6 +455,8 @@ offset:int可以让你从第n项开始遍历。
 	{{ article }}
 	
 	{% endif %}
+	
+	{% endraw %}
 
 \* TOC
 {: toc} ：生成文档目录结构
@@ -425,6 +484,8 @@ article：文档内容变量，在使用此模板的文档中定义。
 文档中，##定义二级标题，如果需要子标题，可以用###和####。
 例如：
 
+	{% raw %}
+	
 	---
 	title: Configuring This Thing
 	---
@@ -442,6 +503,8 @@ article：文档内容变量，在使用此模板的文档中定义。
 	{% endcapture %}
 	
 	{% include templates/home.md %}
+	
+	{% endraw %}
 
 ### 包含文档模板
 
@@ -451,7 +514,8 @@ article：文档内容变量，在使用此模板的文档中定义。
 
 模板文件/\_includes/templates/home.md对应的目录文件为/_data/docs-home.yml，内容如下:
     
-
+	{% raw %}
+	
 	bigheader: "Documentation Home"
 	abstract: "Documentation for using and learning about ONAP."
 	toc:
@@ -464,6 +528,8 @@ article：文档内容变量，在使用此模板的文档中定义。
  	 section:
 	  - docs/home/contribute/create-pull-request.md
  	  - docs/home/contribute/my-test-file.md
+ 	  
+	{% endraw %}
  
 bigheader：标题
 
@@ -480,3 +546,4 @@ sedtion：子目录
 根据文档模板，在/_data/docs-home.yml文件中添加入口，将你的文档存放路径添加到目录文件中。例如：
 
 	- docs/home/contribute/write-new-topic.md
+
