@@ -1,6 +1,6 @@
 ---
 title: this is my test file
---------
+---
 
 {% capture article %}
 This page shows how to ...
