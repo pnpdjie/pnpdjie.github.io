@@ -29,7 +29,7 @@ body{
  line-height: 1.7em;
 }
 #docsTree{
-float: left; padding-top: 50px;padding-left: 10px;padding-right: 10px;
+float: left;padding: 7.5px 10px 7.5px 18px;
 }
 
 #markdown-toc {
@@ -39,6 +39,12 @@ right: 0px;
 list-style: none; 
 }
 
-<!--main外面一层div float: left; WIDTH: 100%;-->
 
+#docsToc > div :hover {
+    color: #3371e3;
+}
+
+#docsToc> .title {
+    color: black;
+}
 
