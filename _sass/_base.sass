@@ -1,0 +1,283 @@
+$header-height: 80px
+
+#docsToc
+	position: fixed
+	background-color: white
+	top: 0
+	left: 0
+	width: 0
+	height: 100vh
+	overflow: hidden
+	padding: 50px 0
+	z-index: 999999
+	transition: 0.3s
+
+
+	.yah
+		& > .title
+			background-color: $light-grey
+			border-left: 3px solid $blue
+			padding: 7.5px 10px 7.5px 18px
+			margin-left: -3px
+			color: $blue
+
+.open-toc
+	body
+		overflow: hidden
+
+	#docsToc
+		padding: 50px 20px
+		width: 200px
+		max-width: 100vw
+		overflow-y: auto
+#docsContent
+	position: relative
+	float: left
+	width: 100%
+
+	$toc-margin: 15px
+	$header-clearance: $header-height + 20px
+
+	* + h2, * + h3, * + h4, * + h5, * + h6
+		margin-top: 30px
+
+	h1, h2, h3, h4, h5, h6
+		line-height: normal
+		font-weight: 500
+		margin-bottom: 30px
+		padding-bottom: 10px
+
+		// Make sure anchor links aren't hidden by the header
+		&:before
+			display: block
+			content: " "
+			margin-top: -$header-clearance
+			height: $header-clearance
+			visibility: hidden
+
+	h1,h2
+		border-bottom: 1px solid #cccccc
+		
+	h1
+		font-size: 32px
+		padding-right: 60px
+
+	h2
+		font-size: 28px
+
+	h3
+		font-size: 24px
+		font-weight: 300
+		margin-bottom: 5px
+
+	h4
+		font-size: 20px
+		margin-bottom: 0px
+
+	h5, h6
+		font-size: 16px
+		font-weight: 500
+
+	p
+		font-size: 16px
+		font-weight: 300
+		line-height: 1.75em
+
+	p + p
+		margin-top: 10px
+
+	code
+		display: inline-block
+		box-sizing: border-box
+		background-color: $light-grey
+		color: $dark-grey
+		font-family: $mono-font
+		vertical-align: baseline
+		font-size: 14px
+		font-weight: bold
+		padding: 2px 4px
+
+	a code
+		color: $blue
+		text-decoration: underline
+
+	pre .pi, pre .s
+		margin: 0
+		padding: 0
+
+	.highlight code span, code, pre code
+		font-family: "Roboto Mono", monospace
+
+	code, pre code
+		color: #303030
+
+	pre code
+		padding: 0
+
+	pre
+		background-color: #f7f7f7
+		display: block
+		margin: 20px 0
+		padding: 15px
+		position: relative
+		overflow-x: auto
+
+	h1 code, h2 code, h3 code, h4 code, h5 code, h6 code
+		font-family: inherit
+		font-size: inherit
+		background-color: transparent
+
+	.includecode
+		table-layout: fixed
+
+	.includecode, .includecode th, .includecode td
+		padding: 0 !important
+
+	.includecode th
+		text-align: right !important
+		padding: 10px !important
+
+	.includecode th a, .includecode th a code
+		color: white !important
+		background-color: transparent !important
+
+	.includecode pre
+		margin: 0 !important
+
+	ul li
+		list-style: disc
+
+	ol li
+		list-style: decimal
+
+	ul, ol
+		margin: 20px 0
+		padding-left: 30px
+		font-weight: 300
+
+	ul ul, ol ol, ul ol, ol ul
+		margin: 0.75em 0
+
+	li
+		margin-bottom: 0.75em
+		font-size: 16px
+		line-height: 1.75em
+
+	table
+		width: 100%
+		border: 1px solid #ccc
+		border-spacing: 0
+		margin-top: 30px
+		margin-bottom: 30px
+
+	thead, tr:nth-child(even)
+		background-color: $light-grey
+
+	thead
+		background-color: #555
+		color: white
+
+	th, td
+		padding: 8px
+		text-align: left
+		margin: 0
+
+	th
+		font-weight: normal
+
+	td
+		font-size: 0.85em
+
+	#editPageButton
+		position: absolute
+		top: -25px
+		right: 5px
+		width: 50px
+		height: 50px
+		line-height: 50px
+		border-radius: 50%
+		white-space: nowrap
+		text-indent: 50px
+		overflow: hidden
+		background: $blue url(/images/icon-pencil.svg) no-repeat
+		background-position: 12px 10px
+		background-size: 29px 29px
+
+	#markdown-toc
+		margin-bottom: 20px
+
+		ul, li
+			list-style: disc
+			color: $blue
+
+		ul
+			padding: 0 15px
+			margin: 0
+
+		li
+			padding: 0
+			line-height: 1.5em
+			margin-bottom: 0
+
+		a
+			position: relative
+			color: $blue
+			font-weight: 700
+
+	img
+		max-width: 100%
+
+	a
+		//font-weight: 700
+		text-decoration: underline
+
+	a:visited
+		color: blueviolet
+
+	a.button
+		border-radius: 2px
+		text-decoration: none
+		
+		&:visited
+			color: white
+
+	a.issue
+		margin-left: 0px
+
+html.search #docsContent
+	position: relative
+	float: none
+	width: 90%
+	max-width: 850px
+	margin: 0 auto
+
+	#editPageButton
+		display: none
+
+	table
+		border: 0
+		margin-bottom: 0
+
+	td
+		padding: 0
+
+	h1
+		margin-bottom: 0
+		border-bottom: 0
+		padding-bottom: 0
+		padding-left: 8px
+
+#articleToc
+	position: relative
+	float: right
+	width: 150px
+
+#markdown-toc
+	width: 150px
+	position: fixed
+	top: 160px
+	right: 150px
+	list-style: none
+
+
+
