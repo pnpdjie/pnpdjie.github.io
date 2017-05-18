@@ -29,7 +29,7 @@ body{
  line-height: 1.7em;
 }
 #docsTree{
-float: left; padding-top: 50px;padding-left: 10px;padding-right: 10px;
+float: left;padding: 7.5px 10px 7.5px 18px;
 }
 
 #markdown-toc {
