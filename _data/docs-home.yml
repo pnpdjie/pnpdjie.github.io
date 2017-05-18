@@ -1,7 +1,10 @@
 bigheader: "Documentation Home"
 abstract: "Documentation for using and learning about ONAP."
 toc:
-- docs/home/index.md
+- title: index
+  path: docs/home/index.md
+  section:
+  - docs/home/contribute/my-test-file.md
 
 - title: ONAP Github
   path: https://github.com/ONAP
