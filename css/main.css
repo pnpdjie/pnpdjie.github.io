@@ -39,4 +39,10 @@ right: 0px;
 list-style: none; 
 }
 
-<!--main外面一层div float: left; WIDTH: 100%;-->
+#docsTree > div :hover {
+    color: #3371e3;
+}
+
+#docsTree> .title {
+    color: black;
+}
