@@ -46,10 +46,9 @@ title: 在一张图片上添加多个热点链接
 ![8](http://a3.qpic.cn/psb?/V13f2fdp4IPomM/PzWOnnI7qwbhQaa.qTVUNry0tdUXugW4mRoKrOWghCk!/b/dBkBAAAAAAAA&bo=LgNdAi4DXQIDACU!&rf=viewer_4)
 
 
-********
+## 7.示例
 
-
-#### 下图为已经添加好热点链接的实例，左上角的4个头像分别添加了不同的热点链接，可以点击查看。
+下图为已经添加好热点链接的实例，大图最左上角的4个头像分别添加了不同的热点链接，可以点击查看。
 
 <img src="http://a3.qpic.cn/psb?/V13f2fdp4IPomM/QLqAgn1mvNf7OVISB7qCsitXsKjhqkrhrcCcqhhcdzs!/b/dBkBAAAAAAAA&bo=sARUA7AEVAMRADc!&rf=viewer_4" width="600" height="426" usemap="#Map" border="0">
 <map name="Map">
