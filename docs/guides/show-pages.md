@@ -1,5 +1,5 @@
 ---
-title: 在一张图片上添加多个热点链接
+title: 引用页面的方式
 ---
 
 {% capture article %}
