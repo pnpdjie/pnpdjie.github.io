@@ -3,6 +3,9 @@ abstract: "Documentation for using and learning about ONAP."
 toc:
 - docs/guides/index.md
 
+- title: Markdown语法解读
+  path: https://github.com/guodongxiaren/README
+
 - title: Markdown
   section:
   - docs/guides/markdown/add-links-into-picture.md
@@ -13,4 +16,5 @@ toc:
 - title: Jekyll
   section:
   - docs/guides/jekyll/page-layout-configuration.md
+  - docs/guides/jekyll/create-new-page.md
  
