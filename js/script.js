@@ -8,6 +8,13 @@ function newDOMElement(tag, className, id){
     return el;
 }
 
+$(function() {
+
+    if ((location.pathname.split("/")[1]) !== ""){
+        $('.trigger a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('nf');
+    }
+});
+
 (function(){
     var yah = true;
     var moving = false;
