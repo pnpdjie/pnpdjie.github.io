@@ -3,8 +3,11 @@ abstract: "Documentation for using and learning about ONAP."
 toc:
 - docs/guides/index.md
 
-- title: Guides
+- title: Markdown
   section:
-  - docs/guides/my-test-file.md
-  - docs/guides/add-links-into-picture.md
+  - docs/guides/markdown/add-links-into-picture.md
+
+- title: Jekyll
+  section:
+  - docs/guides/jekyll/page-layout-configuration.md
  
