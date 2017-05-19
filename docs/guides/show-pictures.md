@@ -31,9 +31,9 @@ title: 引用图片方式
 
 代码如下：
 
-	[![玉龙雪山](http://b378.photo.store.qq.com/psb?/V13f2fdp2KFdb0/EuAA*UN7XwQUvIPQvpqlFYue83qdLuqB.jv0OETzj20!/b/dA*pVeGTPwAA&bo=6gOAAkAG*gMFAPM!&rf=viewer_4)](www.baidu.com)
+	[![玉龙雪山](http://b378.photo.store.qq.com/psb?/V13f2fdp2KFdb0/EuAA*UN7XwQUvIPQvpqlFYue83qdLuqB.jv0OETzj20!/b/dA*pVeGTPwAA&bo=6gOAAkAG*gMFAPM!&rf=viewer_4)](http://www.baidu.com)
 
-[![keyabingo](http://b378.photo.store.qq.com/psb?/V13f2fdp2KFdb0/EuAA*UN7XwQUvIPQvpqlFYue83qdLuqB.jv0OETzj20!/b/dA*pVeGTPwAA&bo=6gOAAkAG*gMFAPM!&rf=viewer_4)](www.baidu.com)
+[![keyabingo](http://b378.photo.store.qq.com/psb?/V13f2fdp2KFdb0/EuAA*UN7XwQUvIPQvpqlFYue83qdLuqB.jv0OETzj20!/b/dA*pVeGTPwAA&bo=6gOAAkAG*gMFAPM!&rf=viewer_4)](http://www.baidu.com)
 
 {% endcapture %}
 
