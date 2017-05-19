@@ -1,7 +1,6 @@
 {% for item in include.tree %}
   {% if item.section %}
-    <div class="item title" data-title="{{ item.title }}">
-      <div>{{item.title}}</div>
+    <div class="item" data-title="{{ item.title }}">
       <div class="container">
         {% include_cached tree.html tree=item.section %}
       </div>
@@ -20,7 +19,7 @@
     {% endcapture %}
 
     {% if path %}
-      <a class="page-link title" data-title="{{ title }}" href="{{ path }}"><div>{{title}}</div></a>
+      <a class="item" data-title="{{ title }}" href="{{ path }}"></a>
     {% endif %}
   {% endif %}
 {% endfor %}

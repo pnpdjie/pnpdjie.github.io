@@ -3,10 +3,13 @@ $vendor-strip-height: 44px
 $video-section-height: 550px
 
 @media screen and (min-width: 1025px)
+	#encyclopedia
+		clear: both
+
 	#docsToc
 		position: relative
 		float: left
-		padding: 0 20px
+		padding: 0 20px 0 0
 		left: 0
 		width: 200px
 		z-index: auto
@@ -18,7 +21,9 @@ $video-section-height: 550px
 		width: calc(100% - 400px)
 
 	#markdown-toc
-		right: calc((100% - 1000px)/2)
+		right: calc((100% - 964px)/2)
+
+	header, #vendorStrip, #encyclopedia, #hero h1, #hero h5, #docs #hero h1, #docs #hero h5,
 
 
 

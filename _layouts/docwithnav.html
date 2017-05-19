@@ -21,31 +21,33 @@
       <h2>{{toc.bigheader}}</h2>
         <nav class="site-nav">
           <div class="trigger">
-          <a href="/docs/home" class="page-link {% if toc.bigheader == "ONAP Documentation" %}highlight{% endif %}">HOME</a>
-          <a href="/docs/setup/" class="page-link {% if toc.bigheader == "Setup" %}highlight{% endif %}">SETUP</a>
-          <a href="/docs/user-guide/" class="page-link {% if toc.bigheader == "Guides" %}highlight{% endif %}">GUIDES</a>
-          <a href="/docs/tasks/" class="page-link {% if toc.bigheader == "Tasks" %}highlight{% endif %}">TASKS</a>
-          <a href="/docs/tutorials/" class="page-link {% if toc.bigheader == "Tutorials" %}highlight{% endif %}">TUTORIALS</a>
-          <a href="/docs/concepts/" class="page-link {% if toc.bigheader == "Concepts" %}highlight{% endif %}">CONCEPTS</a>
-        </div>
+		  <a href="/docs/home" class="page-link {% if toc.bigheader == "ONAP Documentation" %}highlight{% endif %}">HOME</a>
+		  <a href="/docs/setup/" class="page-link {% if toc.bigheader == "Setup" %}highlight{% endif %}">SETUP</a>
+		  <a href="/docs/user-guide/" class="page-link {% if toc.bigheader == "Guides" %}highlight{% endif %}">GUIDES</a>
+		  <a href="/docs/tasks/" class="page-link {% if toc.bigheader == "Tasks" %}highlight{% endif %}">TASKS</a>
+		  <a href="/docs/tutorials/" class="page-link {% if toc.bigheader == "Tutorials" %}highlight{% endif %}">TUTORIALS</a>
+		  <a href="/docs/concepts/" class="page-link {% if toc.bigheader == "Concepts" %}highlight{% endif %}">CONCEPTS</a>
+		</div>
         </nav>
       </div>
     </section>
 
-    <section>
-  	<div class="wrapper" >
+    <section  id="encyclopedia" class="wrapper">
+  	
         <div id="docsToc">
-          {% include_cached tree.html tree=toc.toc %}
+		<div class="pi-accordion">
+          		{% include_cached tree.html tree=toc.toc %}
+		</div>
         </div>
 	<div id="docsContent">
-	{% unless page.notitle %}
-          <h1>{{ page.title }}</h1>
-        {% endunless %}
-        {{ content }}
+		{% unless page.notitle %}
+		  <h1>{{ page.title }}</h1>
+		{% endunless %}
+		{{ content }}
       </div>
-  </div>
+	
 
-</section>
+	</section>
 
     {% include footer.html %}
 

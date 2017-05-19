@@ -3,8 +3,6 @@ abstract: "Documentation for using and learning about ONAP."
 toc:
 - title: index
   path: docs/home/index.md
-  section:
-  - docs/home/contribute/my-test-file.md
 
 - title: ONAP Github
   path: https://github.com/ONAP
