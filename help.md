@@ -546,4 +546,11 @@ sedtion：子目录
 根据文档模板，在/_data/docs-home.yml文件中添加入口，将你的文档存放路径添加到目录文件中。例如：
 
 	- docs/home/contribute/write-new-topic.md
+	
+## 表格测试
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
 
