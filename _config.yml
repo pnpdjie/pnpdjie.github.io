@@ -44,3 +44,5 @@ defaults:
       showedit: true
 tocs:
   - docs-home
+  - setup
+  - guides

@@ -11,7 +11,7 @@ function newDOMElement(tag, className, id){
 $(function() {
 
     if ((location.pathname.split("/")[1]) !== ""){
-        $('.trigger a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('nf');
+        $('header .trigger a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('nf');
     }
 });
 
