@@ -6,6 +6,9 @@ toc:
 - title: Markdown
   section:
   - docs/guides/markdown/add-links-into-picture.md
+  - docs/guides/markdown/show-tables.md
+  - docs/guides/markdown/show-pictures.md
+  - docs/guides/markdown/show-pages.md
 
 - title: Jekyll
   section:

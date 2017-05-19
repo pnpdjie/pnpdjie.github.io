@@ -23,7 +23,7 @@ github_username:  ONAP
 
 # Build settings
 markdown: kramdown
-
+   
 #incremental: true
 #theme: minima
 gems:
