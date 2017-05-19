@@ -48,6 +48,6 @@ list-style: none;
     color: black;
 }
   
-#docsToc > div {
+#docsToc .page-link >div {
     padding: 7.5px 10px 7.5px 18px;
 } 
