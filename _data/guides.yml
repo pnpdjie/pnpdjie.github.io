@@ -18,3 +18,6 @@ toc:
   - docs/guides/jekyll/page-layout-configuration.md
   - docs/guides/jekyll/create-new-page.md
  
+- title: Add Page Test
+  section:
+  - docs/guides/jekyll/test/md
