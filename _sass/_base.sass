@@ -199,7 +199,6 @@ $header-height: 80px
 
 	#editPageButton
 		position: absolute
-		top: -25px
 		right: 5px
 		width: 50px
 		height: 50px
@@ -215,9 +214,11 @@ $header-height: 80px
 	#markdown-toc
 		margin-bottom: 20px
 		width: 150px
+		height: 300px
 		position: fixed
 		top: 160px
 		list-style: none
+		overflow-y: auto
 
 		&:before 
 			font-weight: 700
@@ -350,8 +351,42 @@ html.search #docsContent
 		& > .pi-wrapper > .content
 			opacity: 1
 
+.logo
+	position: relative
+	float: left
+	display: block
+	width: 180px
+	height: 88px
+	top: 0
+	left: 0
+	transform: none
+	background-image: url(/images/logo_onap_2017.png)
+	background-size: contain
+	background-position: center center
+	background-repeat: no-repeat
 
+#search-input 
+	padding: .5em
+	margin-left: 20px
+	width: 20em
+	font-size: 0.8em
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	float: right
+	margin-top: 10px
 
-
+#search-demo-container 
+	ul#results-container 
+		list-style: none
+		font-size: 12px
+		background-color: white
+		position: absolute
+		top: 40px
+		right: 0
+		z-index: -1
+		width: 223px
+		border-left: 1px solid #dedede
+		box-shadow: 2px 3px 2px #dedede
 
 

@@ -4,13 +4,13 @@ title: Linux安装Jekyll
 
 {% capture article %}
 
-本文记录在Linux系统（CentOS和ubuntu）中安装Jekyll的流程。
+本文记录在Linux系统（CentOS和Ubuntu）中安装Jekyll的流程。
 
-一般步骤是安装Ruby，node.js，Jekyll。
+安装顺序为[Ruby](https://www.ruby-lang.org/en/)，[Node.js](https://nodejs.org/en/)，[Jekyll](http://jekyllrb.com/)。
 
 Jekyll是用Ruby开发的，首先要安装Ruby。
 
-安装Jekyll需要使用Ruby的开发工具包Gem，而Gem管理需要用到nodejs环境，所以要安装node.js。
+安装Jekyll需要使用Ruby的开发工具包Gem，而Gem管理需要用到nodejs环境，所以要安装Node.js。
 
 ## CentOS安装Jekyll
 
@@ -31,10 +31,9 @@ RVM是Ruby的版本管理工具。
 
 	rvm -v
 	
-	
 如果出现版本说明则安装成功。
 	
-**安装ruby**
+**安装Ruby**
 
 	rvm install INTERPRETER[-VERSION] OPTIONS 
 	
@@ -42,13 +41,13 @@ RVM是Ruby的版本管理工具。
 
 *省略INTERPRETER，默认安装MRI ruby*
 
-**设置ruby版本**
+**设置Ruby版本**
 
 	rvm 2.4.0 --default
 	
-### 安装node.js
+### 安装Node.js
 
-在此使用源码方式安装node.js。
+在此使用源码方式安装Node.js。
 
 **下载最新版本源码**
 
@@ -74,7 +73,7 @@ RVM是Ruby的版本管理工具。
 
 	vi /etc/profile
 
-**设置nodejs环境变量**
+**设置Node.js环境变量**
 
 在 export PATH USER LOGNAME MAIL HOSTNAME HISTSIZE HISTCONTROL 一行的上面添加如下内容:
 
@@ -91,17 +90,17 @@ RVM是Ruby的版本管理工具。
  
 	source /etc/profile
 
-**验证node.js是否安装配置成功**
- 
+**验证Node.js是否安装配置成功**
+
  	node -v
- 	
+
 npm模块安装路径：/usr/local/node/6.10.3/lib/node_modules/
 
-### 安装jekyII
+### 安装JekyII
 
 	gem install jekyll
 
-### 试试jekyll
+### 试试Jekyll
 
 生成目录
 
@@ -148,7 +147,7 @@ npm模块安装路径：/usr/local/node/6.10.3/lib/node_modules/
 	sudo apt-get update  
 	sudo apt-get install nodejs  
 
-### 安装jekyII
+### 安装Jekyll
 
 	sudo gem install jekyll
 
