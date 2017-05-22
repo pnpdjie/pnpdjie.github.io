@@ -2,6 +2,8 @@
 title: Linux安装Jekyll
 ---
 
+{% capture article %}
+
 本文记录在Linux系统（CentOS和ubuntu）中安装Jekyll的流程。
 
 一般步骤是安装Ruby，node.js，Jekyll。
@@ -150,4 +152,6 @@ npm模块安装路径：/usr/local/node/6.10.3/lib/node_modules/
 
 	sudo gem install jekyll
 
+{% endcapture %}
 
+{% include templates/home.md %}

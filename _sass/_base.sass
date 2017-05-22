@@ -214,10 +214,21 @@ $header-height: 80px
 
 	#markdown-toc
 		margin-bottom: 20px
+		width: 150px
+		position: fixed
+		top: 160px
+		list-style: none
+
+		&:before 
+			font-weight: 700
+			content: "目录"
+			color: $grey
+			text-align: center
+			width: 70px
 
 		ul, li
 			list-style: disc
-			color: $blue
+			color: $grey
 
 		ul
 			padding: 0 15px
@@ -230,8 +241,9 @@ $header-height: 80px
 
 		a
 			position: relative
-			color: $blue
+			color: $grey
 			font-weight: 700
+			text-decoration: none
 
 	img
 		max-width: 100%
@@ -280,13 +292,6 @@ html.search #docsContent
 	position: relative
 	float: right
 	width: 150px
-
-#markdown-toc
-	width: 150px
-	position: fixed
-	top: 160px
-	right: 0
-	list-style: none
 
 .pi-accordion
 	& > .container:first-child > .item:first-child > .title:first-child
@@ -344,6 +349,9 @@ html.search #docsContent
 
 		& > .pi-wrapper > .content
 			opacity: 1
+
+
+
 
 
 
