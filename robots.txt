@@ -1,0 +1,5 @@
+---
+  search: exclude
+---
+User-agent: *
+SITEMAP: https://pnpdjie.github.io/sitemap.xml

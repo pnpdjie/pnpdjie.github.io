@@ -49,7 +49,8 @@ defaults:
       showedit: true
 tocs:
   - docs-home
-  - setup
   - guides
+  - setup
+  - empty
 
 github_url: https://github.com/pnpdjie/pnpdjie.github.io/edit/master/
