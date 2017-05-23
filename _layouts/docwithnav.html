@@ -57,30 +57,50 @@
 
 // hide docs nav area if no nav is present, or if nav only contains a link to the current page
 (function () {
-    window.addEventListener('DOMContentLoaded', init)
+	window.addEventListener('DOMContentLoaded', init);
 
-        // play nice with our neighbors
-        function init() {
-            window.removeEventListener('DOMContentLoaded', init)
-                hideNav()
+      // play nice with our neighbors
+      function init() {
+            window.removeEventListener('DOMContentLoaded', init);
+            hideNav();
         }
 
-    function hideNav(toc){
-        if (!toc) toc = document.querySelector('#docsToc')
-            var container = toc.querySelector('.container')
+	function hideNav(toc){
+		if (!toc) {
+			toc = document.querySelector('#docsToc');
+		}
+		
+		var rightToc = document.querySelector('#markdown-toc');
+		var container = toc.querySelector('.container');
 
-                // container is built dynamically, so it may not be present on the first runloop
-                if (container) {
-                    if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
-                        toc.style.display = 'none'
-                            document.getElementById('docsContent').style.width = '100%'
-                    }
-                } else {
-                    requestAnimationFrame(function () {
-                        hideNav(toc)
-                    })
-                }
-    }
+		if(rightToc) {//right toc is exist
+			// container is built dynamically, so it may not be present on the first runloop
+			if (container) {
+				if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
+					toc.style.display = 'none';
+					document.getElementById('docsContent').style.width = document.getElementById('docsContent').clientWidth + 200 + "px";
+				}
+			} else {
+			    requestAnimationFrame(function () {
+				hideNav(toc)
+			    })
+			}
+		}
+		else {//right toc is not exist
+			if (container) {
+				if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
+					toc.style.display = 'none';
+					document.getElementById('docsContent').style.width = '100%';
+				} else {
+					document.getElementById('docsContent').style.width = document.getElementById('docsContent').clientWidth + 150 + "px";
+				}
+			} else {
+			    requestAnimationFrame(function () {
+				hideNav(toc)
+			    })
+			}
+		}
+	}
 })();
 </script>
   </body>
