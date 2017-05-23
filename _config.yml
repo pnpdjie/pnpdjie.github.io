@@ -33,7 +33,7 @@ markdown: kramdown
 #theme: minima
 gems:
   - jekyll-redirect-from
-  - jekyll-feed
+#  - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-include-cache

@@ -1,5 +1,35 @@
 $header-height: 80px
 
+body
+	min-width: 320px
+
+button
+	cursor: pointer
+
+#docs
+	.flyout-button
+		position: fixed
+		top: 20px
+		left: 20px
+		width: 50px
+		height: 50px
+		background-image: url(/images/toc_icon.png)
+		background-position: center center
+		background-repeat: no-repeat
+		background-size: auto
+		border-radius: 50%
+		transition: 0.3s
+		z-index: 99999
+		border: 0px none
+		margin: 0px
+		background-color: #424242
+
+	&.open-nav .flyout-button
+		display: none
+
+	&.flip-nav .flyout-button
+		background-image: url(/images/toc_icon_grey.png)
+
 #encyclopedia
 	position: relative
 	overflow: hidden
@@ -17,7 +47,7 @@ $header-height: 80px
 	width: 0
 	height: 100vh
 	overflow: hidden
-	padding: 0 50px 0 0
+	padding: 50px 0
 	z-index: 999999
 	transition: 0.3s
 
@@ -219,6 +249,7 @@ $header-height: 80px
 		top: 160px
 		list-style: none
 		overflow-y: auto
+		z-index: 1
 
 		&:before 
 			font-weight: 700
@@ -366,9 +397,9 @@ html.search #docsContent
 	background-repeat: no-repeat
 
 #search-input 
-	padding: .5em
+	padding: 5px
 	margin-left: 20px
-	width: 20em
+	width: 200px
 	font-size: 12px
 	-webkit-box-sizing: border-box
 	-moz-box-sizing: border-box
@@ -410,4 +441,27 @@ html.search #docsContent
 		outline: none
 		text-decoration: none
 		
+.push-menu-close-button
+	position: absolute
+	top: 0
+	right: 0
+	width: 50px
+	height: 50px
+	background: none
+	border: 0px none
+	margin: 0px
 
+	&:before, &:after
+		content: ""
+		position: absolute
+		top: calc(50% - 1px)
+		left: 25%
+		width: 50%
+		height: 2px
+		background-color: black
+
+	&:before
+		transform: rotate(45deg)
+
+	&:after
+		transform: rotate(-45deg)

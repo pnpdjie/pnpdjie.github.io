@@ -159,3 +159,162 @@ $(function() {
         });
     }
 })();
+
+var kub = (function () {
+    var HEADER_HEIGHT;
+    var html, header, mainNav, quickstartButton, hero, encyclopedia, footer, headlineWrapper;
+
+    $(document).ready(function () {
+        html = $('html');
+        body = $('body');
+        header = $('header');
+        mainNav = $('#mainNav');
+        quickstartButton = $('#quickstartButton');
+        hero = $('#hero');
+        encyclopedia = $('#encyclopedia');
+        footer = $('footer');
+        headlineWrapper = $('#headlineWrapper');
+        HEADER_HEIGHT = header.outerHeight();
+
+        resetTheView();
+
+        window.addEventListener('resize', resetTheView);
+        window.addEventListener('scroll', resetTheView);
+        window.addEventListener('keydown', handleKeystrokes);
+
+        document.onunload = function(){
+            window.removeEventListener('resize', resetTheView);
+            window.removeEventListener('scroll', resetTheView);
+            window.removeEventListener('keydown', handleKeystrokes);
+        };
+
+        setInterval(setFooterType, 10);
+    });
+
+    function setFooterType() {
+        var windowHeight = window.innerHeight;
+        var bodyHeight;
+
+        switch (html[0].id) {
+            case 'docs': {
+                bodyHeight = hero.outerHeight() + encyclopedia.outerHeight();
+                break;
+            }
+
+            case 'home':
+            // case 'caseStudies':
+                bodyHeight = windowHeight;
+                break;
+
+            case 'caseStudies':
+            case 'partners':
+                bodyHeight = windowHeight * 2;
+                break;
+
+            default: {
+                bodyHeight = hero.outerHeight() + $('#mainContent').outerHeight();
+            }
+        }
+
+        var footerHeight = footer.outerHeight();
+        classOnCondition(body, 'fixed', windowHeight - footerHeight > bodyHeight);
+    }
+
+    function resetTheView() {
+        if (html.hasClass('open-nav')) {
+            toggleMenu();
+        } else {
+            HEADER_HEIGHT = header.outerHeight();
+        }
+
+        if (html.hasClass('open-toc')) {
+            toggleToc();
+        }
+
+        classOnCondition(html, 'flip-nav', window.pageYOffset > 0);
+
+        if (html[0].id == 'home') {
+            setHomeHeaderStyles();
+        }
+    }
+
+    function setHomeHeaderStyles() {
+        var Y = window.pageYOffset;
+        var quickstartBottom = quickstartButton[0].getBoundingClientRect().bottom;
+
+        classOnCondition(html[0], 'y-enough', Y > quickstartBottom);
+    }
+
+    function toggleMenu() {
+        if (window.innerWidth < 800) {
+            pushmenu.show('primary');
+        }
+
+        else {
+            var newHeight = HEADER_HEIGHT;
+
+            if (!html.hasClass('open-nav')) {
+                newHeight = mainNav.outerHeight();
+            }
+
+            header.css({height: px(newHeight)});
+            html.toggleClass('open-nav');
+        }
+    }
+
+    function handleKeystrokes(e) {
+        switch (e.which) {
+            case 27: {
+                if (html.hasClass('open-nav')) {
+                    toggleMenu();
+                }
+                break;
+            }
+        }
+    }
+
+    function showVideo() {
+        $('body').css({overflow: 'hidden'});
+
+        var videoPlayer = $("#videoPlayer");
+        var videoIframe = videoPlayer.find("iframe")[0];
+        videoIframe.src = videoIframe.getAttribute("data-url");
+        videoPlayer.css({zIndex: highestZ()});
+        videoPlayer.fadeIn(300);
+        videoPlayer.click(function(){
+            $('body').css({overflow: 'auto'});
+
+            videoPlayer.fadeOut(300, function(){
+                videoIframe.src = '';
+            });
+        });
+    }
+
+    function tocWasClicked(e) {
+        var target = $(e.target);
+        var docsToc = $("#docsToc");
+        return (target[0] === docsToc[0] || target.parents("#docsToc").length > 0);
+    }
+
+    function listenForTocClick(e) {
+        if (!tocWasClicked(e)) toggleToc();
+    }
+
+    function toggleToc() {
+        html.toggleClass('open-toc');
+
+        setTimeout(function () {
+            if (html.hasClass('open-toc')) {
+                window.addEventListener('click', listenForTocClick);
+            } else {
+                window.removeEventListener('click', listenForTocClick);
+            }
+        }, 100);
+    }
+
+    return {
+        toggleToc: toggleToc,
+        toggleMenu: toggleMenu,
+        showVideo: showVideo
+    };
+})();
