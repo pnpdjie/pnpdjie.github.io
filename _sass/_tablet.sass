@@ -1,8 +1,9 @@
 
 @media screen and (max-width: 1023px)
 
-	header
-		height: 80px
+	.site-header
+		min-width: 320px
+		height: 120px
 		position: fixed
 		top: 0
 		left: 0
@@ -16,7 +17,7 @@
 		overflow: visible
 
 	.site-sub-section
-		padding-top: 80px
+		padding-top: 120px
 	
 	#docsContent
 		width: 100%
@@ -31,7 +32,7 @@
 	.logo
 		position: absolute
 		top: 40px
-		left: 175px
+		left: 50%
 		transform: translate(-50%, -50%)
 		display: block
 
@@ -39,14 +40,17 @@
 		top: 20px
 		
 	#search-input
-		margin-top: 20px
-		margin-right: 40px
+		position: relative
+		left: calc((100% - 240px) / 2)
+		float: left
+		margin: 70px 0 0 0
 
 	#search-demo-container
 
 		ul#results-container 
-			top: 40px
-			right: 40px
+			top: 100px
+			left: calc((100% - 240px) / 2)
+			margin: 0
 
 		
 		

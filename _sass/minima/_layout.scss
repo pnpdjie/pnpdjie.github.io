@@ -180,6 +180,12 @@
   padding: $spacing-unit 0;
 }
 
+@include media-query($on-palm) {
+  .page-content {
+    margin-top: 120px;
+  }
+}
+
 .page-heading {
   @include relative-font-size(1.25);
 }
