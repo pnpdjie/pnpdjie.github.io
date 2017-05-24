@@ -8,6 +8,13 @@ function newDOMElement(tag, className, id){
     return el;
 }
 
+function classOnCondition(element, className, condition) {
+    if (condition)
+        $(element).addClass(className);
+    else
+        $(element).removeClass(className);
+}
+
 $(function() {
 
     if ((location.pathname.split("/")[1]) !== ""){
