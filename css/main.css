@@ -28,23 +28,6 @@ body{
   font-size: 14px;
  line-height: 1.7em;
 }
-#docsTree{
-float: left;padding: 7.5px 10px 7.5px 18px;
-}
-
-#markdown-toc {
-position: fixed;
-top: 300px;
-right: 0px;
-list-style: none; 
-}
 
 
-#docsToc > div :hover {
-    color: #3371e3;
-}
-
-#docsToc> .title {
-    color: black;
-}
   
