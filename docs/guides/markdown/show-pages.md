@@ -14,8 +14,6 @@ title: 引用页面的方式
 
 之后，实际效果如下：
 
-{% include code.html %}
-
 <iframe src="http://www.baidu.com" width="700px" height="500px"></iframe>
 
 
