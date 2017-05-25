@@ -1,5 +1,7 @@
 'use strict';
 
+var body;
+
 function newDOMElement(tag, className, id) {
     var el = document.createElement(tag);
 
@@ -184,7 +186,7 @@ $(function() {
 
 var kub = (function() {
     var HEADER_HEIGHT;
-    var html, body, header, mainNav, quickstartButton, hero, encyclopedia, footer, headlineWrapper;
+    var html, header, mainNav, quickstartButton, hero, encyclopedia, footer, headlineWrapper;
 
     $(document).ready(function() {
         html = $('html');
