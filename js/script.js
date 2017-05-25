@@ -184,7 +184,7 @@ $(function() {
 
 var kub = (function() {
     var HEADER_HEIGHT;
-    var html, header, mainNav, quickstartButton, hero, encyclopedia, footer, headlineWrapper;
+    var html, body, header, mainNav, quickstartButton, hero, encyclopedia, footer, headlineWrapper;
 
     $(document).ready(function() {
         html = $('html');
