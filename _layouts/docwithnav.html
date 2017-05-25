@@ -1,111 +1,86 @@
-{% for current_toc in site.tocs %}
-  {% if found_toc %}
-    {% break %}
-  {% else %}
-    {% assign toc=site.data[current_toc] %}
-    {% include tocsearch.html tree=toc.toc toc=toc %}
-  {% endif %} 
-{% endfor %}
-
+{% for current_toc in site.tocs %} {% if found_toc %} {% break %} {% else %} {% assign toc=site.data[current_toc] %} {% include tocsearch.html tree=toc.toc toc=toc %} {% endif %} {% endfor %}
 <!DOCTYPE html>
-<html id="docs" lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html id="docs" lang="{{ page.lang | default: site.lang | default: " en " }}">
+{% include head.html %}
 
-  {% include head.html %}
-
-  <body>
-
+<body>
     {% include header.html %}
-    
     <section class="site-sub-section">
-      <div class="wrapper">
-      <h2>{{toc.bigheader}}</h2>
-        <nav class="site-sub-nav" style="float:left">
-          <div class="trigger highlight">
-		  <a href="/docs/home" {% if toc.bigheader == "Documentation Home" %}class="page-link nc"{% else %}class="page-link"{% endif %}>HOME</a>
-		  <a href="/docs/setup/" {% if toc.bigheader == "Setup" %}class="page-link nc"{% else %}class="page-link"{% endif %}>SETUP</a>
-		  <a href="/docs/guides/" {% if toc.bigheader == "Guides" %}class="page-link nc"{% else %}class="page-link"{% endif %}>GUIDES</a>
-		  <a href="/docs/tasks/" {% if toc.bigheader == "Tasks" %}class="page-link nc"{% else %}class="page-link"{% endif %}>TASKS</a>
-		  <a href="/docs/tutorials/" {% if toc.bigheader == "Tutorials" %}class="page-link nc"{% else %}class="page-link"{% endif %}>TUTORIALS</a>
-		  <a href="/docs/concepts/" {% if toc.bigheader == "Concepts" %}class="page-link nc"{% else %}class="page-link"{% endif %}>CONCEPTS</a>
-		</div>
-        </nav>
-      </div>
-    </section>
-
-    <section  id="encyclopedia" class="wrapper">
-  	
-        <div id="docsToc">
-		<div class="pi-accordion">
-          		{% include_cached tree.html tree=toc.toc %}
-		</div>
-		<button class="push-menu-close-button" onclick="kub.toggleToc()"></button>
+        <div class="wrapper">
+            <h2>{{toc.bigheader}}</h2>
+            <nav class="site-sub-nav" style="float:left">
+                <div class="trigger highlight">
+                    <a href="/docs/home" {% if toc.bigheader=="Documentation Home" %}class="page-link nc" {% else %}class="page-link" {% endif %}>HOME</a>
+                    <a href="/docs/setup/" {% if toc.bigheader=="Setup" %}class="page-link nc" {% else %}class="page-link" {% endif %}>SETUP</a>
+                    <a href="/docs/guides/" {% if toc.bigheader=="Guides" %}class="page-link nc" {% else %}class="page-link" {% endif %}>GUIDES</a>
+                    
+                </div>
+            </nav>
         </div>
-	<div id="docsContent">
-		<p><a href="{{ site.github_url }}{{ page.path }}" id="editPageButton">Edit This Page</a></p>
-
-		{% unless page.notitle %}
-		  <h1>{{ page.title }}</h1>
-		{% endunless %}
-		{{ content }}
-      </div>
-	
-
-	</section>
-
+    </section>
+    <section id="encyclopedia" class="wrapper">
+        <div id="docsToc">
+            <div class="pi-accordion">
+                {% include_cached tree.html tree=toc.toc %}
+            </div>
+            <button class="push-menu-close-button" onclick="kub.toggleToc()"></button>
+        </div>
+        <div id="docsContent">
+            <p><a href="{{ site.github_url }}{{ page.path }}" id="editPageButton">Edit This Page</a></p>
+            {% unless page.notitle %}
+            <h1>{{ page.title }}</h1> {% endunless %} {{ content }}
+        </div>
+    </section>
     {% include footer.html %}
+    <button class="flyout-button" onclick="kub.toggleToc()"></button>
+    <script>
+    // hide docs nav area if no nav is present, or if nav only contains a link to the current page
+    (function() {
+        window.addEventListener('DOMContentLoaded', init);
 
-<button class="flyout-button" onclick="kub.toggleToc()"></button>
-<script>
-
-// hide docs nav area if no nav is present, or if nav only contains a link to the current page
-(function () {
-	window.addEventListener('DOMContentLoaded', init);
-
-      // play nice with our neighbors
-      function init() {
+        // play nice with our neighbors
+        function init() {
             window.removeEventListener('DOMContentLoaded', init);
             hideNav();
         }
 
-	function hideNav(toc){
-		if (!toc) {
-			toc = document.querySelector('#docsToc');
-		}
-		
-		var rightToc = document.querySelector('#markdown-toc');
-		var container = toc.querySelector('.container');
+        function hideNav(toc) {
+            if (!toc) {
+                toc = document.querySelector('#docsToc');
+            }
 
-		if(rightToc) {//right toc is exist
-			// container is built dynamically, so it may not be present on the first runloop
-			if (container) {
-				if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
-					toc.style.display = 'none';
-					document.getElementById('docsContent').style.width = document.getElementById('docsContent').clientWidth + 200 + "px";
-				}
-			} else {
-			    requestAnimationFrame(function () {
-				hideNav(toc)
-			    })
-			}
-		}
-		else {//right toc is not exist
-			if (container) {
-				if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
-					toc.style.display = 'none';
-					document.getElementById('docsContent').style.width = '100%';
-				} else {
-					document.getElementById('docsContent').style.width = document.getElementById('docsContent').clientWidth + 150 + "px";
-				}
-			} else {
-			    requestAnimationFrame(function () {
-				hideNav(toc)
-			    })
-			}
-		}
-	}
-})();
-</script>
-  </body>
+            var rightToc = document.querySelector('#markdown-toc');
+            var container = toc.querySelector('.container');
+
+            if (rightToc) { //right toc is exist
+                // container is built dynamically, so it may not be present on the first runloop
+                if (container) {
+                    if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
+                        toc.style.display = 'none';
+                        document.getElementById('docsContent').style.width = document.getElementById('docsContent').clientWidth + 200 + "px";
+                    }
+                } else {
+                    requestAnimationFrame(function() {
+                        hideNav(toc)
+                    })
+                }
+            } else { //right toc is not exist
+                if (container) {
+                    if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
+                        toc.style.display = 'none';
+                        document.getElementById('docsContent').style.width = '100%';
+                    } else {
+                        document.getElementById('docsContent').style.width = document.getElementById('docsContent').clientWidth + 150 + "px";
+                    }
+                } else {
+                    requestAnimationFrame(function() {
+                        hideNav(toc)
+                    })
+                }
+            }
+        }
+    })();
+    </script>
+</body>
 
 </html>
-
