@@ -14,8 +14,8 @@ title: 引用页面的方式
 
 之后，实际效果如下：
 
+<iframe src="http://www.baidu.com" width="700px" height="500px"></iframe>
 
-<iframe src="http://blog.shengbin.me/posts/iframe-in-markdown-of-jekyll" width="700px" height="500px"></iframe>
 
 {% endcapture %}
 
