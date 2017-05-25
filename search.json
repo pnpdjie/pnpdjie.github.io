@@ -5,20 +5,26 @@ search: exclude
 
 [
 {% for page in site.pages %}
+{% assign urlExtension = page.url | slice: -4, 4 | downcase %}
+{% if urlExtension == "html" %}
 {% unless page.search == "exclude" %}
 {
 "title": "{{ page.title | escape }}",
+"url": "{{ page.url }}",
 "tags": "{{ page.tags }}",
 "keywords": "{{page.keywords}}",
-"summary": "{{page.summary | strip }}"
+"summary": "{{page.summary | strip }}",
+"content": "{{page.content | strip_html | strip_newlines | replace: '\', '\\\\' | replace: '"', '\\"' | replace: '	', '    ' }}"
 },
 {% endunless %}
+{% endif %}
 {% endfor %}
 
 {% for post in site.posts %}
 
 {
 "title": "{{ post.title | escape }}",
+"url": "{{ page.url }}",
 "tags": "{{ post.tags }}",
 "keywords": "{{post.keywords}}",
 "summary": "{{post.summary | strip }}"
