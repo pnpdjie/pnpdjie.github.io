@@ -1,7 +1,6 @@
 'use strict';
 
-module.exports = function(grunt) {
-
+module.exports = function (grunt) {
     // Project configuration.
     grunt.initConfig({
         htmllint: {
@@ -20,14 +19,8 @@ module.exports = function(grunt) {
                 'js/script.js'
             ],
             options: {
-                //jshintrc: '.jshintrc'
-                curly: true,
-                eqeqeq: true,
-                eqnull: true,
-                browser: true,
-                globals: {
-                    jQuery: true
-                },
+                force: true,
+                jshintrc: '.jshintrc',
                 reporterOutput: 'tmp/jshint-report.txt'
             }
         },
@@ -52,7 +45,7 @@ module.exports = function(grunt) {
         csslint: {
             options: {
                 formatters: [
-                    { id: 'csslint-xml', dest: 'tmp/csslint.xml' }
+                    {id: 'csslint-xml', dest: 'tmp/csslint.xml'}
                 ]
             },
             strict: {
@@ -83,7 +76,8 @@ module.exports = function(grunt) {
 
     // Whenever the "test" task is run, first clean the "tmp" dir, then run this
     // plugin's task(s), then test the result.
-    grunt.registerTask('test', ['clean', 'jshint', 'scsslint', 'sasslint', 'csslint', 'htmllint']);
+    //grunt.registerTask('test', ['clean', 'jshint', 'scsslint', 'sasslint', 'csslint', 'htmllint']);
+    grunt.registerTask('test', ['clean', 'jshint']);
 
     // By default, lint and run all tests.
     grunt.registerTask('default', ['test']);

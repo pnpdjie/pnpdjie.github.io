@@ -1,8 +1,8 @@
-'use strict';
-
 var body;
 
 function newDOMElement(tag, className, id) {
+    "use strict";
+
     var el = document.createElement(tag);
 
     if (className) {
@@ -16,7 +16,23 @@ function newDOMElement(tag, className, id) {
     return el;
 }
 
+function highestZ() {
+    "use strict";
+    var Z = 1000;
+
+    $("*").each(function(){
+        var thisZ = $(this).css('z-index');
+
+        if (thisZ !== "auto" && thisZ > Z) {
+            Z = ++thisZ;
+        }
+    });
+
+    return Z;
+}
+
 function classOnCondition(element, className, condition) {
+    "use strict";
     if (condition) {
         $(element).addClass(className);
     } else {
@@ -25,42 +41,40 @@ function classOnCondition(element, className, condition) {
 }
 
 $(function() {
-
+    "use strict";
     if ((location.pathname.split("/")[1]) !== "") {
         $('header .trigger a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('nf');
     }
 });
 
 var kub = (function() {
+    "use strict";
     var HEADER_HEIGHT;
     var html, header, mainNav, quickstartButton, hero, encyclopedia, footer, headlineWrapper;
 
-    $(document).ready(function() {
-        html = $('html');
-        body = $('body');
-        header = $('header');
-        mainNav = $('#mainNav');
-        quickstartButton = $('#quickstartButton');
-        hero = $('#hero');
-        encyclopedia = $('#encyclopedia');
-        footer = $('footer');
-        headlineWrapper = $('#headlineWrapper');
-        HEADER_HEIGHT = header.outerHeight();
+    function tocWasClicked(e) {
+        var target = $(e.target);
+        var docsToc = $("#docsToc");
+        return (target[0] === docsToc[0] || target.parents("#docsToc").length > 0);
+    }
 
-        resetTheView();
+    function listenForTocClick(e) {
+        if (!tocWasClicked(e)) {
+            toggleToc();
+        }
+    }
 
-        window.addEventListener('resize', resetTheView);
-        window.addEventListener('scroll', resetTheView);
-        window.addEventListener('keydown', handleKeystrokes);
+    function toggleToc() {
+        html.toggleClass('open-toc');
 
-        document.onunload = function() {
-            window.removeEventListener('resize', resetTheView);
-            window.removeEventListener('scroll', resetTheView);
-            window.removeEventListener('keydown', handleKeystrokes);
-        };
-
-        setInterval(setFooterType, 10);
-    });
+        setTimeout(function() {
+            if (html.hasClass('open-toc')) {
+                window.addEventListener('click', listenForTocClick);
+            } else {
+                window.removeEventListener('click', listenForTocClick);
+            }
+        }, 100);
+    }
 
     function setFooterType() {
         var windowHeight = window.innerHeight;
@@ -93,10 +107,15 @@ var kub = (function() {
         classOnCondition(body, 'fixed', windowHeight - footerHeight > bodyHeight);
     }
 
+    function setHomeHeaderStyles() {
+        var Y = window.pageYOffset;
+        var quickstartBottom = quickstartButton[0].getBoundingClientRect().bottom;
+
+        classOnCondition(html[0], 'y-enough', Y > quickstartBottom);
+    }
+
     function resetTheView() {
-        if (html.hasClass('open-nav')) {
-            toggleMenu();
-        } else {
+        if (!html.hasClass('open-nav')) {
             HEADER_HEIGHT = header.outerHeight();
         }
 
@@ -106,44 +125,35 @@ var kub = (function() {
 
         classOnCondition(html, 'flip-nav', window.pageYOffset > 0);
 
-        if (html[0].id == 'home') {
+        if (html[0].id === 'home') {
             setHomeHeaderStyles();
         }
     }
 
-    function setHomeHeaderStyles() {
-        var Y = window.pageYOffset;
-        var quickstartBottom = quickstartButton[0].getBoundingClientRect().bottom;
+    $(document).ready(function() {
+        html = $('html');
+        body = $('body');
+        header = $('header');
+        mainNav = $('#mainNav');
+        quickstartButton = $('#quickstartButton');
+        hero = $('#hero');
+        encyclopedia = $('#encyclopedia');
+        footer = $('footer');
+        headlineWrapper = $('#headlineWrapper');
+        HEADER_HEIGHT = header.outerHeight();
 
-        classOnCondition(html[0], 'y-enough', Y > quickstartBottom);
-    }
+        resetTheView();
 
-    function toggleMenu() {
-        if (window.innerWidth < 800) {
-            pushmenu.show('primary');
-        } else {
-            var newHeight = HEADER_HEIGHT;
+        window.addEventListener('resize', resetTheView);
+        window.addEventListener('scroll', resetTheView);
 
-            if (!html.hasClass('open-nav')) {
-                newHeight = mainNav.outerHeight();
-            }
+        document.onunload = function() {
+            window.removeEventListener('resize', resetTheView);
+            window.removeEventListener('scroll', resetTheView);
+        };
 
-            header.css({ height: px(newHeight) });
-            html.toggleClass('open-nav');
-        }
-    }
-
-    function handleKeystrokes(e) {
-        switch (e.which) {
-            case 27:
-                {
-                    if (html.hasClass('open-nav')) {
-                        toggleMenu();
-                    }
-                    break;
-                }
-        }
-    }
+        setInterval(setFooterType, 10);
+    });
 
     function showVideo() {
         $('body').css({ overflow: 'hidden' });
@@ -162,69 +172,41 @@ var kub = (function() {
         });
     }
 
-    function tocWasClicked(e) {
-        var target = $(e.target);
-        var docsToc = $("#docsToc");
-        return (target[0] === docsToc[0] || target.parents("#docsToc").length > 0);
-    }
-
-    function listenForTocClick(e) {
-        if (!tocWasClicked(e)) {
-            toggleToc();
-        }
-    }
-
-    function toggleToc() {
-        html.toggleClass('open-toc');
-
-        setTimeout(function() {
-            if (html.hasClass('open-toc')) {
-                window.addEventListener('click', listenForTocClick);
-            } else {
-                window.removeEventListener('click', listenForTocClick);
-            }
-        }, 100);
-    }
-
     return {
         toggleToc: toggleToc,
-        toggleMenu: toggleMenu,
         showVideo: showVideo
     };
 })();
 
 (function() {
+    "use strict";
     var yah = true;
     var moving = false;
     var CSS_BROWSER_HACK_DELAY = 25;
 
-    $(document).ready(function() {
-        // Safari chokes on the animation here, so...
-        if (navigator.userAgent.indexOf('Chrome') == -1 && navigator.userAgent.indexOf('Safari') != -1) {
-            var hackStyle = newDOMElement('style');
-            hackStyle.innerHTML = '.pi-accordion .pi-wrapper{transition: none}';
-            body.append(hackStyle);
-        }
-        // Gross.
+    function setYAH() {
+        var pathname = location.href.split('#')[0]; // on page load, make sure the page is YAH even if there's a hash
+        var currentLinks = [];
 
-        $('.pi-accordion').each(function() {
-            var accordion = this;
-            var content = this.innerHTML;
-            var container = newDOMElement('div', 'container');
-            container.innerHTML = content;
-            $(accordion).empty();
-            accordion.appendChild(container);
-            CollapseBox($(container));
+        $('.pi-accordion a').each(function() {
+            if (pathname === this.href) {
+                currentLinks.push(this);
+            }
         });
 
-        setYAH();
+        currentLinks.forEach(function(yahLink) {
+            $(yahLink).parents('.item').each(function() {
+                $(this).addClass('on');
+                $(this).find('.pi-wrapper').eq(0).css({ height: 'auto' });
+                $(this).find('.content').eq(0).css({ opacity: 1 });
+            });
 
-        setTimeout(function() {
-            yah = false;
-        }, 500);
-    });
+            $(yahLink).addClass('yah');
+            yahLink.onclick = function(e) { e.preventDefault(); };
+        });
+    }
 
-    function CollapseBox(container) {
+    function collapseBox(container) {
         container.children('.item').each(function() {
             // build the TOC DOM
             // the animated open/close is enabled by having each item's content exist in the flow, at its natural height,
@@ -254,33 +236,6 @@ var kub = (function() {
                 item.appendChild(wrapper);
                 $(wrapper).css({ height: 0 });
             }
-
-
-            $(title).click(function() {
-                if (!yah) {
-                    if (moving) {
-                        return;
-                    }
-                    moving = true;
-                }
-
-                if (container[0].getAttribute('data-single')) {
-                    var openSiblings = item.siblings().filter(function(sib) {
-                        return sib.hasClass('on');
-                    });
-                    openSiblings.forEach(function(sibling) {
-                        toggleItem(sibling);
-                    });
-                }
-
-                setTimeout(function() {
-                    if (!isContainer) {
-                        moving = false;
-                        return;
-                    }
-                    toggleItem(item);
-                }, CSS_BROWSER_HACK_DELAY);
-            });
 
             function toggleItem(thisItem) {
                 var thisWrapper = $(thisItem).find('.pi-wrapper').eq(0);
@@ -312,38 +267,66 @@ var kub = (function() {
                 }
             }
 
+            $(title).click(function() {
+                if (!yah) {
+                    if (moving) {
+                        return;
+                    }
+                    moving = true;
+                }
+
+                if (container[0].getAttribute('data-single')) {
+                    var openSiblings = item.siblings().filter(function(sib) {
+                        return sib.hasClass('on');
+                    });
+                    openSiblings.forEach(function(sibling) {
+                        toggleItem(sibling);
+                    });
+                }
+
+                setTimeout(function() {
+                    if (!isContainer) {
+                        moving = false;
+                        return;
+                    }
+                    toggleItem(item);
+                }, CSS_BROWSER_HACK_DELAY);
+            });
+
             if (content) {
                 var innerContainers = $(content).children('.container');
                 if (innerContainers.length > 0) {
                     innerContainers.each(function() {
-                        CollapseBox($(this));
+                        collapseBox($(this));
                     });
                 }
             }
         });
     }
 
-    function setYAH() {
-        var pathname = location.href.split('#')[0]; // on page load, make sure the page is YAH even if there's a hash
-        var currentLinks = [];
+    $(document).ready(function() {
+        // Safari chokes on the animation here, so...
+        if (navigator.userAgent.indexOf('Chrome') === -1 && navigator.userAgent.indexOf('Safari') !== -1) {
+            var hackStyle = newDOMElement('style');
+            hackStyle.innerHTML = '.pi-accordion .pi-wrapper{transition: none}';
+            body.append(hackStyle);
+        }
+        // Gross.
 
-        $('.pi-accordion a').each(function() {
-            if (pathname === this.href) {
-                currentLinks.push(this);
-            }
+        $('.pi-accordion').each(function() {
+            var accordion = this;
+            var content = this.innerHTML;
+            var container = newDOMElement('div', 'container');
+            container.innerHTML = content;
+            $(accordion).empty();
+            accordion.appendChild(container);
+            collapseBox($(container));
         });
 
-        currentLinks.forEach(function(yahLink) {
-            $(yahLink).parents('.item').each(function() {
-                $(this).addClass('on');
-                $(this).find('.pi-wrapper').eq(0).css({ height: 'auto' });
-                $(this).find('.content').eq(0).css({ opacity: 1 });
-            });
+        setYAH();
 
-            $(yahLink).addClass('yah');
-            yahLink.onclick = function(e) { e.preventDefault(); };
-        });
-    }
+        setTimeout(function() {
+            yah = false;
+        }, 500);
+    });
 })();
-
-

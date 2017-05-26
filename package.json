@@ -15,7 +15,8 @@
     "grunt-htmllint": "^0.2.7",
     "grunt-sass-lint": "^0.2.2",
     "grunt-scss-lint": "^0.5.0",
-    "htmllint": "^0.6.0"
+    "htmllint": "^0.6.0",
+    "jshint-stylish": "^2.2.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
