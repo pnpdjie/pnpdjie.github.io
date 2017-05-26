@@ -1,20 +1,20 @@
 bigheader: "Guides"
 abstract: "Documentation for using and learning about ONAP."
-toc:
+toc: 
 - docs/guides/index.md
 
 - title: Markdown语法解读
   path: https://github.com/guodongxiaren/README
 
 - title: Markdown
-  section:
+  section: 
   - docs/guides/markdown/add-links-into-picture.md
   - docs/guides/markdown/show-tables.md
   - docs/guides/markdown/show-pictures.md
   - docs/guides/markdown/show-pages.md
 
 - title: Jekyll
-  section:
+  section: 
   - docs/guides/jekyll/install-jekyll-in-linux.md
   - docs/guides/jekyll/page-layout-configuration.md
   - docs/guides/jekyll/create-new-page.md
