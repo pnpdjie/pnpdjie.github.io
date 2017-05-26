@@ -1,7 +1,6 @@
 ---
 title: 页面布局说明
 ---
-
 {% capture article %}
 
 ## 页面布局

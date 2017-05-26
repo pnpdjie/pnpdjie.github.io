@@ -3,7 +3,7 @@ title: 创建新页面
 ---
 
 {% capture article %}
-{% include code.html language="liquid" file="page-layout-configuration.md" ghlink="/docs/guides/jekyll/page-layout-configuration.md"%}
+{% include code.html file="page-layout-configuration.md" %}
 ## 选择标题和文件名
 
 以关键字命名标题，方便搜索。将标题以“-”相连形成文件名。例如“Writing a New Topic”的文件名为“write-new-topic.md”。
