@@ -4,50 +4,19 @@ redirect_from:
 - "/docs/"
 - "/docs/index.html"
 ---
-* content
-{:toc}
 
-<p>Kubernetes documentation can help you set up Kubernetes, learn about the system, or get your applications and workloads running on Kubernetes. To learn the basics of what Kubernetes is and how it works, read "<a href="/docs/whatisk8s/">What is Kubernetes</a>". </p>
+This documentation is for developers and users of ONAP, an open source software platform that delivers robust capabilities for the design, creation, orchestration, monitoring, and life cycle management of Software-Defined Networks (SDNs).
 
-<h2>Interactive Tutorial</h2>
+ONAP (Open Network Automation Platform) is an open source software platform that delivers capabilities for the design, creation, orchestration, monitoring, and life cycle management of
+ 
+* Virtual Network Functions (VNFs)
+* The carrier-scale Software Defined Networks (SDNs) that contain them
+* Higher-level services that combine the above
 
-<p>The <a href="/docs/tutorials/kubernetes-basics/">Kubernetes Basics interactive tutorial</a> lets you try out Kubernetes right out of your web browser, using a virtual terminal. Learn about the Kubernetes system and deploy, expose, scale, and upgrade a containerized application in just a few minutes.</p>
+ONAP (derived from the AT&T's ECOMP) provides for automatic, policy-driven interaction of these functions and services in a dynamic, real-time cloud environment. ONAP is not just a run-time platform; it includes graphical design tools for function/service creation.
 
-<h2>Installing/Setting Up Kubernetes</h2>
-
-<p><a href="/docs/getting-started-guides/">Picking the Right Solution</a> can help you get a Kubernetes cluster up and running, either for local development, or on your cloud provider of choice.</p>
-
-<p>Other/newer ways to set up a Kubernetes cluster include:</p>
-<ul>
-<li><a href="/docs/getting-started-guides/minikube/">Minikube</a>: Install a single-node Kubernetes cluster on your local machine for development and testing.</li>
-<li><a href="/docs/getting-started-guides/kops/">Installing Kubernetes on AWS with kops</a>: Bring up a complete Kubernetes cluster on Amazon Web Services, using a tool called <code>kops</code>.</li>
-<li><a href="/docs/getting-started-guides/kubeadm/">Installing Kubernetes on Linux with kubeadm</a> (Beta): Install a secure Kubernetes cluster on any pre-existing machines running Linux, using the built-in <code>kubeadm</code> tool.</li>
-<li><a href="/docs/getting-started-guides/kargo/">Installing Kubernetes On-premise/Cloud Providers with Kargo</a>: Deploy a Kubernetes cluster on-premise baremetal or hosted on cloud providers, with Ansible and <code>kargo</code> tools.</li>
-</ul>
-
-<h2>Guides, Tutorials, Tasks, and Concepts</h2>
-
-<p>The Kubernetes documentation contains a number of resources to help you understand and work with Kubernetes.</p>
-<ul>
-<li><b><a href="/docs/user-guide/">Guides</a></b> provides documentation for Kubernetes features as well as administering and spinning up clusters, including usage examples.</li>
-<li><b><a href="/docs/tutorials/">Tutorials</a></b> contain detailed walkthroughs of the Kubernetes workflow.</li>
-<li><b><a href="/docs/tasks/">Tasks</a></b> contain step-by-step instructions for common Kubernetes tasks.</li>
-<li><b><a href="/docs/concepts/">Concepts</a></b> provide a deep understanding of how Kubernetes works.</li>
-</ul>
-
-<h2>API and Command References</h2>
-
-<p>The <a href="/docs/reference/">reference</a> documentation provides complete information on the Kubernetes APIs and the <code>kubectl</code> command-line interface.</p>
-
-<h2>Tools</h2>
-
-<p>The <a href="/docs/tools/">tools</a> page contains a list of native and third-party tools for Kubernetes.</p>
-
-<h2>Frequently Asked Questions</h2>
-
-* <a href="https://github.com/kubernetes/kubernetes/wiki/User-FAQ">User FAQ</a>
-* <a href="https://github.com/kubernetes/kubernetes/wiki/Debugging-FAQ">Debugging FAQ</a>
-* <a href="https://github.com/kubernetes/kubernetes/wiki/Services-FAQ">Services FAQ</a>
-
+ONAP uses cloud technologies and network virtualization to offer services, achieving both faster development and greater operational automation. It lets service providers quickly add features and reduces operations costs. It gives service providers and businesses with their own network clouds more control of their network services, and enables developers to create new services. Ultimately, consumers benefit because the network better adapts, scales and predicts how to make their connected experiences seamless.
+ 
+ONAP is mature, feature-complete, secure, and tested in real-world deployments. Releasing this software as open source, under the auspices of the Linux Foundation, creates a level playing field for carriers and equipment providers. By providing a common platform, ONAP has the potential to rapidly accelerate standardization and innovation across the cloud and networking ecosystems.
 
 

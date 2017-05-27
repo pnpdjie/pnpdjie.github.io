@@ -16,21 +16,6 @@ function newDOMElement(tag, className, id) {
     return el;
 }
 
-function highestZ() {
-    "use strict";
-    var Z = 1000;
-
-    $("*").each(function(){
-        var thisZ = $(this).css('z-index');
-
-        if (thisZ !== "auto" && thisZ > Z) {
-            Z = ++thisZ;
-        }
-    });
-
-    return Z;
-}
-
 function classOnCondition(element, className, condition) {
     "use strict";
     if (condition) {
