@@ -10,10 +10,13 @@ choose: true
  {% raw %}
  
  {% if page.choose%}
+ 
  要显示的内容
+ 
  {% endif%}
 
  {% endraw%}
+ 
 {% if page.choose%}
  通过当前页面的属性判断是否显示这句话
 {% endif%}
