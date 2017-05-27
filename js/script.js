@@ -50,7 +50,7 @@ $(function() {
 var kub = (function() {
     "use strict";
     var HEADER_HEIGHT;
-    var html, header, mainNav, quickstartButton, hero, encyclopedia, footer, headlineWrapper;
+    var html, header, quickstartButton, hero, encyclopedia, footer, headlineWrapper;
 
     function tocWasClicked(e) {
         var target = $(e.target);
@@ -134,7 +134,6 @@ var kub = (function() {
         html = $('html');
         body = $('body');
         header = $('header');
-        mainNav = $('#mainNav');
         quickstartButton = $('#quickstartButton');
         hero = $('#hero');
         encyclopedia = $('#encyclopedia');
@@ -155,26 +154,8 @@ var kub = (function() {
         setInterval(setFooterType, 10);
     });
 
-    function showVideo() {
-        $('body').css({ overflow: 'hidden' });
-
-        var videoPlayer = $("#videoPlayer");
-        var videoIframe = videoPlayer.find("iframe")[0];
-        videoIframe.src = videoIframe.getAttribute("data-url");
-        videoPlayer.css({ zIndex: highestZ() });
-        videoPlayer.fadeIn(300);
-        videoPlayer.click(function() {
-            $('body').css({ overflow: 'auto' });
-
-            videoPlayer.fadeOut(300, function() {
-                videoIframe.src = '';
-            });
-        });
-    }
-
     return {
-        toggleToc: toggleToc,
-        showVideo: showVideo
+        toggleToc: toggleToc
     };
 })();
 
