@@ -71,11 +71,11 @@
             }
 
             function findMatchesInObject(obj, crit, strategy) {
-                for (var key in obj)
-                    if (strategy.matches(obj[key], crit)) {
-                        matches.push(obj);
-                        break
-                    }
+                //for (var key in obj)
+                if (strategy.matches(obj['all'], crit)) {
+                    matches.push(obj);
+                    //break
+                }
             }
 
             function getSearchStrategy() {
@@ -133,10 +133,27 @@
         module.exports = function() {
             var self = this,
                 templatePattern = /\{(.*?)\}/g;
-            self.setTemplatePattern = function(newTemplatePattern) { templatePattern = newTemplatePattern }, self.render = function(t, data) {
+            self.setTemplatePattern = function(newTemplatePattern) { templatePattern = newTemplatePattern }, self.render = function(t, data, condition) {
+                // var res = t.replace(templatePattern, function(match, prop) {
+                //     return data[prop] || match
+                // });
+                // return res.replace(condition), function(match, prop) {
+                //     return data[prop] || match
+                // });
                 return t.replace(templatePattern, function(match, prop) {
-                    return data[prop] || match
-                })
+                    if (data[prop]) {
+                        var res = data[prop];
+                        if (prop === 'title' || prop === 'content') {
+                            var reg = new RegExp(condition, "gi")
+                            res = res.replace(reg, function(match,prop){
+                            	return '<strong>' + match + '</strong>';
+                            });
+                        }
+                        return res;
+                    } else {
+                        match
+                    }
+                });
             }
         }
     }, {}],
@@ -187,10 +204,28 @@
                 }
 
                 function registerInput() {
-                    opt.searchInput.addEventListener("keyup", function(e) {
-                        condition = e.target.value.trim();
-                        return 0 == condition.length ? void emptyResultsContainer() : void render(searcher.search(store, condition))
-                    })
+                    if (!opt.searchButton) {
+                        opt.searchInput.addEventListener("keyup", function(e) {
+                            condition = e.target.value.trim();
+                            return 0 == condition.length ? void emptyResultsContainer() : void render(searcher.search(store, condition))
+                        })
+                    } else {
+                        opt.searchInput.addEventListener("keydown", function(e) {
+                            switch (e.which) {
+                                case 13:
+                                    {
+                                        condition = e.target.value.trim();
+                                        return 0 == condition.length ? void emptyResultsContainer() : void render(searcher.search(store, condition))
+                                        break;
+                                    }
+                            }
+                        })
+
+                        opt.searchButton.addEventListener("click", function(e) {
+                            condition = opt.searchInput.value.trim();
+                            return 0 == condition.length ? void emptyResultsContainer() : void render(searcher.search(store, condition))
+                        })
+                    }
                 }
 
                 function render(results) {
@@ -198,14 +233,14 @@
                         appendToResultsContainer(opt.noResultsText);
                     } else {
                         for (var i = 0; i < results.length; i++)
-                            appendToResultsContainer(templater.render(opt.searchResultTemplate, results[i]))
+                            appendToResultsContainer(templater.render(opt.searchResultTemplate, results[i], condition))
                     }
                     appendContentSearchLink();
                 }
                 var self = this,
                     condition = '',
                     requiredOptions = ["searchInput", "resultsContainer", "dataSource"],
-                    opt = { searchInput: null, resultsContainer: null, dataSource: [], searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>', noResultsText: "No results found", limit: 10, fuzzy: !1, isLimit: !1 };
+                    opt = { searchInput: null, resultsContainer: null, dataSource: [], searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>', noResultsText: "No results found", limit: 10, fuzzy: !1, isLimit: !1, searchButton: null };
                 self.init = function(_opt) { validateOptions(_opt), assignOptions(_opt), isJSON(opt.dataSource) ? initWithJSON(opt.dataSource) : initWithURL(opt.dataSource) }
             }
             var Searcher = require("./Searcher"),
