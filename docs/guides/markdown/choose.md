@@ -1,6 +1,6 @@
 ---
 title: Markdown属性过滤
-choose:true
+choose: true
 ---
 
 {% capture article %}
