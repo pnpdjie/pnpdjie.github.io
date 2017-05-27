@@ -12,10 +12,11 @@ toc:
   - docs/guides/markdown/show-tables.md
   - docs/guides/markdown/show-pictures.md
   - docs/guides/markdown/show-pages.md
+  - docs/guides/jekyll/choose.md
 
 - title: Jekyll
   section: 
   - docs/guides/jekyll/install-jekyll-in-linux.md
   - docs/guides/jekyll/page-layout-configuration.md
   - docs/guides/jekyll/create-new-page.md
-  - docs/guides/jekyll/choose.md
+  
