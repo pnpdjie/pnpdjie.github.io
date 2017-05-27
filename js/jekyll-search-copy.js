@@ -66,7 +66,7 @@
     4: [function(require, module) {
         module.exports = function() {
             function findMatches(store, crit, strategy) {
-                for (var data = store.get(), i = 0; i < data.length && matches.length < limit; i++) findMatchesInObject(data[i], crit, strategy);
+                for (var data = store.get(), i = 0; i < data.length && (isLimit ? (matches.length < limit) : true); i++) findMatchesInObject(data[i], crit, strategy);
                 return matches
             }
 
@@ -85,9 +85,17 @@
                 matches = [],
                 fuzzy = !1,
                 limit = 10,
+                isLimit = true,
                 fuzzySearchStrategy = require("./SearchStrategies/fuzzy"),
                 literalSearchStrategy = require("./SearchStrategies/literal");
-            self.setFuzzy = function(_fuzzy) { fuzzy = !!_fuzzy }, self.setLimit = function(_limit) { limit = parseInt(_limit, 10) || limit }, self.search = function(data, crit) {
+            self.setFuzzy = function(_fuzzy) {
+                fuzzy = !!_fuzzy
+            }, self.setLimit = function(_limit, _isLimit) {
+                isLimit = _isLimit;
+                if (isLimit) {
+                    limit = parseInt(_limit, 10) || limit
+                }
+            }, self.search = function(data, crit) {
                 return crit ? (matches.length = 0, findMatches(data, crit, getSearchStrategy())) : []
             }
         }
@@ -154,6 +162,8 @@
 
                 function assignOptions(_opt) {
                     for (var option in opt) opt[option] = _opt[option] || opt[option]
+
+                    searcher.setLimit(opt['limit'], opt['isLimit']);
                 }
 
                 function isJSON(json) {
@@ -164,23 +174,38 @@
                     }
                 }
 
-                function emptyResultsContainer() { opt.resultsContainer.innerHTML = "" }
+                function emptyResultsContainer() {
+                    opt.resultsContainer.innerHTML = "";
+                }
 
-                function appendToResultsContainer(text) { opt.resultsContainer.innerHTML += text }
+                function appendToResultsContainer(text) {
+                    opt.resultsContainer.innerHTML += text;
+                }
+
+                function appendContentSearchLink() {
+                    opt.resultsContainer.innerHTML += '<li><a href="/dosearch.html?queryString=' + condition + '" class="search-for"><span title="搜索‘' + condition + '’"><em>搜索‘' + condition + '’</em></span></a></li>';
+                }
 
                 function registerInput() {
                     opt.searchInput.addEventListener("keyup", function(e) {
-                        return 0 == e.target.value.length ? void emptyResultsContainer() : void render(searcher.search(store, e.target.value))
+                        condition = e.target.value.trim();
+                        return 0 == condition.length ? void emptyResultsContainer() : void render(searcher.search(store, condition))
                     })
                 }
 
                 function render(results) {
-                    if (emptyResultsContainer(), 0 == results.length) return appendToResultsContainer(opt.noResultsText);
-                    for (var i = 0; i < results.length; i++) appendToResultsContainer(templater.render(opt.searchResultTemplate, results[i]))
+                    if (emptyResultsContainer(), 0 == results.length) {
+                        appendToResultsContainer(opt.noResultsText);
+                    } else {
+                        for (var i = 0; i < results.length; i++)
+                            appendToResultsContainer(templater.render(opt.searchResultTemplate, results[i]))
+                    }
+                    appendContentSearchLink();
                 }
                 var self = this,
+                    condition = '',
                     requiredOptions = ["searchInput", "resultsContainer", "dataSource"],
-                    opt = { searchInput: null, resultsContainer: null, dataSource: [], searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>', noResultsText: "No results found", limit: 10, fuzzy: !1 };
+                    opt = { searchInput: null, resultsContainer: null, dataSource: [], searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>', noResultsText: "No results found", limit: 10, fuzzy: !1, isLimit: !1 };
                 self.init = function(_opt) { validateOptions(_opt), assignOptions(_opt), isJSON(opt.dataSource) ? initWithJSON(opt.dataSource) : initWithURL(opt.dataSource) }
             }
             var Searcher = require("./Searcher"),
@@ -192,6 +217,7 @@
                 store = new Store,
                 jsonLoader = new JSONLoader;
             window.SimpleJekyllSearch = new SimpleJekyllSearch
+            window.ContentJekyllSearch = new SimpleJekyllSearch
         }(window, document)
     }, { "./JSONLoader": 1, "./Searcher": 4, "./Store": 5, "./Templater": 6 }]
 }, {}, [7]);
