@@ -1,471 +1,474 @@
 $header-height: 80px
 
 body
-	min-width: 320px
+  min-width: 320px
 
 button
-	cursor: pointer
+  cursor: pointer
 
 #docs
-	.flyout-button
-		position: fixed
-		top: 20px
-		left: 20px
-		width: 50px
-		height: 50px
-		background-image: url(/images/toc_icon.png)
-		background-position: center center
-		background-repeat: no-repeat
-		background-size: auto
-		border-radius: 50%
-		transition: 0.3s
-		z-index: 99999
-		border: 0px none
-		margin: 0px
-		background-color: #424242
+  .flyout-button
+    background-color: $ink-black
+    background-image: url('/images/toc_icon.png')
+    background-position: center center
+    background-repeat: no-repeat
+    background-size: auto
+    border: 0 none
+    border-radius: 50%
+    height: 50px
+    left: 20px
+    margin: 0
+    position: fixed
+    top: 20px
+    transition: 0.3s
+    width: 50px
+    z-index: 99999
 
-	&.open-nav .flyout-button
-		display: none
+  &.open-nav
+    .flyout-button
+      display: none
 
-	&.flip-nav .flyout-button
-		background-image: url(/images/toc_icon_grey.png)
+  &.flip-nav
+    .flyout-button
+      background-image: url('/images/toc_icon_grey.png')
 
 #encyclopedia
-	position: relative
-	overflow: hidden
-	font-size: 14px
+  font-size: 14px
+  overflow: hidden
+  position: relative
 
 
-	& > div
-		height: 100%
+  & > div
+    height: 100%
 
 #docsToc
-	position: fixed
-	background-color: #fdfdfd
-	top: 0
-	left: 0
-	width: 0
-	height: 100vh
-	overflow: hidden
-	padding: 50px 0
-	z-index: 999999
-	transition: 0.3s
+  background-color: $background-color
+  height: 100vh
+  left: 0
+  overflow: hidden
+  padding: 50px 0
+  position: fixed
+  transition: 0.3s
+  top: 0
+  width: 0
+  z-index: 999999
 
 
-	.yah
-		& > .title
-			background-color: $light-grey
-			border-left: 3px solid $blue
-			padding: 7.5px 10px 7.5px 18px
-			margin-left: -3px
-			color: $blue
+  .yah
+    & > .title
+      background-color: $light-grey
+      border-left: 3px solid $blue
+      padding: 7.5px 10px 7.5px 18px
+      margin-left: -3px
+      color: $blue
 
 .open-toc
-	body
-		overflow: hidden
+  body
+    overflow: hidden
 
-	#docsToc
-		padding: 50px 20px
-		width: 200px
-		max-width: 100vw
-		overflow-y: auto
+  #docsToc
+    padding: 50px 20px
+    width: 200px
+    max-width: 100vw
+    overflow-y: auto
+
 #docsContent
-	position: relative
-	float: left
-	width: calc(100% - 150px)
+  position: relative
+  float: left
+  width: calc(100% - 150px)
 
-	$toc-margin: 15px
-	$header-clearance: $header-height + 20px
+  $toc-margin: 15px
+  $header-clearance: $header-height + 20px
 
-	* + h2, * + h3, * + h4, * + h5, * + h6
-		margin-top: 30px
+  * + h2, * + h3, * + h4, * + h5, * + h6
+    margin-top: 30px
 
-	h1, h2, h3, h4, h5, h6
-		line-height: normal
-		font-weight: 500
-		margin-bottom: 30px
-		padding-bottom: 10px
+  h1, h2, h3, h4, h5, h6
+    line-height: normal
+    font-weight: 500
+    margin-bottom: 30px
+    padding-bottom: 10px
 
-		// Make sure anchor links aren't hidden by the header
-		&:before
-			display: block
-			content: " "
-			margin-top: -$header-clearance
-			height: $header-clearance
-			visibility: hidden
+    // Make sure anchor links aren't hidden by the header
+    &::before
+      display: block
+      content: ' '
+      margin-top: -$header-clearance
+      height: $header-clearance
+      visibility: hidden
 
-	h1,h2
-		border-bottom: 1px solid #cccccc
-		
-	h1
-		font-size: 32px
-		padding-right: 60px
+  h1, h2
+    border-bottom: 1px solid $light-grey
+ 
+  h1
+    font-size: 32px
+    padding-right: 60px
 
-	h2
-		font-size: 28px
+  h2
+    font-size: 28px
 
-	h3
-		font-size: 24px
-		font-weight: 300
-		margin-bottom: 5px
+  h3
+    font-size: 24px
+    font-weight: 300
+    margin-bottom: 5px
 
-	h4
-		font-size: 20px
-		margin-bottom: 0px
+  h4
+    font-size: 20px
+    margin-bottom: 0
 
-	h5, h6
-		font-size: 16px
-		font-weight: 500
+  h5, h6
+    font-size: 16px
+    font-weight: 500
 
-	p
-		font-size: 16px
-		font-weight: 300
-		line-height: 1.75em
+  p
+    font-size: 16px
+    font-weight: 300
+    line-height: 1.75em
 
-	p + p
-		margin-top: 10px
+  p + p
+    margin-top: 10px
 
-	code
-		display: inline-block
-		box-sizing: border-box
-		background-color: $light-grey
-		color: $dark-grey
-		font-family: $mono-font
-		vertical-align: baseline
-		font-size: 14px
-		font-weight: bold
-		padding: 2px 4px
+  code
+    display: inline-block
+    box-sizing: border-box
+    background-color: $light-grey
+    color: $dark-grey
+    font-family: $mono-font
+    vertical-align: baseline
+    font-size: 14px
+    font-weight: bold
+    padding: 2px 4px
 
-	a code
-		color: $blue
-		text-decoration: underline
+  a code
+    color: $blue
+    text-decoration: underline
 
-	pre .pi, pre .s
-		margin: 0
-		padding: 0
+  pre .pi, pre .s
+    margin: 0
+    padding: 0
 
-	.highlight code span, code, pre code
-		font-family: "Roboto Mono", monospace
+  .highlight code span, code, pre code
+    font-family: 'Roboto Mono', monospace
 
-	code, pre code
-		color: #303030
+  code, pre code
+    color: $dark-grey
 
-	pre code
-		padding: 0
+  pre code
+    padding: 0
 
-	pre
-		background-color: #f7f7f7
-		display: block
-		margin: 20px 0
-		padding: 15px
-		position: relative
-		overflow-x: auto
+  pre
+    background-color: $light-grey
+    display: block
+    margin: 20px 0
+    padding: 15px
+    position: relative
+    overflow-x: auto
 
-	h1 code, h2 code, h3 code, h4 code, h5 code, h6 code
-		font-family: inherit
-		font-size: inherit
-		background-color: transparent
+  h1 code, h2 code, h3 code, h4 code, h5 code, h6 code
+    font-family: inherit
+    font-size: inherit
+    background-color: transparent
 
-	.includecode
-		table-layout: fixed
+  .includecode
+    table-layout: fixed
 
-	.includecode, .includecode th, .includecode td
-		padding: 0 !important
+  .includecode, .includecode th, .includecode td
+    padding: 0 !important
 
-	.includecode th
-		text-align: right !important
-		padding: 10px !important
+  .includecode th
+    text-align: right !important
+    padding: 10px !important
 
-	.includecode th a, .includecode th a code
-		color: white !important
-		background-color: transparent !important
+  .includecode th a, .includecode th a code
+    color: $white !important
+    background-color: transparent !important
 
-	.includecode pre
-		margin: 0 !important
+  .includecode pre
+    margin: 0 !important
 
-	ul li
-		list-style: disc
+  ul li
+    list-style: disc
 
-	ol li
-		list-style: decimal
+  ol li
+    list-style: decimal
 
-	ul, ol
-		margin: 20px 0
-		padding-left: 30px
-		font-weight: 300
+  ul, ol
+    margin: 20px 0
+    padding-left: 30px
+    font-weight: 300
 
-	ul ul, ol ol, ul ol, ol ul
-		margin: 0.75em 0
+  ul ul, ol ol, ul ol, ol ul
+    margin: 0.75em 0
 
-	li
-		margin-bottom: 0.75em
-		font-size: 16px
-		line-height: 1.75em
+  li
+    margin-bottom: 0.75em
+    font-size: 16px
+    line-height: 1.75em
 
-	table
-		width: 100%
-		border: 1px solid #ccc
-		border-spacing: 0
-		margin-top: 30px
-		margin-bottom: 30px
+  table
+    width: 100%
+    border: 1px solid #ccc
+    border-spacing: 0
+    margin-top: 30px
+    margin-bottom: 30px
 
-	thead, tr:nth-child(even)
-		background-color: $light-grey
+  thead, tr:nth-child(even)
+    background-color: $light-grey
 
-	thead
-		background-color: #555
-		color: white
+  thead
+    background-color: #555
+    color: white
 
-	th, td
-		padding: 8px
-		text-align: left
-		margin: 0
+  th, td
+    padding: 8px
+    text-align: left
+    margin: 0
 
-	th
-		font-weight: normal
+  th
+    font-weight: normal
 
-	td
-		font-size: 0.85em
+  td
+    font-size: 0.85em
 
-	#editPageButton
-		position: absolute
-		right: 5px
-		width: 50px
-		height: 50px
-		line-height: 50px
-		border-radius: 50%
-		white-space: nowrap
-		text-indent: 50px
-		overflow: hidden
-		background: $blue url(/images/icon-pencil.svg) no-repeat
-		background-position: 12px 10px
-		background-size: 29px 29px
+  #editPageButton
+    position: absolute
+    right: 5px
+    width: 50px
+    height: 50px
+    line-height: 50px
+    border-radius: 50%
+    white-space: nowrap
+    text-indent: 50px
+    overflow: hidden
+    background: $blue url(/images/icon-pencil.svg) no-repeat
+    background-position: 12px 10px
+    background-size: 29px 29px
 
-	#markdown-toc
-		margin-bottom: 20px
-		width: 150px
-		height: 300px
-		position: fixed
-		top: 160px
-		list-style: none
-		overflow-y: auto
-		z-index: 1
+  #markdown-toc
+    margin-bottom: 20px
+    width: 150px
+    height: 300px
+    position: fixed
+    top: 160px
+    list-style: none
+    overflow-y: auto
+    z-index: 1
 
-		&:before 
-			font-weight: 700
-			content: "目录"
-			color: $grey
-			text-align: center
-			width: 70px
+    &::before 
+      font-weight: 700
+      content: '目录'
+      color: $grey
+      text-align: center
+      width: 70px
 
-		ul, li
-			list-style: disc
-			color: $grey
+    ul, li
+      list-style: disc
+      color: $grey
 
-		ul
-			padding: 0 15px
-			margin: 0
+    ul
+      padding: 0 15px
+      margin: 0
 
-		li
-			padding: 0
-			line-height: 1.5em
-			margin-bottom: 0
+    li
+      padding: 0
+      line-height: 1.5em
+      margin-bottom: 0
 
-		a
-			position: relative
-			color: $grey
-			font-weight: 700
-			text-decoration: none
+    a
+      position: relative
+      color: $grey
+      font-weight: 700
+      text-decoration: none
 
-	img
-		max-width: 100%
+  img
+    max-width: 100%
 
-	a
-		//font-weight: 700
-		text-decoration: underline
+  a
+    //font-weight: 700
+    text-decoration: underline
 
-	a:visited
-		color: blueviolet
+  a:visited
+    color: blueviolet
 
-	a.button
-		border-radius: 2px
-		text-decoration: none
-		
-		&:visited
-			color: white
+  a.button
+    border-radius: 2px
+    text-decoration: none
+    
+    &:visited
+      color: white
 
-	a.issue
-		margin-left: 0px
+  a.issue
+    margin-left: 0px
 
 html.search #docsContent
-	position: relative
-	float: none
-	width: 90%
-	max-width: 850px
-	margin: 0 auto
+  position: relative
+  float: none
+  width: 90%
+  max-width: 850px
+  margin: 0 auto
 
-	#editPageButton
-		display: none
+  #editPageButton
+    display: none
 
-	table
-		border: 0
-		margin-bottom: 0
+  table
+    border: 0
+    margin-bottom: 0
 
-	td
-		padding: 0
+  td
+    padding: 0
 
-	h1
-		margin-bottom: 0
-		border-bottom: 0
-		padding-bottom: 0
-		padding-left: 8px
+  h1
+    margin-bottom: 0
+    border-bottom: 0
+    padding-bottom: 0
+    padding-left: 8px
 
 #articleToc
-	position: relative
-	float: right
-	width: 150px
+  position: relative
+  float: right
+  width: 150px
 
 .pi-accordion
-	& > .container:first-child > .item:first-child > .title:first-child
-		padding-left: 0
-		font-size: 1.5em
-		font-weight: 700
+  & > .container:first-child > .item:first-child > .title:first-child
+    padding-left: 0
+    font-size: 1.5em
+    font-weight: 700
 
-	& > .container:first-child > .item.yah:first-child > .title:first-child
-		margin-left: -20px !important
+  & > .container:first-child > .item.yah:first-child > .title:first-child
+    margin-left: -20px !important
 
-	.item
-		overflow: hidden
+  .item
+    overflow: hidden
 
-	.title
-		color: $dark-grey
-		position: relative
-		padding: 7.5px 10px 7.5px 18px
-		cursor: pointer
-		transition: 0.3s
+  .title
+    color: $dark-grey
+    position: relative
+    padding: 7.5px 10px 7.5px 18px
+    cursor: pointer
+    transition: 0.3s
 
-		&:hover
-			color: $blue
+    &:hover
+      color: $blue
 
-	a.item > .title
-		color: black
+  a.item > .title
+    color: black
 
-		&:hover
-			color: $blue
+    &:hover
+      color: $blue
 
-	div.item > .title
-		&:before
-			content: ""
-			position: absolute
-			top: 12px
-			left: 2px
-			border-style: solid
-			border-width: 5px 0 5px 8px
-			border-color: transparent transparent transparent $blue
-			transform: rotate(0deg)
-			transition: 0.3s
+  div.item > .title
+    &::before
+      content: ''
+      position: absolute
+      top: 12px
+      left: 2px
+      border-style: solid
+      border-width: 5px 0 5px 8px
+      border-color: transparent transparent transparent $blue
+      transform: rotate(0deg)
+      transition: 0.3s
 
-	.pi-wrapper
-		position: relative
-		width: 100%
-		transition: height 0.3s
+  .pi-wrapper
+    position: relative
+    width: 100%
+    transition: height 0.3s
 
-	.content
-		padding-left: 20px
-		opacity: 0
-		transition: 0.3s
+  .content
+    padding-left: 20px
+    opacity: 0
+    transition: 0.3s
 
-	.item.on
-		& > .title:before
-			transform: rotate(90deg)
+  .item.on
+    & > .title::before
+      transform: rotate(90deg)
 
-		& > .pi-wrapper > .content
-			opacity: 1
+    & > .pi-wrapper > .content
+      opacity: 1
 
 .logo
-	position: relative
-	float: left
-	display: block
-	width: 180px
-	height: 88px
-	top: 0
-	left: 0
-	transform: none
-	background-image: url(/images/logo_onap_2017.png)
-	background-size: contain
-	background-position: center center
-	background-repeat: no-repeat
+  position: relative
+  float: left
+  display: block
+  width: 180px
+  height: 88px
+  top: 0
+  left: 0
+  transform: none
+  background-image: url(/images/logo_onap_2017.png)
+  background-size: contain
+  background-position: center center
+  background-repeat: no-repeat
 
 #search-input 
-	padding: 5px
-	margin-left: 20px
-	width: 240px
-	font-size: 12px
-	-webkit-box-sizing: border-box
-	-moz-box-sizing: border-box
-	box-sizing: border-box
-	float: right
-	margin-top: 10px
+  padding: 5px
+  margin-left: 20px
+  width: 240px
+  font-size: 12px
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  float: right
+  margin-top: 10px
 
 #search-demo-container
-	position: relative
+  position: relative
 
-	ul#results-container 
-		list-style: none
-		font-size: 12px
-		background-color: white
-		position: absolute
-		top: 40px
-		right: 0
-		z-index: 1
-		width: 240px
-		border-left: 1px solid #dedede
-		box-shadow: 2px 3px 2px #dedede
-		margin: 0
+  ul#results-container 
+    list-style: none
+    font-size: 12px
+    background-color: white
+    position: absolute
+    top: 40px
+    right: 0
+    z-index: 1
+    width: 240px
+    border-left: 1px solid #dedede
+    box-shadow: 2px 3px 2px #dedede
+    margin: 0
 
-	li
-		margin: 2px 0
-		list-style: none
-		display: list-item
-		text-align: left
+  li
+    margin: 2px 0
+    list-style: none
+    display: list-item
+    text-align: left
 
-	a
-		background-color: transparent
-		border-top: 1px solid whitesmoke
-		padding-left: 10px
-		padding-right: 10px
-		font-size: 12px
-		line-height: 18px
-		padding: 2px 10px
-		color: #333
-		display: block
-		outline: none
-		text-decoration: none
+  a
+    background-color: transparent
+    border-top: 1px solid $whitesmoke
+    padding-left: 10px
+    padding-right: 10px
+    font-size: 12px
+    line-height: 18px
+    padding: 2px 10px
+    color: $color-333
+    display: block
+    outline: none
+    text-decoration: none
 
-	.search-for span:before
-		content: "\f002"
-		
+  .search-for span::before
+    content: '\f002'
+    
 .push-menu-close-button
-	position: absolute
-	top: 0
-	right: 0
-	width: 50px
-	height: 50px
-	background: none
-	border: 0px none
-	margin: 0px
+  position: absolute
+  top: 0
+  right: 0
+  width: 50px
+  height: 50px
+  background: none
+  border: 0px none
+  margin: 0px
 
-	&:before, &:after
-		content: ""
-		position: absolute
-		top: calc(50% - 1px)
-		left: 25%
-		width: 50%
-		height: 2px
-		background-color: black
+  &::before, &::after
+    content: ''
+    position: absolute
+    top: calc(50% - 1px)
+    left: 25%
+    width: 50%
+    height: 2px
+    background-color: $black
 
-	&:before
-		transform: rotate(45deg)
+  &::before
+    transform: rotate(45deg)
 
-	&:after
-		transform: rotate(-45deg)
+  &::after
+    transform: rotate(-45deg)

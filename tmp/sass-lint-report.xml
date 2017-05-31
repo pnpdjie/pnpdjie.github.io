@@ -1,0 +1,401 @@
+
+[4mcss/styles.sass[24m
+   [2m6:14[22m  [33mwarning[39m  Hex values should use the shorthand format - 3 characters where possible  [2mhex-length[22m
+   [2m9:9[22m   [33mwarning[39m  Color 'white' should be written in its hexadecimal form #ffffff           [2mno-color-keywords[22m
+  [2m10:9[22m   [33mwarning[39m  Color 'black' should be written in its hexadecimal form #000000           [2mno-color-keywords[22m
+  [2m12:14[22m  [33mwarning[39m  Color 'whitesmoke' should be written in its hexadecimal form #f5f5f5      [2mno-color-keywords[22m
+
+[4m_sass/_base.sass[24m
+    [2m9:1[22m   [33mwarning[39m  ID selectors not allowed                                                          [2mno-ids[22m
+   [2m23:17[22m  [33mwarning[39m  Don't include leading zeros on numbers                                            [2mleading-zero[22m
+   [2m35:1[22m   [33mwarning[39m  ID selectors not allowed                                                          [2mno-ids[22m
+   [2m44:1[22m   [33mwarning[39m  ID selectors not allowed                                                          [2mno-ids[22m
+   [2m51:3[22m   [33mwarning[39m  Expected `top`, found `transition`                                                [2mproperty-sort-order[22m
+   [2m51:15[22m  [33mwarning[39m  Don't include leading zeros on numbers                                            [2mleading-zero[22m
+   [2m52:3[22m   [33mwarning[39m  Expected `transition`, found `top`                                                [2mproperty-sort-order[22m
+   [2m61:7[22m   [33mwarning[39m  Expected `color`, found `padding`                                                 [2mproperty-sort-order[22m
+   [2m63:7[22m   [33mwarning[39m  Expected `padding`, found `color`                                                 [2mproperty-sort-order[22m
+   [2m69:3[22m   [33mwarning[39m  ID selectors not allowed                                                          [2mno-ids[22m
+   [2m70:5[22m   [33mwarning[39m  Expected `max-width`, found `padding`                                             [2mproperty-sort-order[22m
+   [2m71:5[22m   [33mwarning[39m  Expected `overflow-y`, found `width`                                              [2mproperty-sort-order[22m
+   [2m72:5[22m   [33mwarning[39m  Expected `padding`, found `max-width`                                             [2mproperty-sort-order[22m
+   [2m73:5[22m   [33mwarning[39m  Expected `width`, found `overflow-y`                                              [2mproperty-sort-order[22m
+   [2m75:1[22m   [33mwarning[39m  ID selectors not allowed                                                          [2mno-ids[22m
+   [2m76:3[22m   [33mwarning[39m  Expected `float`, found `position`                                                [2mproperty-sort-order[22m
+   [2m77:3[22m   [33mwarning[39m  Expected `position`, found `float`                                                [2mproperty-sort-order[22m
+   [2m83:11[22m  [33mwarning[39m  Selectors must be placed on new lines                                             [2msingle-line-per-selector[22m
+   [2m83:19[22m  [33mwarning[39m  Selectors must be placed on new lines                                             [2msingle-line-per-selector[22m
+   [2m83:27[22m  [33mwarning[39m  Selectors must be placed on new lines                                             [2msingle-line-per-selector[22m
+   [2m83:35[22m  [33mwarning[39m  Selectors must be placed on new lines                                             [2msingle-line-per-selector[22m
+   [2m86:7[22m   [33mwarning[39m  Selectors must be placed on new lines                                             [2msingle-line-per-selector[22m
+   [2m86:11[22m  [33mwarning[39m  Selectors must be placed on new lines                                             [2msingle-line-per-selector[22m
+   [2m86:15[22m  [33mwarning[39m  Selectors must be placed on new lines                                             [2msingle-line-per-selector[22m
+   [2m86:19[22m  [33mwarning[39m  Selectors must be placed on new lines                                             [2msingle-line-per-selector[22m
+   [2m86:23[22m  [33mwarning[39m  Selectors must be placed on new lines                                             [2msingle-line-per-selector[22m
+   [2m87:5[22m   [33mwarning[39m  Expected `font-weight`, found `line-height`                                       [2mproperty-sort-order[22m
+   [2m88:5[22m   [33mwarning[39m  Expected `line-height`, found `font-weight`                                       [2mproperty-sort-order[22m
+   [2m94:7[22m   [33mwarning[39m  Expected `content`, found `display`                                               [2mproperty-sort-order[22m
+   [2m95:7[22m   [33mwarning[39m  Expected `display`, found `content`                                               [2mproperty-sort-order[22m
+   [2m96:7[22m   [33mwarning[39m  Expected `height`, found `margin-top`                                             [2mproperty-sort-order[22m
+   [2m97:7[22m   [33mwarning[39m  Expected `margin-top`, found `height`                                             [2mproperty-sort-order[22m
+  [2m100:7[22m   [33mwarning[39m  Selectors must be placed on new lines                                             [2msingle-line-per-selector[22m
+  [2m102:1[22m   [33mwarning[39m  No trailing whitespace allowed                                                    [2mno-trailing-whitespace[22m
+  [2m119:7[22m   [33mwarning[39m  Selectors must be placed on new lines                                             [2msingle-line-per-selector[22m
+  [2m132:5[22m   [33mwarning[39m  Expected `background-color`, found `display`                                      [2mproperty-sort-order[22m
+  [2m134:5[22m   [33mwarning[39m  Expected `color`, found `background-color`                                        [2mproperty-sort-order[22m
+  [2m135:5[22m   [33mwarning[39m  Expected `display`, found `color`                                                 [2mproperty-sort-order[22m
+  [2m137:5[22m   [33mwarning[39m  Expected `font-size`, found `vertical-align`                                      [2mproperty-sort-order[22m
+  [2m138:5[22m   [33mwarning[39m  Expected `font-weight`, found `font-size`                                         [2mproperty-sort-order[22m
+  [2m139:5[22m   [33mwarning[39m  Expected `padding`, found `font-weight`                                           [2mproperty-sort-order[22m
+  [2m140:5[22m   [33mwarning[39m  Expected `vertical-align`, found `padding`                                        [2mproperty-sort-order[22m
+  [2m142:3[22m   [33mwarning[39m  Type-selector should be nested within its parent Type-selector                    [2mforce-element-nesting[22m
+  [2m146:3[22m   [33mwarning[39m  Class should be nested within its parent Type-selector                            [2mforce-element-nesting[22m
+  [2m146:12[22m  [33mwarning[39m  Class should be nested within its parent Type-selector                            [2mforce-element-nesting[22m
+  [2m146:12[22m  [33mwarning[39m  Selectors must be placed on new lines                                             [2msingle-line-per-selector[22m
+  [2m150:3[22m   [33mwarning[39m  Type-selector should be nested within its parent Class                            [2mforce-element-nesting[22m
+  [2m150:3[22m   [33mwarning[39m  Type-selector should be nested within its parent Type-selector                    [2mforce-element-nesting[22m
+  [2m150:25[22m  [33mwarning[39m  Selectors must be placed on new lines                                             [2msingle-line-per-selector[22m
+  [2m150:31[22m  [33mwarning[39m  Selectors must be placed on new lines                                             [2msingle-line-per-selector[22m
+  [2m150:31[22m  [33mwarning[39m  Type-selector should be nested within its parent Type-selector                    [2mforce-element-nesting[22m
+  [2m153:9[22m   [33mwarning[39m  Selectors must be placed on new lines                                             [2msingle-line-per-selector[22m
+  [2m153:9[22m   [33mwarning[39m  Type-selector should be nested within its parent Type-selector                    [2mforce-element-nesting[22m
+  [2m156:3[22m   [33mwarning[39m  Type-selector should be nested within its parent Type-selector                    [2mforce-element-nesting[22m
+  [2m163:5[22m   [33mwarning[39m  Expected `overflow-x`, found `padding`                                            [2mproperty-sort-order[22m
+  [2m164:5[22m   [33mwarning[39m  Expected `padding`, found `position`                                              [2mproperty-sort-order[22m
+  [2m165:5[22m   [33mwarning[39m  Expected `position`, found `overflow-x`                                           [2mproperty-sort-order[22m
+  [2m167:3[22m   [33mwarning[39m  Type-selector should be nested within its parent Type-selector                    [2mforce-element-nesting[22m
+  [2m167:12[22m  [33mwarning[39m  Selectors must be placed on new lines                                             [2msingle-line-per-selector[22m
+  [2m167:12[22m  [33mwarning[39m  Type-selector should be nested within its parent Type-selector                    [2mforce-element-nesting[22m
+  [2m167:21[22m  [33mwarning[39m  Type-selector should be nested within its parent Type-selector                    [2mforce-element-nesting[22m
+  [2m167:21[22m  [33mwarning[39m  Selectors must be placed on new lines                                             [2msingle-line-per-selector[22m
+  [2m167:30[22m  [33mwarning[39m  Selectors must be placed on new lines                                             [2msingle-line-per-selector[22m
+  [2m167:30[22m  [33mwarning[39m  Type-selector should be nested within its parent Type-selector                    [2mforce-element-nesting[22m
+  [2m167:39[22m  [33mwarning[39m  Selectors must be placed on new lines                                             [2msingle-line-per-selector[22m
+  [2m167:39[22m  [33mwarning[39m  Type-selector should be nested within its parent Type-selector                    [2mforce-element-nesting[22m
+  [2m167:48[22m  [33mwarning[39m  Type-selector should be nested within its parent Type-selector                    [2mforce-element-nesting[22m
+  [2m167:48[22m  [33mwarning[39m  Selectors must be placed on new lines                                             [2msingle-line-per-selector[22m
+  [2m168:5[22m   [33mwarning[39m  Expected `background-color`, found `font-family`                                  [2mproperty-sort-order[22m
+  [2m169:5[22m   [33mwarning[39m  Expected `font-family`, found `font-size`                                         [2mproperty-sort-order[22m
+  [2m170:5[22m   [33mwarning[39m  Expected `font-size`, found `background-color`                                    [2mproperty-sort-order[22m
+  [2m175:17[22m  [33mwarning[39m  Selectors must be placed on new lines                                             [2msingle-line-per-selector[22m
+  [2m175:17[22m  [33mwarning[39m  Type-selector should be nested within its parent Class                            [2mforce-element-nesting[22m
+  [2m175:34[22m  [33mwarning[39m  Type-selector should be nested within its parent Class                            [2mforce-element-nesting[22m
+  [2m175:34[22m  [33mwarning[39m  Selectors must be placed on new lines                                             [2msingle-line-per-selector[22m
+  [2m176:16[22m  [33mwarning[39m  !important not allowed                                                            [2mno-important[22m
+  [2m178:3[22m   [33mwarning[39m  Type-selector should be nested within its parent Class                            [2mforce-element-nesting[22m
+  [2m179:5[22m   [33mwarning[39m  Expected `padding`, found `text-align`                                            [2mproperty-sort-order[22m
+  [2m179:23[22m  [33mwarning[39m  !important not allowed                                                            [2mno-important[22m
+  [2m180:5[22m   [33mwarning[39m  Expected `text-align`, found `padding`                                            [2mproperty-sort-order[22m
+  [2m180:19[22m  [33mwarning[39m  !important not allowed                                                            [2mno-important[22m
+  [2m182:3[22m   [33mwarning[39m  Type-selector should be nested within its parent Type-selector                    [2mforce-element-nesting[22m
+  [2m182:3[22m   [33mwarning[39m  Type-selector should be nested within its parent Class                            [2mforce-element-nesting[22m
+  [2m182:22[22m  [33mwarning[39m  Type-selector should be nested within its parent Type-selector                    [2mforce-element-nesting[22m
+  [2m182:22[22m  [33mwarning[39m  Selectors must be placed on new lines                                             [2msingle-line-per-selector[22m
+  [2m182:22[22m  [33mwarning[39m  Type-selector should be nested within its parent Class                            [2mforce-element-nesting[22m
+  [2m182:22[22m  [33mwarning[39m  Type-selector should be nested within its parent Type-selector                    [2mforce-element-nesting[22m
+  [2m183:5[22m   [33mwarning[39m  Expected `background-color`, found `color`                                        [2mproperty-sort-order[22m
+  [2m183:19[22m  [33mwarning[39m  !important not allowed                                                            [2mno-important[22m
+  [2m184:5[22m   [33mwarning[39m  Expected `color`, found `background-color`                                        [2mproperty-sort-order[22m
+  [2m184:35[22m  [33mwarning[39m  !important not allowed                                                            [2mno-important[22m
+  [2m186:3[22m   [33mwarning[39m  Type-selector should be nested within its parent Class                            [2mforce-element-nesting[22m
+  [2m187:15[22m  [33mwarning[39m  !important not allowed                                                            [2mno-important[22m
+  [2m189:3[22m   [33mwarning[39m  Type-selector should be nested within its parent Type-selector                    [2mforce-element-nesting[22m
+  [2m192:3[22m   [33mwarning[39m  Type-selector should be nested within its parent Type-selector                    [2mforce-element-nesting[22m
+  [2m195:7[22m   [33mwarning[39m  Selectors must be placed on new lines                                             [2msingle-line-per-selector[22m
+  [2m196:5[22m   [33mwarning[39m  Expected `font-weight`, found `margin`                                            [2mproperty-sort-order[22m
+  [2m197:5[22m   [33mwarning[39m  Expected `margin`, found `padding-left`                                           [2mproperty-sort-order[22m
+  [2m198:5[22m   [33mwarning[39m  Expected `padding-left`, found `font-weight`                                      [2mproperty-sort-order[22m
+  [2m200:3[22m   [33mwarning[39m  Type-selector should be nested within its parent Type-selector                    [2mforce-element-nesting[22m
+  [2m200:10[22m  [33mwarning[39m  Selectors must be placed on new lines                                             [2msingle-line-per-selector[22m
+  [2m200:10[22m  [33mwarning[39m  Type-selector should be nested within its parent Type-selector                    [2mforce-element-nesting[22m
+  [2m200:17[22m  [33mwarning[39m  Selectors must be placed on new lines                                             [2msingle-line-per-selector[22m
+  [2m200:17[22m  [33mwarning[39m  Type-selector should be nested within its parent Type-selector                    [2mforce-element-nesting[22m
+  [2m200:24[22m  [33mwarning[39m  Selectors must be placed on new lines                                             [2msingle-line-per-selector[22m
+  [2m200:24[22m  [33mwarning[39m  Type-selector should be nested within its parent Type-selector                    [2mforce-element-nesting[22m
+  [2m201:13[22m  [33mwarning[39m  Don't include leading zeros on numbers                                            [2mleading-zero[22m
+  [2m204:5[22m   [33mwarning[39m  Expected `font-size`, found `margin-bottom`                                       [2mproperty-sort-order[22m
+  [2m204:20[22m  [33mwarning[39m  Don't include leading zeros on numbers                                            [2mleading-zero[22m
+  [2m205:5[22m   [33mwarning[39m  Expected `line-height`, found `font-size`                                         [2mproperty-sort-order[22m
+  [2m206:5[22m   [33mwarning[39m  Expected `margin-bottom`, found `line-height`                                     [2mproperty-sort-order[22m
+  [2m209:5[22m   [33mwarning[39m  Expected `border`, found `width`                                                  [2mproperty-sort-order[22m
+  [2m210:5[22m   [33mwarning[39m  Expected `border-spacing`, found `border`                                         [2mproperty-sort-order[22m
+  [2m210:23[22m  [33mwarning[39m  Color literals such as '#ccc' should only be used in variable declarations        [2mno-color-literals[22m
+  [2m211:5[22m   [33mwarning[39m  Expected `margin-bottom`, found `border-spacing`                                  [2mproperty-sort-order[22m
+  [2m213:5[22m   [33mwarning[39m  Expected `width`, found `margin-bottom`                                           [2mproperty-sort-order[22m
+  [2m215:10[22m  [33mwarning[39m  Selectors must be placed on new lines                                             [2msingle-line-per-selector[22m
+  [2m215:10[22m  [33mwarning[39m  Pseudo-class should be nested within its parent Type-selector                     [2mforce-pseudo-nesting[22m
+  [2m219:23[22m  [33mwarning[39m  Color literals such as '#555' should only be used in variable declarations        [2mno-color-literals[22m
+  [2m220:12[22m  [33mwarning[39m  Color 'white' should be written in its hexadecimal form #ffffff                   [2mno-color-keywords[22m
+  [2m220:12[22m  [33mwarning[39m  Color literals such as 'white' should only be used in variable declarations       [2mno-color-literals[22m
+  [2m222:7[22m   [33mwarning[39m  Selectors must be placed on new lines                                             [2msingle-line-per-selector[22m
+  [2m223:5[22m   [33mwarning[39m  Expected `margin`, found `padding`                                                [2mproperty-sort-order[22m
+  [2m224:5[22m   [33mwarning[39m  Expected `padding`, found `text-align`                                            [2mproperty-sort-order[22m
+  [2m225:5[22m   [33mwarning[39m  Expected `text-align`, found `margin`                                             [2mproperty-sort-order[22m
+  [2m231:16[22m  [33mwarning[39m  Don't include leading zeros on numbers                                            [2mleading-zero[22m
+  [2m233:3[22m   [33mwarning[39m  ID selectors not allowed                                                          [2mno-ids[22m
+  [2m234:5[22m   [33mwarning[39m  Expected `background`, found `position`                                           [2mproperty-sort-order[22m
+  [2m235:5[22m   [33mwarning[39m  Expected `background-position`, found `right`                                     [2mproperty-sort-order[22m
+  [2m236:5[22m   [33mwarning[39m  Expected `background-size`, found `width`                                         [2mproperty-sort-order[22m
+  [2m237:5[22m   [33mwarning[39m  Expected `border-radius`, found `height`                                          [2mproperty-sort-order[22m
+  [2m238:5[22m   [33mwarning[39m  Expected `height`, found `line-height`                                            [2mproperty-sort-order[22m
+  [2m239:5[22m   [33mwarning[39m  Expected `line-height`, found `border-radius`                                     [2mproperty-sort-order[22m
+  [2m240:5[22m   [33mwarning[39m  Expected `overflow`, found `white-space`                                          [2mproperty-sort-order[22m
+  [2m241:5[22m   [33mwarning[39m  Expected `position`, found `text-indent`                                          [2mproperty-sort-order[22m
+  [2m242:5[22m   [33mwarning[39m  Expected `right`, found `overflow`                                                [2mproperty-sort-order[22m
+  [2m243:5[22m   [33mwarning[39m  Expected `text-indent`, found `background`                                        [2mproperty-sort-order[22m
+  [2m243:27[22m  [33mwarning[39m  Quotes around URLs are required                                                   [2murl-quotes[22m
+  [2m244:5[22m   [33mwarning[39m  Expected `white-space`, found `background-position`                               [2mproperty-sort-order[22m
+  [2m245:5[22m   [33mwarning[39m  Expected `width`, found `background-size`                                         [2mproperty-sort-order[22m
+  [2m247:3[22m   [33mwarning[39m  ID selectors not allowed                                                          [2mno-ids[22m
+  [2m248:5[22m   [33mwarning[39m  Expected `height`, found `margin-bottom`                                          [2mproperty-sort-order[22m
+  [2m249:5[22m   [33mwarning[39m  Expected `list-style`, found `width`                                              [2mproperty-sort-order[22m
+  [2m250:5[22m   [33mwarning[39m  Expected `margin-bottom`, found `height`                                          [2mproperty-sort-order[22m
+  [2m251:5[22m   [33mwarning[39m  Expected `overflow-y`, found `position`                                           [2mproperty-sort-order[22m
+  [2m252:5[22m   [33mwarning[39m  Expected `position`, found `top`                                                  [2mproperty-sort-order[22m
+  [2m253:5[22m   [33mwarning[39m  Expected `top`, found `list-style`                                                [2mproperty-sort-order[22m
+  [2m254:5[22m   [33mwarning[39m  Expected `width`, found `overflow-y`                                              [2mproperty-sort-order[22m
+  [2m257:14[22m  [33mwarning[39m  No trailing whitespace allowed                                                    [2mno-trailing-whitespace[22m
+  [2m258:7[22m   [33mwarning[39m  Expected `color`, found `font-weight`                                             [2mproperty-sort-order[22m
+  [2m260:7[22m   [33mwarning[39m  Expected `font-weight`, found `color`                                             [2mproperty-sort-order[22m
+  [2m264:9[22m   [33mwarning[39m  Selectors must be placed on new lines                                             [2msingle-line-per-selector[22m
+  [2m265:7[22m   [33mwarning[39m  Expected `color`, found `list-style`                                              [2mproperty-sort-order[22m
+  [2m266:7[22m   [33mwarning[39m  Expected `list-style`, found `color`                                              [2mproperty-sort-order[22m
+  [2m269:7[22m   [33mwarning[39m  Expected `margin`, found `padding`                                                [2mproperty-sort-order[22m
+  [2m270:7[22m   [33mwarning[39m  Expected `padding`, found `margin`                                                [2mproperty-sort-order[22m
+  [2m273:7[22m   [33mwarning[39m  Expected `line-height`, found `padding`                                           [2mproperty-sort-order[22m
+  [2m274:7[22m   [33mwarning[39m  Expected `margin-bottom`, found `line-height`                                     [2mproperty-sort-order[22m
+  [2m275:7[22m   [33mwarning[39m  Expected `padding`, found `margin-bottom`                                         [2mproperty-sort-order[22m
+  [2m278:7[22m   [33mwarning[39m  Expected `color`, found `position`                                                [2mproperty-sort-order[22m
+  [2m279:7[22m   [33mwarning[39m  Expected `font-weight`, found `color`                                             [2mproperty-sort-order[22m
+  [2m280:7[22m   [33mwarning[39m  Expected `position`, found `font-weight`                                          [2mproperty-sort-order[22m
+  [2m290:3[22m   [33mwarning[39m  Pseudo-class should be nested within its parent Type-selector                     [2mforce-pseudo-nesting[22m
+  [2m291:12[22m  [33mwarning[39m  Color literals such as 'blueviolet' should only be used in variable declarations  [2mno-color-literals[22m
+  [2m291:12[22m  [33mwarning[39m  Color 'blueviolet' should be written in its hexadecimal form #8a2be2              [2mno-color-keywords[22m
+  [2m293:3[22m   [33mwarning[39m  Class should be nested within its parent Type-selector                            [2mforce-element-nesting[22m
+  [2m293:4[22m   [33mwarning[39m  Qualifying elements are not allowed for class selectors                           [2mno-qualifying-elements[22m
+  [2m296:1[22m   [33mwarning[39m  No trailing whitespace allowed                                                    [2mno-trailing-whitespace[22m
+  [2m298:14[22m  [33mwarning[39m  Color 'white' should be written in its hexadecimal form #ffffff                   [2mno-color-keywords[22m
+  [2m298:14[22m  [33mwarning[39m  Color literals such as 'white' should only be used in variable declarations       [2mno-color-literals[22m
+  [2m300:3[22m   [33mwarning[39m  Class should be nested within its parent Type-selector                            [2mforce-element-nesting[22m
+  [2m300:4[22m   [33mwarning[39m  Qualifying elements are not allowed for class selectors                           [2mno-qualifying-elements[22m
+  [2m301:18[22m  [33mwarning[39m  No unit allowed for values of 0                                                   [2mzero-unit[22m
+  [2m303:1[22m   [33mwarning[39m  Class should be nested within its parent Type-selector                            [2mforce-element-nesting[22m
+  [2m303:1[22m   [33mwarning[39m  Id should be nested within its parent Class                                       [2mforce-element-nesting[22m
+  [2m303:5[22m   [33mwarning[39m  Qualifying elements are not allowed for class selectors                           [2mno-qualifying-elements[22m
+  [2m303:13[22m  [33mwarning[39m  ID selectors not allowed                                                          [2mno-ids[22m
+  [2m304:3[22m   [33mwarning[39m  Expected `float`, found `position`                                                [2mproperty-sort-order[22m
+  [2m305:3[22m   [33mwarning[39m  Expected `margin`, found `float`                                                  [2mproperty-sort-order[22m
+  [2m306:3[22m   [33mwarning[39m  Expected `max-width`, found `width`                                               [2mproperty-sort-order[22m
+  [2m307:3[22m   [33mwarning[39m  Expected `position`, found `max-width`                                            [2mproperty-sort-order[22m
+  [2m308:3[22m   [33mwarning[39m  Expected `width`, found `margin`                                                  [2mproperty-sort-order[22m
+  [2m310:3[22m   [33mwarning[39m  ID selectors not allowed                                                          [2mno-ids[22m
+  [2m321:5[22m   [33mwarning[39m  Expected `border-bottom`, found `margin-bottom`                                   [2mproperty-sort-order[22m
+  [2m322:5[22m   [33mwarning[39m  Expected `margin-bottom`, found `border-bottom`                                   [2mproperty-sort-order[22m
+  [2m326:1[22m   [33mwarning[39m  ID selectors not allowed                                                          [2mno-ids[22m
+  [2m327:3[22m   [33mwarning[39m  Expected `float`, found `position`                                                [2mproperty-sort-order[22m
+  [2m328:3[22m   [33mwarning[39m  Expected `position`, found `float`                                                [2mproperty-sort-order[22m
+  [2m332:3[22m   [33mwarning[39m  Pseudo-class should be nested within its parent Class                             [2mforce-pseudo-nesting[22m
+  [2m333:5[22m   [33mwarning[39m  Expected `font-size`, found `padding-left`                                        [2mproperty-sort-order[22m
+  [2m334:5[22m   [33mwarning[39m  Expected `font-weight`, found `font-size`                                         [2mproperty-sort-order[22m
+  [2m335:5[22m   [33mwarning[39m  Expected `padding-left`, found `font-weight`                                      [2mproperty-sort-order[22m
+  [2m337:3[22m   [33mwarning[39m  Class should be nested within its parent Class                                    [2mforce-element-nesting[22m
+  [2m337:3[22m   [33mwarning[39m  Pseudo-class should be nested within its parent Class                             [2mforce-pseudo-nesting[22m
+  [2m338:24[22m  [33mwarning[39m  !important not allowed                                                            [2mno-important[22m
+  [2m345:5[22m   [33mwarning[39m  Expected `cursor`, found `position`                                               [2mproperty-sort-order[22m
+  [2m347:5[22m   [33mwarning[39m  Expected `position`, found `cursor`                                               [2mproperty-sort-order[22m
+  [2m348:17[22m  [33mwarning[39m  Don't include leading zeros on numbers                                            [2mleading-zero[22m
+  [2m353:3[22m   [33mwarning[39m  Class should be nested within its parent Type-selector                            [2mforce-element-nesting[22m
+  [2m353:4[22m   [33mwarning[39m  Qualifying elements are not allowed for class selectors                           [2mno-qualifying-elements[22m
+  [2m354:12[22m  [33mwarning[39m  Color 'black' should be written in its hexadecimal form #000000                   [2mno-color-keywords[22m
+  [2m354:12[22m  [33mwarning[39m  Color literals such as 'black' should only be used in variable declarations       [2mno-color-literals[22m
+  [2m359:3[22m   [33mwarning[39m  Class should be nested within its parent Type-selector                            [2mforce-element-nesting[22m
+  [2m359:6[22m   [33mwarning[39m  Qualifying elements are not allowed for class selectors                           [2mno-qualifying-elements[22m
+  [2m361:7[22m   [33mwarning[39m  Expected `border-color`, found `content`                                          [2mproperty-sort-order[22m
+  [2m362:7[22m   [33mwarning[39m  Expected `border-style`, found `position`                                         [2mproperty-sort-order[22m
+  [2m363:7[22m   [33mwarning[39m  Expected `border-width`, found `top`                                              [2mproperty-sort-order[22m
+  [2m364:7[22m   [33mwarning[39m  Expected `content`, found `left`                                                  [2mproperty-sort-order[22m
+  [2m365:7[22m   [33mwarning[39m  Expected `left`, found `border-style`                                             [2mproperty-sort-order[22m
+  [2m366:7[22m   [33mwarning[39m  Expected `position`, found `border-width`                                         [2mproperty-sort-order[22m
+  [2m367:7[22m   [33mwarning[39m  Expected `top`, found `border-color`                                              [2mproperty-sort-order[22m
+  [2m369:19[22m  [33mwarning[39m  Don't include leading zeros on numbers                                            [2mleading-zero[22m
+  [2m373:5[22m   [33mwarning[39m  Expected `transition`, found `width`                                              [2mproperty-sort-order[22m
+  [2m374:5[22m   [33mwarning[39m  Expected `width`, found `transition`                                              [2mproperty-sort-order[22m
+  [2m374:24[22m  [33mwarning[39m  Don't include leading zeros on numbers                                            [2mleading-zero[22m
+  [2m377:5[22m   [33mwarning[39m  Expected `opacity`, found `padding-left`                                          [2mproperty-sort-order[22m
+  [2m378:5[22m   [33mwarning[39m  Expected `padding-left`, found `opacity`                                          [2mproperty-sort-order[22m
+  [2m379:17[22m  [33mwarning[39m  Don't include leading zeros on numbers                                            [2mleading-zero[22m
+  [2m381:3[22m   [33mwarning[39m  Class should be nested within its parent Class                                    [2mforce-element-nesting[22m
+  [2m382:5[22m   [33mwarning[39m  Pseudo-element should be nested within its parent Class                           [2mforce-pseudo-nesting[22m
+  [2m389:3[22m   [33mwarning[39m  Expected `background-image`, found `position`                                     [2mproperty-sort-order[22m
+  [2m390:3[22m   [33mwarning[39m  Expected `background-position`, found `float`                                     [2mproperty-sort-order[22m
+  [2m391:3[22m   [33mwarning[39m  Expected `background-repeat`, found `display`                                     [2mproperty-sort-order[22m
+  [2m392:3[22m   [33mwarning[39m  Expected `background-size`, found `width`                                         [2mproperty-sort-order[22m
+  [2m393:3[22m   [33mwarning[39m  Expected `display`, found `height`                                                [2mproperty-sort-order[22m
+  [2m394:3[22m   [33mwarning[39m  Expected `float`, found `top`                                                     [2mproperty-sort-order[22m
+  [2m395:3[22m   [33mwarning[39m  Expected `height`, found `left`                                                   [2mproperty-sort-order[22m
+  [2m396:3[22m   [33mwarning[39m  Expected `left`, found `transform`                                                [2mproperty-sort-order[22m
+  [2m397:3[22m   [33mwarning[39m  Expected `position`, found `background-image`                                     [2mproperty-sort-order[22m
+  [2m397:25[22m  [33mwarning[39m  Quotes around URLs are required                                                   [2murl-quotes[22m
+  [2m398:3[22m   [33mwarning[39m  Expected `top`, found `background-size`                                           [2mproperty-sort-order[22m
+  [2m399:3[22m   [33mwarning[39m  Expected `transform`, found `background-position`                                 [2mproperty-sort-order[22m
+  [2m400:3[22m   [33mwarning[39m  Expected `width`, found `background-repeat`                                       [2mproperty-sort-order[22m
+  [2m402:1[22m   [33mwarning[39m  ID selectors not allowed                                                          [2mno-ids[22m
+  [2m402:14[22m  [33mwarning[39m  No trailing whitespace allowed                                                    [2mno-trailing-whitespace[22m
+  [2m403:3[22m   [33mwarning[39m  Expected `-moz-box-sizing`, found `padding`                                       [2mproperty-sort-order[22m
+  [2m404:3[22m   [33mwarning[39m  Expected `-webkit-box-sizing`, found `margin-left`                                [2mproperty-sort-order[22m
+  [2m405:3[22m   [33mwarning[39m  Expected `box-sizing`, found `width`                                              [2mproperty-sort-order[22m
+  [2m406:3[22m   [33mwarning[39m  Expected `float`, found `font-size`                                               [2mproperty-sort-order[22m
+  [2m407:3[22m   [33mwarning[39m  Expected `font-size`, found `-webkit-box-sizing`                                  [2mproperty-sort-order[22m
+  [2m407:3[22m   [33mwarning[39m  Vendor prefixes should not be used                                                [2mno-vendor-prefixes[22m
+  [2m408:3[22m   [33mwarning[39m  Expected `margin-left`, found `-moz-box-sizing`                                   [2mproperty-sort-order[22m
+  [2m408:3[22m   [33mwarning[39m  Vendor prefixes should not be used                                                [2mno-vendor-prefixes[22m
+  [2m409:3[22m   [33mwarning[39m  Expected `margin-top`, found `box-sizing`                                         [2mproperty-sort-order[22m
+  [2m410:3[22m   [33mwarning[39m  Expected `padding`, found `float`                                                 [2mproperty-sort-order[22m
+  [2m411:3[22m   [33mwarning[39m  Expected `width`, found `margin-top`                                              [2mproperty-sort-order[22m
+  [2m413:1[22m   [33mwarning[39m  ID selectors not allowed                                                          [2mno-ids[22m
+  [2m416:3[22m   [33mwarning[39m  Id should be nested within its parent Type-selector                               [2mforce-element-nesting[22m
+  [2m416:5[22m   [33mwarning[39m  ID selectors not allowed                                                          [2mno-ids[22m
+  [2m416:5[22m   [33mwarning[39m  Qualifying elements are not allowed for id selectors                              [2mno-qualifying-elements[22m
+  [2m416:23[22m  [33mwarning[39m  No trailing whitespace allowed                                                    [2mno-trailing-whitespace[22m
+  [2m417:5[22m   [33mwarning[39m  Expected `background-color`, found `list-style`                                   [2mproperty-sort-order[22m
+  [2m418:5[22m   [33mwarning[39m  Expected `border-left`, found `font-size`                                         [2mproperty-sort-order[22m
+  [2m419:5[22m   [33mwarning[39m  Expected `box-shadow`, found `background-color`                                   [2mproperty-sort-order[22m
+  [2m419:23[22m  [33mwarning[39m  Color literals such as 'white' should only be used in variable declarations       [2mno-color-literals[22m
+  [2m419:23[22m  [33mwarning[39m  Color 'white' should be written in its hexadecimal form #ffffff                   [2mno-color-keywords[22m
+  [2m420:5[22m   [33mwarning[39m  Expected `font-size`, found `position`                                            [2mproperty-sort-order[22m
+  [2m421:5[22m   [33mwarning[39m  Expected `list-style`, found `top`                                                [2mproperty-sort-order[22m
+  [2m422:5[22m   [33mwarning[39m  Expected `margin`, found `right`                                                  [2mproperty-sort-order[22m
+  [2m423:5[22m   [33mwarning[39m  Expected `position`, found `z-index`                                              [2mproperty-sort-order[22m
+  [2m424:5[22m   [33mwarning[39m  Expected `right`, found `width`                                                   [2mproperty-sort-order[22m
+  [2m425:5[22m   [33mwarning[39m  Expected `top`, found `border-left`                                               [2mproperty-sort-order[22m
+  [2m425:28[22m  [33mwarning[39m  Color literals such as '#dedede' should only be used in variable declarations     [2mno-color-literals[22m
+  [2m426:5[22m   [33mwarning[39m  Expected `width`, found `box-shadow`                                              [2mproperty-sort-order[22m
+  [2m426:29[22m  [33mwarning[39m  Color literals such as '#dedede' should only be used in variable declarations     [2mno-color-literals[22m
+  [2m427:5[22m   [33mwarning[39m  Expected `z-index`, found `margin`                                                [2mproperty-sort-order[22m
+  [2m430:5[22m   [33mwarning[39m  Expected `display`, found `margin`                                                [2mproperty-sort-order[22m
+  [2m432:5[22m   [33mwarning[39m  Expected `margin`, found `display`                                                [2mproperty-sort-order[22m
+  [2m438:5[22m   [33mwarning[39m  Expected `color`, found `padding-left`                                            [2mproperty-sort-order[22m
+  [2m439:5[22m   [33mwarning[39m  Expected `display`, found `padding-right`                                         [2mproperty-sort-order[22m
+  [2m442:5[22m   [33mwarning[39m  Expected `outline`, found `padding`                                               [2mproperty-sort-order[22m
+  [2m443:5[22m   [33mwarning[39m  Expected `padding`, found `color`                                                 [2mproperty-sort-order[22m
+  [2m444:5[22m   [33mwarning[39m  Expected `padding-left`, found `display`                                          [2mproperty-sort-order[22m
+  [2m445:5[22m   [33mwarning[39m  Expected `padding-right`, found `outline`                                         [2mproperty-sort-order[22m
+  [2m448:3[22m   [33mwarning[39m  Pseudo-element should be nested within its parent Type-selector                   [2mforce-pseudo-nesting[22m
+  [2m448:3[22m   [33mwarning[39m  Type-selector should be nested within its parent Class                            [2mforce-element-nesting[22m
+  [2m450:1[22m   [33mwarning[39m  No trailing whitespace allowed                                                    [2mno-trailing-whitespace[22m
+  [2m452:3[22m   [33mwarning[39m  Expected `background`, found `position`                                           [2mproperty-sort-order[22m
+  [2m453:3[22m   [33mwarning[39m  Expected `border`, found `top`                                                    [2mproperty-sort-order[22m
+  [2m454:3[22m   [33mwarning[39m  Expected `height`, found `right`                                                  [2mproperty-sort-order[22m
+  [2m455:3[22m   [33mwarning[39m  Expected `margin`, found `width`                                                  [2mproperty-sort-order[22m
+  [2m456:3[22m   [33mwarning[39m  Expected `position`, found `height`                                               [2mproperty-sort-order[22m
+  [2m457:3[22m   [33mwarning[39m  Expected `right`, found `background`                                              [2mproperty-sort-order[22m
+  [2m458:3[22m   [33mwarning[39m  Expected `top`, found `border`                                                    [2mproperty-sort-order[22m
+  [2m458:11[22m  [33mwarning[39m  No unit allowed for values of 0                                                   [2mzero-unit[22m
+  [2m459:3[22m   [33mwarning[39m  Expected `width`, found `margin`                                                  [2mproperty-sort-order[22m
+  [2m459:11[22m  [33mwarning[39m  No unit allowed for values of 0                                                   [2mzero-unit[22m
+  [2m461:14[22m  [33mwarning[39m  Selectors must be placed on new lines                                             [2msingle-line-per-selector[22m
+  [2m462:5[22m   [33mwarning[39m  Expected `background-color`, found `content`                                      [2mproperty-sort-order[22m
+  [2m463:5[22m   [33mwarning[39m  Expected `content`, found `position`                                              [2mproperty-sort-order[22m
+  [2m464:5[22m   [33mwarning[39m  Expected `height`, found `top`                                                    [2mproperty-sort-order[22m
+  [2m466:5[22m   [33mwarning[39m  Expected `position`, found `width`                                                [2mproperty-sort-order[22m
+  [2m467:5[22m   [33mwarning[39m  Expected `top`, found `height`                                                    [2mproperty-sort-order[22m
+  [2m468:5[22m   [33mwarning[39m  Expected `width`, found `background-color`                                        [2mproperty-sort-order[22m
+
+[4m_sass/_desktop.sass[24m
+  [2m32:1[22m  [31merror[39m  Please check validity of the block starting from line #32  [2mFatal[22m
+
+[4m_sass/_tablet.sass[24m
+   [2m4:2[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+   [2m5:3[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+   [2m5:3[22m   [33mwarning[39m  Expected `background-color`, found `min-width`                                            [2mproperty-sort-order[22m
+   [2m6:3[22m   [33mwarning[39m  Expected `box-shadow`, found `height`                                                     [2mproperty-sort-order[22m
+   [2m6:3[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+   [2m7:3[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+   [2m7:3[22m   [33mwarning[39m  Expected `height`, found `position`                                                       [2mproperty-sort-order[22m
+   [2m8:3[22m   [33mwarning[39m  Expected `left`, found `top`                                                              [2mproperty-sort-order[22m
+   [2m8:3[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+   [2m9:3[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+   [2m9:3[22m   [33mwarning[39m  Expected `min-width`, found `left`                                                        [2mproperty-sort-order[22m
+  [2m10:3[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m10:3[22m   [33mwarning[39m  Expected `overflow`, found `width`                                                        [2mproperty-sort-order[22m
+  [2m11:3[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m11:3[22m   [33mwarning[39m  Expected `position`, found `z-index`                                                      [2mproperty-sort-order[22m
+  [2m12:3[22m   [33mwarning[39m  Expected `text-align`, found `background-color`                                           [2mproperty-sort-order[22m
+  [2m12:3[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m12:21[22m  [33mwarning[39m  Hex values should use the shorthand format - 3 characters where possible                  [2mhex-length[22m
+  [2m12:21[22m  [33mwarning[39m  Color literals such as '#445588' should only be used in variable declarations             [2mno-color-literals[22m
+  [2m13:3[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m13:3[22m   [33mwarning[39m  Expected `top`, found `box-shadow`                                                        [2mproperty-sort-order[22m
+  [2m13:25[22m  [33mwarning[39m  Color literals such as '#4c4c4c' should only be used in variable declarations             [2mno-color-literals[22m
+  [2m14:3[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m15:3[22m   [33mwarning[39m  Expected `width`, found `transition`                                                      [2mproperty-sort-order[22m
+  [2m15:3[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m15:15[22m  [33mwarning[39m  Don't include leading zeros on numbers                                                    [2mleading-zero[22m
+  [2m16:3[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m16:3[22m   [33mwarning[39m  Expected `z-index`, found `text-align`                                                    [2mproperty-sort-order[22m
+  [2m17:3[22m   [33mwarning[39m  Expected `transition`, found `overflow`                                                   [2mproperty-sort-order[22m
+  [2m17:3[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m17:3[22m   [33mwarning[39m  Duplicate properties are not allowed within a block                                       [2mno-duplicate-properties[22m
+  [2m19:2[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m20:3[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m21:1[22m   [33mwarning[39m  No trailing whitespace allowed                                                            [2mno-trailing-whitespace[22m
+  [2m21:2[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m22:2[22m   [33mwarning[39m  ID selectors not allowed                                                                  [2mno-ids[22m
+  [2m22:2[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m23:3[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m25:3[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m25:3[22m   [33mwarning[39m  ID selectors not allowed                                                                  [2mno-ids[22m
+  [2m26:4[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m26:4[22m   [33mwarning[39m  Expected `height`, found `width`                                                          [2mproperty-sort-order[22m
+  [2m27:4[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m27:4[22m   [33mwarning[39m  Expected `position`, found `height`                                                       [2mproperty-sort-order[22m
+  [2m28:4[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m28:4[22m   [33mwarning[39m  Expected `top`, found `position`                                                          [2mproperty-sort-order[22m
+  [2m29:4[22m   [33mwarning[39m  Expected `width`, found `top`                                                             [2mproperty-sort-order[22m
+  [2m29:4[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m33:3[22m   [33mwarning[39m  Expected `display`, found `position`                                                      [2mproperty-sort-order[22m
+  [2m33:3[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m34:3[22m   [33mwarning[39m  Expected `left`, found `top`                                                              [2mproperty-sort-order[22m
+  [2m34:3[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m35:3[22m   [33mwarning[39m  Expected `position`, found `left`                                                         [2mproperty-sort-order[22m
+  [2m35:3[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m36:3[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m36:3[22m   [33mwarning[39m  Expected `top`, found `transform`                                                         [2mproperty-sort-order[22m
+  [2m37:3[22m   [33mwarning[39m  Expected `transform`, found `display`                                                     [2mproperty-sort-order[22m
+  [2m37:3[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m39:2[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m40:3[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m41:1[22m   [33mwarning[39m  No trailing whitespace allowed                                                            [2mno-trailing-whitespace[22m
+  [2m41:3[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m42:2[22m   [33mwarning[39m  ID selectors not allowed                                                                  [2mno-ids[22m
+  [2m42:2[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m43:3[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m43:3[22m   [33mwarning[39m  Expected `float`, found `position`                                                        [2mproperty-sort-order[22m
+  [2m44:3[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m45:3[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m45:3[22m   [33mwarning[39m  Expected `margin`, found `float`                                                          [2mproperty-sort-order[22m
+  [2m46:3[22m   [33mwarning[39m  Expected `position`, found `margin`                                                       [2mproperty-sort-order[22m
+  [2m46:3[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m46:11[22m  [33mwarning[39m  Property `margin` should be written more concisely as `70px 0 0` instead of `70px 0 0 0`  [2mshorthand-values[22m
+  [2m48:2[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m48:2[22m   [33mwarning[39m  ID selectors not allowed                                                                  [2mno-ids[22m
+  [2m50:3[22m   [33mwarning[39m  Id should be nested within its parent Type-selector                                       [2mforce-element-nesting[22m
+  [2m50:3[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m50:5[22m   [33mwarning[39m  Qualifying elements are not allowed for id selectors                                      [2mno-qualifying-elements[22m
+  [2m50:5[22m   [33mwarning[39m  ID selectors not allowed                                                                  [2mno-ids[22m
+  [2m50:23[22m  [33mwarning[39m  No trailing whitespace allowed                                                            [2mno-trailing-whitespace[22m
+  [2m51:4[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m51:4[22m   [33mwarning[39m  Expected `left`, found `top`                                                              [2mproperty-sort-order[22m
+  [2m52:4[22m   [33mwarning[39m  Expected `margin`, found `left`                                                           [2mproperty-sort-order[22m
+  [2m52:4[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m53:4[22m   [33mwarning[39m  Expected `top`, found `margin`                                                            [2mproperty-sort-order[22m
+  [2m53:4[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m54:1[22m   [33mwarning[39m  No trailing whitespace allowed                                                            [2mno-trailing-whitespace[22m
+  [2m55:1[22m   [33mwarning[39m  No trailing whitespace allowed                                                            [2mno-trailing-whitespace[22m
+  [2m55:3[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+  [2m55:3[22m   [33mwarning[39m  No trailing whitespace allowed                                                            [2mno-trailing-whitespace[22m
+  [2m56:1[22m   [33mwarning[39m  No trailing whitespace allowed                                                            [2mno-trailing-whitespace[22m
+  [2m56:3[22m   [33mwarning[39m  Mixed tabs and spaces                                                                     [2mindentation[22m
+
+[31m[1m✖ 390 problems (1 error, 389 warnings)
+[22m[39m
