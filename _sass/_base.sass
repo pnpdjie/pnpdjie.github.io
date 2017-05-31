@@ -98,8 +98,8 @@ button
       visibility: hidden
 
   h1, h2
-    border-bottom: 1px solid $light-grey
- 
+    border-bottom: 1px solid $color-ccc
+
   h1
     font-size: 32px
     padding-right: 60px
@@ -157,7 +157,7 @@ button
     padding: 0
 
   pre
-    background-color: $light-grey
+    background-color: $color-ccc
     display: block
     margin: 20px 0
     padding: 15px
@@ -173,18 +173,18 @@ button
     table-layout: fixed
 
   .includecode, .includecode th, .includecode td
-    padding: 0 !important
+    padding: 0
 
   .includecode th
-    text-align: right !important
-    padding: 10px !important
+    text-align: right
+    padding: 10px
 
   .includecode th a, .includecode th a code
-    color: $white !important
-    background-color: transparent !important
+    color: $white
+    background-color: transparent
 
   .includecode pre
-    margin: 0 !important
+    margin: 0
 
   ul li
     list-style: disc
@@ -207,7 +207,7 @@ button
 
   table
     width: 100%
-    border: 1px solid #ccc
+    border: 1px solid $color-ccc
     border-spacing: 0
     margin-top: 30px
     margin-bottom: 30px
@@ -216,8 +216,8 @@ button
     background-color: $light-grey
 
   thead
-    background-color: #555
-    color: white
+    background-color: $color-555
+    color: $white
 
   th, td
     padding: 8px
@@ -240,7 +240,7 @@ button
     white-space: nowrap
     text-indent: 50px
     overflow: hidden
-    background: $blue url(/images/icon-pencil.svg) no-repeat
+    background: $blue url('/images/icon-pencil.svg') no-repeat
     background-position: 12px 10px
     background-size: 29px 29px
 
@@ -288,17 +288,17 @@ button
     text-decoration: underline
 
   a:visited
-    color: blueviolet
+    color: $blueviolet
 
   a.button
     border-radius: 2px
     text-decoration: none
-    
+
     &:visited
-      color: white
+      color: $white
 
   a.issue
-    margin-left: 0px
+    margin-left: 0
 
 html.search #docsContent
   position: relative
@@ -335,7 +335,7 @@ html.search #docsContent
     font-weight: 700
 
   & > .container:first-child > .item.yah:first-child > .title:first-child
-    margin-left: -20px !important
+    margin-left: -20px
 
   .item
     overflow: hidden
@@ -351,7 +351,7 @@ html.search #docsContent
       color: $blue
 
   a.item > .title
-    color: black
+    color: $black
 
     &:hover
       color: $blue
@@ -394,12 +394,12 @@ html.search #docsContent
   top: 0
   left: 0
   transform: none
-  background-image: url(/images/logo_onap_2017.png)
+  background-image: url('/images/logo_onap_2017.png')
   background-size: contain
   background-position: center center
   background-repeat: no-repeat
 
-#search-input 
+#search-input
   padding: 5px
   margin-left: 20px
   width: 240px
@@ -413,17 +413,17 @@ html.search #docsContent
 #search-demo-container
   position: relative
 
-  ul#results-container 
+  ul#results-container
     list-style: none
     font-size: 12px
-    background-color: white
+    background-color: $white
     position: absolute
     top: 40px
     right: 0
     z-index: 1
     width: 240px
-    border-left: 1px solid #dedede
-    box-shadow: 2px 3px 2px #dedede
+    border-left: 1px solid $pale
+    box-shadow: 2px 3px 2px $pale
     margin: 0
 
   li
@@ -447,7 +447,7 @@ html.search #docsContent
 
   .search-for span::before
     content: '\f002'
-    
+
 .push-menu-close-button
   position: absolute
   top: 0
@@ -455,8 +455,8 @@ html.search #docsContent
   width: 50px
   height: 50px
   background: none
-  border: 0px none
-  margin: 0px
+  border: 0 none
+  margin: 0
 
   &::before, &::after
     content: ''
