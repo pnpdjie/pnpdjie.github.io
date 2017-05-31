@@ -5,8 +5,6 @@ search: exclude
 
 [
 {% for page in site.pages %}
-{% assign urlExtension = page.url | slice: -4, 4 | downcase %}
-{% if urlExtension == "html" %}
 {% unless page.search == "exclude" %}
 {
 "title": "{{ page.title | escape }}",
@@ -18,7 +16,6 @@ search: exclude
 "all": "{{ page.title | escape }}{{ page.tags }}{{page.keywords}}{{page.summary | strip }}{{page.content | strip_html | strip_newlines | replace: '\', '\\\\' | replace: '"', '\\"' | replace: '	', '    ' }}"
 },
 {% endunless %}
-{% endif %}
 {% endfor %}
 
 {% for post in site.posts %}
