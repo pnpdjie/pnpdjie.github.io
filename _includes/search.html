@@ -13,13 +13,31 @@
     </div>
 </section>
 <script type="text/javascript">
-ContentJekyllSearch.init({
-    searchInput: document.getElementById('query-string'),
-    searchButton: document.getElementById('search-content-button'),
-    resultsContainer: document.getElementById('results-content-container'),
-    dataSource: '/search.json',
-    searchResultTemplate: '<li><a href="{url}" title="Search configuration">{title}</a><div>{content}</div></li>',
-    noResultsText: 'No results found.',
-    fuzzy: true
-})
+function getQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]);
+    return null;
+}
+(function() {
+    var queryString = getQueryString('queryString');
+    if (queryString) {
+        document.getElementById('query-string').value = queryString;
+
+        function triggerSearch() {
+            document.getElementById("search-content-button").click();
+        };
+
+        ContentJekyllSearch.init({
+            searchInput: document.getElementById('query-string'),
+            searchButton: document.getElementById('search-content-button'),
+            resultsContainer: document.getElementById('results-content-container'),
+            dataSource: '/search.json',
+            searchResultTemplate: '<li><a href="{url}" title="Search configuration">{title}</a><div>{content}</div></li>',
+            noResultsText: 'No results found.',
+            fuzzy: true,
+            afterInit: triggerSearch
+        });
+    }
+})();
 </script>

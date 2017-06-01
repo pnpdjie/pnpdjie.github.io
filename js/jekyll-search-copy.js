@@ -199,10 +199,6 @@
                     opt.resultsContainer.innerHTML += text;
                 }
 
-                function appendContentSearchLink() {
-                    opt.resultsContainer.innerHTML += '<li><a href="/dosearch.html?queryString=' + condition + '" class="search-for"><span title="搜索‘' + condition + '’"><em>搜索‘' + condition + '’</em></span></a></li>';
-                }
-
                 function registerInput() {
                     if (!opt.searchButton) {
                         opt.searchInput.addEventListener("keyup", function(e) {
@@ -225,6 +221,10 @@
                             condition = opt.searchInput.value.trim();
                             return 0 == condition.length ? void emptyResultsContainer() : void render(searcher.search(store, condition))
                         })
+
+                        if(opt.afterInit){
+                          opt.afterInit();
+                        }
                     }
                 }
 
@@ -235,14 +235,16 @@
                         for (var i = 0; i < results.length; i++)
                             appendToResultsContainer(templater.render(opt.searchResultTemplate, results[i], condition))
                     }
-                    appendContentSearchLink();
+                    if(opt.afterRender){
+                    	  opt.afterRender(opt.resultsContainer, condition);
+                    }
                 }
                 var self = this,
                     condition = '',
                     requiredOptions = ["searchInput", "resultsContainer", "dataSource"],
-                    opt = { searchInput: null, resultsContainer: null, dataSource: [], searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>', noResultsText: "No results found", limit: 10, fuzzy: !1, isLimit: !1, searchButton: null };
+                    opt = { searchInput: null, resultsContainer: null, dataSource: [], searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>', noResultsText: "No results found", limit: 10, fuzzy: !1, isLimit: !1, searchButton: null, afterInit: null, afterRender: null };
                 self.init = function(_opt) { validateOptions(_opt), assignOptions(_opt), isJSON(opt.dataSource) ? initWithJSON(opt.dataSource) : initWithURL(opt.dataSource) }
-            }
+            
             var Searcher = require("./Searcher"),
                 Templater = require("./Templater"),
                 Store = require("./Store"),
@@ -251,6 +253,7 @@
                 templater = new Templater,
                 store = new Store,
                 jsonLoader = new JSONLoader;
+            }
             window.SimpleJekyllSearch = new SimpleJekyllSearch
             window.ContentJekyllSearch = new SimpleJekyllSearch
         }(window, document)
