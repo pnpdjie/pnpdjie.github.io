@@ -28,7 +28,7 @@ function classOnCondition(element, className, condition) {
 $(function() {
     "use strict";
     if ((location.pathname.split("/")[1]) !== "") {
-        $('header .trigger a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('nf');
+        $('header .trigger a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
     }
 });
 
