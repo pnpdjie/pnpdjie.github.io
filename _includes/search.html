@@ -1,14 +1,9 @@
-<div id="search-results-header" class="aui-page-header">
-    <h1>搜索</h1>
-    <span class="search-input-wrapper">
-    <input type="text" class="text long-field search-input" name="queryString" id="query-string" value="" incremental="true" maxlength="255" />
-    <span class="aui-icon aui-icon-small aui-iconfont-help help-button">Help</span>
-    </span>
-    <button type="button" class="aui-button" id="search-content-button"><span class="aui-icon aui-icon-small aui-iconfont-search">Search</span></button>
-    <div class="loading-spinner button-spinner"></div>
+<div id="search-results-header" >
+    <input type="text" name="queryString" id="query-string" value="" incremental="true" maxlength="255" />
+    <button type="button" id="search-content-button">Search</button>
 </div>
-<section class="aui-page-panel-content  two-panels ">
-    <div class="search-results-wrapper">
+<section>
+    <div>
         <ul id="results-content-container"></ul>
     </div>
 </section>

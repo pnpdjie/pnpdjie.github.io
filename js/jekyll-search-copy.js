@@ -143,11 +143,21 @@
                 return t.replace(templatePattern, function(match, prop) {
                     if (data[prop]) {
                         var res = data[prop];
-                        if (prop === 'title' || prop === 'content') {
+                        var cutedContent = '';
+                        if (prop === 'title' ) {
                             var reg = new RegExp(condition, "gi")
                             res = res.replace(reg, function(match,prop){
                             	return '<strong>' + match + '</strong>';
                             });
+                            return res;
+                        } else if (prop === 'content') {
+                            var reg = new RegExp(condition, "gi")
+
+                            res = res.replace(reg, function(match,prop){
+                            	cutedContent += '...' + res.substr(prop-20,20) + '<strong>' + match + '</strong>' + res.substr(prop + match.length, 20) + '...';
+                            	return '<strong>' + match + '</strong>';
+                            });
+                            return cutedContent;
                         }
                         return res;
                     } else {
