@@ -23,5 +23,6 @@
         /*"sha1": true,*/
         /*"_": true,*/
         /*"echarts": true*/
-    }
+    },
+    "predef": ["ActiveXObject"]
 }
