@@ -5,6 +5,10 @@ search: exclude
 
 [
 {% for page in site.pages %}
+{% assign urlExtension = page.url | slice: -4, 4 | downcase %}
+{% if urlExtension == ".xml" or urlExtension == "json"  %}
+{% continue %}
+{% endif %}
 {% unless page.search == "exclude" %}
 {
 "title": "{{ page.title | escape }}",
@@ -19,15 +23,14 @@ search: exclude
 {% endfor %}
 
 {% for post in site.posts %}
-
 {
 "title": "{{ post.title | escape }}",
-"url": "{{ page.url }}",
+"url": "{{ post.url }}",
 "tags": "{{ post.tags }}",
 "keywords": "{{post.keywords}}",
 "summary": "{{post.summary | strip }}",
-"content": "{{page.content | strip_html | strip_newlines | replace: '\', '\\\\' | replace: '"', '\\"' | replace: '	', '    ' }}",
-"all": "{{ page.title | escape }}{{ page.tags }}{{page.keywords}}{{page.summary | strip }}{{page.content | strip_html | strip_newlines | replace: '\', '\\\\' | replace: '"', '\\"' | replace: '	', '    ' }}"
+"content": "{{post.content | strip_html | strip_newlines | replace: '\', '\\\\' | replace: '"', '\\"' | replace: '	', '    ' }}",
+"all": "{{ post.title | escape }}{{ post.tags }}{{post.keywords}}{{post.summary | strip }}{{post.content | strip_html | strip_newlines | replace: '\', '\\\\' | replace: '"', '\\"' | replace: '	', '    ' }}"
 }
 {% unless forloop.last %},{% endunless %}
 {% endfor %}

@@ -2,7 +2,7 @@
 _site
 node_modules
 npm-debug.log
-#tmp
+tmp
 
 # swap
 [._]*.s[a-v][a-z]
