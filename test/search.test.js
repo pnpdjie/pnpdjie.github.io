@@ -11,7 +11,7 @@ describe('js/jekyll-search-copy.js', function() {
         document.getElementById('query-string').value = queryString;
     });
 
-    describe('7:init-validateOptions(_opt)', function() {
+    describe('ContentJekyllSearch:init-validateOptions(_opt)', function() {
 
         it('测试-包含必要参数["searchInput", "resultsContainer", "dataSource"]', function() {
             var _opt = {
@@ -76,7 +76,7 @@ describe('js/jekyll-search-copy.js', function() {
         });
     });
 
-    describe('7:init-assignOptions(_opt)', function() {
+    describe('ContentJekyllSearch:init-assignOptions(_opt)', function() {
         var _opt = {
             searchInput: document.getElementById('query-string'),
             searchButton: document.getElementById('search-content-button'),
@@ -101,7 +101,7 @@ describe('js/jekyll-search-copy.js', function() {
         });
     });
 
-    describe('7:init-isJSON(json)', function() {
+    describe('ContentJekyllSearch:init-isJSON(json)', function() {
         var _opt = {
             searchInput: document.getElementById('query-string'),
             searchButton: document.getElementById('search-content-button'),
@@ -131,7 +131,7 @@ describe('js/jekyll-search-copy.js', function() {
         });
     });
 
-    describe('7:init-validateJSON(json)', function() {
+    describe('ContentJekyllSearch:init-validateJSON(json)', function() {
 
         it('测试-验证JSON格式，必须包含title,url,content,all', function() {
             var data = [{
@@ -147,7 +147,7 @@ describe('js/jekyll-search-copy.js', function() {
             try {
                 data = [];
                 res = ContentJekyllSearch.validateJSON(data);
-            } catch(e) {
+            } catch (e) {
                 assert.equal(undefined, res);
                 assert.equal(msg, e.message);
             }
@@ -159,7 +159,7 @@ describe('js/jekyll-search-copy.js', function() {
                     "all": ""
                 }];
                 res = ContentJekyllSearch.validateJSON(data);
-            } catch(e) {
+            } catch (e) {
                 assert.equal(undefined, res);
                 assert.equal(msg, e.message);
             }
@@ -171,7 +171,7 @@ describe('js/jekyll-search-copy.js', function() {
                     "all": ""
                 }];
                 res = ContentJekyllSearch.validateJSON(data);
-            } catch(e) {
+            } catch (e) {
                 assert.equal(undefined, res);
                 assert.equal(msg, e.message);
             }
@@ -183,7 +183,7 @@ describe('js/jekyll-search-copy.js', function() {
                     "all": ""
                 }];
                 res = ContentJekyllSearch.validateJSON(data);
-            } catch(e) {
+            } catch (e) {
                 assert.equal(undefined, res);
                 assert.equal(msg, e.message);
             }
@@ -195,10 +195,98 @@ describe('js/jekyll-search-copy.js', function() {
                     "content": ""
                 }];
                 res = ContentJekyllSearch.validateJSON(data);
-            } catch(e) {
+            } catch (e) {
                 assert.equal(undefined, res);
                 assert.equal(msg, e.message);
             }
+        });
+    });
+
+    describe('ContentJekyllSearch:init-读取JSON数据', function() {
+        var _opt = {
+            searchInput: document.getElementById('query-string'),
+            searchButton: document.getElementById('search-content-button'),
+            resultsContainer: document.getElementById('results-content-container'),
+            dataSource: 'data/search.json',
+            searchResultTemplate: '<li><a href="{url}" title="Search configuration">{title}</a><div>{content}</div></li>',
+            noResultsText: 'No results found.',
+            fuzzy: true,
+            afterInit: triggerSearch
+        };
+
+        it('测试-空数据，非JSON数据，格式错误JSON数据', function() {
+            _opt.dataSource = null;
+            var res = false;
+            try {
+                ContentJekyllSearch.init(_opt);
+                res = true;
+            } catch (e) {
+                res = false;
+            }
+            assert.equal(false, res);
+
+            _opt.dataSource = "";
+            try {
+                ContentJekyllSearch.init(_opt);
+                res = true;
+            } catch (e) {
+                res = false;
+            }
+            assert.equal(false, res);
+
+            _opt.dataSource = [{ "a": "b" }];
+            try {
+                ContentJekyllSearch.init(_opt);
+                res = true;
+            } catch (e) {
+                res = false;
+            }
+            assert.equal(false, res);
+
+            var data = [{
+                "title": "About",
+                "url": "/about.html",
+                "content": "This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at jekyllrb.comYou can find the source code for the Jekyll new theme at:    jekyll /minimaYou can find the source code for Jekyll at    jekyll /jekyll"
+            }, ];
+            _opt.dataSource = data;
+            try {
+                ContentJekyllSearch.init(_opt);
+                res = true;
+            } catch (e) {
+                res = false;
+            }
+            assert.equal(false, res);
+
+        });
+
+        it('测试-格式正确JSON数据且包含title,url,content,all', function() {
+            var data = [{
+                "title": "About",
+                "url": "/about.html",
+                "all": "",
+                "content": "This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at jekyllrb.comYou can find the source code for the Jekyll new theme at:    jekyll /minimaYou can find the source code for Jekyll at    jekyll /jekyll"
+            }];
+            _opt.dataSource = data;
+            try {
+                ContentJekyllSearch.init(_opt);
+                res = true;
+            } catch (e) {
+                res = false;
+            }
+            assert.equal(true, res);
+
+        });
+
+        it('测试-URL读取JSON数据', function() {
+            _opt.dataSource = 'data/search.json';
+            try {
+                ContentJekyllSearch.init(_opt);
+                res = true;
+            } catch (e) {
+                res = false;
+            }
+            assert.equal(true, res);
+
         });
     });
 });

@@ -274,7 +274,7 @@
                     }
                 }
 
-                function initWithJSON() {
+                var initWithJSON = function() {
                     validateJSON(opt.dataSource);
                     store.put(opt.dataSource);
                     registerInput();
@@ -284,7 +284,7 @@
                     throw new Error("SimpleJekyllSearch --- " + message);
                 }
 
-                function initWithURL(url) {
+                var initWithURL = function(url) {
                     jsonLoader.load(url, function(err, json) {
                         //err ? throwError("failed to get JSON (" + url + ")") : (store.put(json), registerInput());
                         if (err) {
