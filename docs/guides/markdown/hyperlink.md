@@ -14,7 +14,7 @@ title: 引用超链接
 
 代码实例及实际效果：
 
-  [github](https://www.github.com "click here")
+	[github](https://www.github.com "click here")
   
 [github](https://www.github.com "click here")
 
