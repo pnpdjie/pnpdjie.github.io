@@ -1,0 +1,206 @@
+
+[1m   ../js/script.js[22m
+      5 |[90m    var el = document.createElement(tag);[39m
+             ^ Missing "use strict" statement.
+     19 |[90m    if (condition) {[39m
+             ^ Missing "use strict" statement.
+     28 |[90m    if ((location.pathname.split("/")[1]) !== "") {[39m
+             ^ Missing "use strict" statement.
+     34 |[90m    var HEADER_HEIGHT;[39m
+             ^ Missing "use strict" statement.
+     64 |[90m    function setFooterType() {[39m
+                      ^ 'setFooterType' was used before it was defined.
+     95 |[90m    function resetTheView() {[39m
+                      ^ 'resetTheView' was used before it was defined.
+    108 |[90m        if (html[0].id == 'home') {[39m
+                                  ^ Expected '===' and instead saw '=='.
+    113 |[90m    function setHomeHeaderStyles() {[39m
+                      ^ 'setHomeHeaderStyles' was used before it was defined.
+    120 |[90m    function toggleMenu() {[39m
+                      ^ 'toggleMenu' was used before it was defined.
+    135 |[90m    function handleKeystrokes(e) {[39m
+                      ^ 'handleKeystrokes' was used before it was defined.
+    176 |[90m    function toggleToc() {[39m
+                      ^ 'toggleToc' was used before it was defined.
+    196 |[90m    var yah = true;[39m
+             ^ Missing "use strict" statement.
+    202 |[90m        if (navigator.userAgent.indexOf('Chrome') == -1 && navigator.userAgent.indexOf('Safari') != -1) {[39m
+                                                             ^ Expected '===' and instead saw '=='.
+    202 |[90m        if (navigator.userAgent.indexOf('Chrome') == -1 && navigator.userAgent.indexOf('Safari') != -1) {[39m
+                                                                                                            ^ Expected '!==' and instead saw '!='.
+    216 |[90m            CollapseBox($(container));[39m
+                     ^ Missing 'new' prefix when invoking a constructor.
+    226 |[90m    function CollapseBox(container) {[39m
+                      ^ 'CollapseBox' was used before it was defined.
+    284 |[90m            function toggleItem(thisItem) {[39m
+                              ^ 'toggleItem' was used before it was defined.
+    318 |[90m                        CollapseBox($(this));[39m
+                                 ^ Missing 'new' prefix when invoking a constructor.
+    325 |[90m    function setYAH() {[39m
+                      ^ 'setYAH' was used before it was defined.
+     20 |[90m        $(element).addClass(className);[39m
+                 ^ '$' is not defined.
+     22 |[90m        $(element).removeClass(className);[39m
+                 ^ '$' is not defined.
+     26 |[90m$(function() {[39m
+         ^ '$' is not defined.
+     29 |[90m        $('header .trigger a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('nf');[39m
+                 ^ '$' is not defined.
+     37 |[90m    $(document).ready(function() {[39m
+             ^ '$' is not defined.
+     38 |[90m        html = $('html');[39m
+                        ^ '$' is not defined.
+     39 |[90m        body = $('body');[39m
+                        ^ '$' is not defined.
+     40 |[90m        header = $('header');[39m
+                          ^ '$' is not defined.
+     41 |[90m        mainNav = $('#mainNav');[39m
+                           ^ '$' is not defined.
+     42 |[90m        quickstartButton = $('#quickstartButton');[39m
+                                    ^ '$' is not defined.
+     43 |[90m        hero = $('#hero');[39m
+                        ^ '$' is not defined.
+     44 |[90m        encyclopedia = $('#encyclopedia');[39m
+                                ^ '$' is not defined.
+     45 |[90m        footer = $('footer');[39m
+                          ^ '$' is not defined.
+     46 |[90m        headlineWrapper = $('#headlineWrapper');[39m
+                                   ^ '$' is not defined.
+     87 |[90m                    bodyHeight = hero.outerHeight() + $('#mainContent').outerHeight();[39m
+                                                               ^ '$' is not defined.
+    148 |[90m        $('body').css({ overflow: 'hidden' });[39m
+                 ^ '$' is not defined.
+    150 |[90m        var videoPlayer = $("#videoPlayer");[39m
+                                   ^ '$' is not defined.
+    156 |[90m            $('body').css({ overflow: 'auto' });[39m
+                     ^ '$' is not defined.
+    165 |[90m        var target = $(e.target);[39m
+                              ^ '$' is not defined.
+    166 |[90m        var docsToc = $("#docsToc");[39m
+                               ^ '$' is not defined.
+    200 |[90m    $(document).ready(function() {[39m
+             ^ '$' is not defined.
+    209 |[90m        $('.pi-accordion').each(function() {[39m
+                 ^ '$' is not defined.
+    214 |[90m            $(accordion).empty();[39m
+                     ^ '$' is not defined.
+    216 |[90m            CollapseBox($(container));[39m
+                                 ^ '$' is not defined.
+    254 |[90m                $(wrapper).css({ height: 0 });[39m
+                         ^ '$' is not defined.
+    258 |[90m            $(title).click(function() {[39m
+                     ^ '$' is not defined.
+    285 |[90m                var thisWrapper = $(thisItem).find('.pi-wrapper').eq(0);[39m
+                                           ^ '$' is not defined.
+    293 |[90m                if ($(thisItem).hasClass('on')) {[39m
+                             ^ '$' is not defined.
+    295 |[90m                    $(thisItem).removeClass('on');[39m
+                             ^ '$' is not defined.
+    302 |[90m                    $(item).addClass('on');[39m
+                             ^ '$' is not defined.
+    315 |[90m                var innerContainers = $(content).children('.container');[39m
+                                               ^ '$' is not defined.
+[1m   ../js/jekyll-search-copy.js[22m
+      2 |[90m    function s(o, u) {[39m
+             ^ Missing "use strict" statement.
+      5 |[90m                var a = "function" == typeof require && require;[39m
+                                              ^ Expected '===' and instead saw '=='.
+      6 |[90m                if (!u && a) return a(o, !0);[39m
+                                      ^ Expected '{' and instead saw 'return'.
+      7 |[90m                if (i) return i(o, !0);[39m
+                                ^ Expected '{' and instead saw 'return'.
+      8 |[90m                throw new Error("Cannot find module '" + o + "'")[39m
+                                                                          ^ Missing semicolon.
+     15 |[90m                return s(n ? n : e)[39m
+                                            ^ Missing semicolon.
+     16 |[90m            }, f, f.exports, e, t, n, r)[39m
+                                                 ^ Missing semicolon.
+     18 |[90m        return n[o].exports[39m
+                                    ^ Missing semicolon.
+     20 |[90m    for (var i = "function" == typeof require && require, o = 0; o < r.length; o++)[39m
+                      ^ 'i' was used before it was defined.
+     20 |[90m    for (var i = "function" == typeof require && require, o = 0; o < r.length; o++)[39m
+                                       ^ Expected '===' and instead saw '=='.
+     21 |[90m        s(r[o]);[39m
+                 ^ Expected '{' and instead saw 's'.
+     22 |[90m    return s[39m
+                     ^ Missing semicolon.
+     23 |[90m}({[39m
+           ^ Wrap an immediate function invocation in parens to assist the reader in understanding that the expression is the result of a function, and not the function itself.
+     25 |[90m        module.exports = function() {[39m
+                 ^ Missing "use strict" statement.
+     27 |[90m                return 200 == xhr.status && 4 == xhr.readyState[39m
+                                      ^ Expected '===' and instead saw '=='.
+     27 |[90m                return 200 == xhr.status && 4 == xhr.readyState[39m
+                                                         ^ Expected '===' and instead saw '=='.
+     27 |[90m                return 200 == xhr.status && 4 == xhr.readyState[39m
+                                                                        ^ Missing semicolon.
+     32 |[90m                    if (receivedResponse(xhr)) try { callback(null, JSON.parse(xhr.responseText)) } catch (err) { callback(err, null) }[39m
+                                                        ^ Expected '{' and instead saw 'try'.
+     32 |[90m                    if (receivedResponse(xhr)) try { callback(null, JSON.parse(xhr.responseText)) } catch (err) { callback(err, null) }[39m
+                                                                                                          ^ Missing semicolon.
+     32 |[90m                    if (receivedResponse(xhr)) try { callback(null, JSON.parse(xhr.responseText)) } catch (err) { callback(err, null) }[39m
+                                                                                                                                              ^ Missing semicolon.
+     33 |[90m                }[39m
+                          ^ Missing semicolon.
+     37 |[90m                var xhr = window.XMLHttpRequest ? new XMLHttpRequest : new ActiveXObject("Microsoft.XMLHTTP");[39m
+                                                               ^ Missing '()' invoking a constructor.
+     38 |[90m                xhr.open("GET", location, !0), handleResponse(xhr, callback), xhr.send()[39m
+                                                                                                ^ Expected an assignment or function call and instead saw an expression.
+     38 |[90m                xhr.open("GET", location, !0), handleResponse(xhr, callback), xhr.send()[39m
+                                                                                                 ^ Missing semicolon.
+     39 |[90m            }[39m
+                      ^ Missing semicolon.
+     40 |[90m        }[39m
+                  ^ Missing semicolon.
+     24 |[90m    1: [function(require, module) {[39m
+                          ^ 'require' is defined but never used.
+     43 |[90m        function FuzzySearchStrategy() {[39m
+                 ^ Missing "use strict" statement.
+     45 |[90m                return new RegExp(string.split("").join(".*?"), "gi")[39m
+                                                                              ^ Missing semicolon.
+     49 |[90m                return "string" != typeof string ? !1 : (string = string.trim(), !!string.match(createFuzzyRegExpFromString(crit)))[39m
+                                           ^ Expected '!==' and instead saw '!='.
+     49 |[90m                return "string" != typeof string ? !1 : (string = string.trim(), !!string.match(createFuzzyRegExpFromString(crit)))[39m
+                                                                                                                                            ^ Missing semicolon.
+     50 |[90m            }[39m
+                      ^ Missing semicolon.
+     52 |[90m        module.exports = new FuzzySearchStrategy[39m
+                                      ^ Missing '()' invoking a constructor.
+     52 |[90m        module.exports = new FuzzySearchStrategy[39m
+                                                         ^ Missing semicolon.
+     42 |[90m    2: [function(require, module) {[39m
+                          ^ 'require' is defined but never used.
+     55 |[90m        function LiteralSearchStrategy() {[39m
+                 ^ Missing "use strict" statement.
+     57 |[90m                return string.toLowerCase().indexOf(crit.toLowerCase()) >= 0[39m
+                                                                                     ^ Missing semicolon.
+     61 |[90m                return "string" != typeof string ? !1 : (string = string.trim(), doMatch(string, crit))[39m
+                                           ^ Expected '!==' and instead saw '!='.
+     61 |[90m                return "string" != typeof string ? !1 : (string = string.trim(), doMatch(string, crit))[39m
+                                                                                                                ^ Missing semicolon.
+     62 |[90m            }[39m
+                      ^ Missing semicolon.
+     64 |[90m        module.exports = new LiteralSearchStrategy[39m
+                                      ^ Missing '()' invoking a constructor.
+     64 |[90m        module.exports = new LiteralSearchStrategy[39m
+                                                           ^ Missing semicolon.
+     54 |[90m    3: [function(require, module) {[39m
+                          ^ 'require' is defined but never used.
+     67 |[90m        module.exports = function() {[39m
+                 ^ Missing "use strict" statement.
+     69 |[90m                for (var data = store.get(), i = 0; i < data.length && (isLimit ? (matches.length < limit) : true); i++) findMatchesInObject(data[i], crit, strategy);[39m
+                                                                                                                                  ^ Expected '{' and instead saw 'findMatchesInObject'.
+     70 |[90m                return matches[39m
+                                       ^ Missing semicolon.
+     73 |[90m            function findMatchesInObject(obj, crit, strategy) {[39m
+                              ^ 'findMatchesInObject' was used before it was defined.
+     82 |[90m                return fuzzy ? fuzzySearchStrategy : literalSearchStrategy[39m
+                                                                                   ^ Missing semicolon.
+     85 |[90m                matches = [],[39m
+                         ^ 'matches' was used before it was defined.
+     86 |[90m                fuzzy = !1,[39m
+                         ^ 'fuzzy' was used before it was defined.
+[31m>> [39mToo many errors. (31% scanned).
+
+[31m>> [39m102 errors in 2 files

@@ -1,0 +1,8 @@
+
+[1m   ../js/script.js[22m
+     67 |[90m    function toggleToc() {[39m
+                      ^ 'toggleToc' was used before it was defined.
+     50 |[90mvar kub = (function() {[39m
+             ^ 'kub' is defined but never used.
+
+[31m>> [39m2 errors in 2 files
