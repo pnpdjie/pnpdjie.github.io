@@ -15,9 +15,9 @@ title: 引用图片方式
 
 代码实例及显示效果：
 
-	[玉龙雪山](http://b378.photo.store.qq.com/psb?/V13f2fdp2KFdb0/EuAA*UN7XwQUvIPQvpqlFYue83qdLuqB.jv0OETzj20!/b/dA*pVeGTPwAA&bo=6gOAAkAG*gMFAPM!&rf=viewer_4 "2017.6.2")
+	![玉龙雪山](http://b378.photo.store.qq.com/psb?/V13f2fdp2KFdb0/EuAA*UN7XwQUvIPQvpqlFYue83qdLuqB.jv0OETzj20!/b/dA*pVeGTPwAA&bo=6gOAAkAG*gMFAPM!&rf=viewer_4 "2017.6.2")
 
-[玉龙雪山](http://b378.photo.store.qq.com/psb?/V13f2fdp2KFdb0/EuAA*UN7XwQUvIPQvpqlFYue83qdLuqB.jv0OETzj20!/b/dA*pVeGTPwAA&bo=6gOAAkAG*gMFAPM!&rf=viewer_4 "2017.6.2")
+![玉龙雪山](http://b378.photo.store.qq.com/psb?/V13f2fdp2KFdb0/EuAA*UN7XwQUvIPQvpqlFYue83qdLuqB.jv0OETzj20!/b/dA*pVeGTPwAA&bo=6gOAAkAG*gMFAPM!&rf=viewer_4 "2017.6.2")
 
 {% endcapture %}
 
