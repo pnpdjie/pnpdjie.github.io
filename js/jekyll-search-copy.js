@@ -212,6 +212,7 @@
         (function(window) {
 
             function SimpleJekyllSearch() {
+                var self = this;
                 var Searcher = require("./Searcher"),
                     Templater = require("./Templater"),
                     Store = require("./Store"),
@@ -220,8 +221,7 @@
                     templater = new Templater(),
                     store = new Store(),
                     jsonLoader = new JSONLoader();
-                var self = this,
-                    condition = '',
+                var condition = '',
                     requiredOptions = ["searchInput", "resultsContainer", "dataSource"],
                     opt = { searchInput: null, resultsContainer: null, dataSource: [], searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>', noResultsText: "No results found", limit: 10, fuzzy: !1, isLimit: !1, searchButton: null, afterInit: null, afterRender: null };
 
@@ -275,6 +275,7 @@
                 }
 
                 function initWithJSON() {
+                    validateJSON(opt.dataSource);
                     store.put(opt.dataSource);
                     registerInput();
                 }
@@ -289,6 +290,7 @@
                         if (err) {
                             throwError("failed to get JSON (" + url + ")");
                         } else {
+                            validateJSON(json);
                             store.put(json);
                             registerInput();
                         }
@@ -311,24 +313,45 @@
                     searcher.setLimit(opt['limit'], opt['isLimit']);
                 }
 
-                function isJSON(json) {
+                var isJSON = function(json) {
                     try {
-                        return json instanceof Object && JSON.parse(JSON.stringify(json));
+                        if (json instanceof Object) {
+                            var data = JSON.parse(JSON.stringify(json));
+                            return data ? true : false;
+                        } else {
+                            return false;
+                        }
+                        // return json instanceof Object && JSON.parse(JSON.stringify(json));
                     } catch (e) {
                         return !1;
                     }
                 }
+                var validateJSON = function(json) {
+                    if (json.length === 0 || !json[0].hasOwnProperty("title") || !json[0].hasOwnProperty("content") || !json[0].hasOwnProperty("all") || !json[0].hasOwnProperty("url")) {
+                        throwError("JSON data must have data and fields(title,url,content,all).");
+                        return false;
+                    }
+                    return true;
+                }
+
                 self.init = function(_opt) {
                     validateOptions(_opt);
                     assignOptions(_opt);
                     //isJSON(opt.dataSource) ? initWithJSON(opt.dataSource) : initWithURL(opt.dataSource);
-                    if(isJSON(opt.dataSource)){
-                    	initWithJSON(opt.dataSource);
-                    } else{
-                    	initWithURL(opt.dataSource);
+                    if (isJSON(opt.dataSource)) {
+                        initWithJSON(opt.dataSource);
+                    } else {
+                        initWithURL(opt.dataSource);
                     }
                 };
-
+                self.dispose = function() {
+                    condition = '';
+                    opt = { searchInput: null, resultsContainer: null, dataSource: [], searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>', noResultsText: "No results found", limit: 10, fuzzy: !1, isLimit: !1, searchButton: null, afterInit: null, afterRender: null };
+                    store.clear();
+                };
+                self.opt = opt;
+                self.isJSON = isJSON;
+                self.validateJSON = validateJSON;
             }
             window.SimpleJekyllSearch = new SimpleJekyllSearch();
             window.ContentJekyllSearch = new SimpleJekyllSearch();

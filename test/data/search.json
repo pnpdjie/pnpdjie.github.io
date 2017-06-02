@@ -1,17 +1,11 @@
 [{
     "title": "About",
     "url": "/about.html",
-    "tags": "",
-    "keywords": "",
-    "summary": "",
     "content": "This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at jekyllrb.comYou can find the source code for the Jekyll new theme at:    jekyll /minimaYou can find the source code for Jekyll at    jekyll /jekyll",
     "all": "AboutThis is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at jekyllrb.comYou can find the source code for the Jekyll new theme at:    jekyll /minimaYou can find the source code for Jekyll at    jekyll /jekyll"
 }, {
     "title": "Index",
     "url": "/index.html",
-    "tags": "",
-    "keywords": "",
-    "summary": "",
     "content": "Once we gain ground on the above items, we can work together formalize our contribution guidelines and governance. For further info & ideas, please see our projects.",
     "all": "IndexOnce we gain ground on the above items, we can work together formalize our contribution guidelines and governance. For further info & ideas, please see our projects."
 }]
