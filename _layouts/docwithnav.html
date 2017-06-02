@@ -1,6 +1,6 @@
 {% for current_toc in site.tocs %} {% if found_toc %} {% break %} {% else %} {% assign toc=site.data[current_toc] %} {% include tocsearch.html tree=toc.toc toc=toc %} {% endif %} {% endfor %}
 <!DOCTYPE html>
-<html id="docs" lang="{{ page.lang | default: site.lang | default: " en " }}">
+<html id="docs" lang="{{ page.lang | default: site.lang | default: "en" }}">
 {% include head.html %}
 
 <body>
