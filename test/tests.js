@@ -1,6 +1,7 @@
 var assert = chai.assert;
 
 describe('newDOMElement(tag, className, id)', function() {
+
   describe('动态生存DOM元素', function() {
     it('测试生成的DOM元素标签名是否匹配', function() {
       assert.equal('input', newDOMElement('input').tagName.toLowerCase());
