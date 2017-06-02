@@ -11,8 +11,11 @@ toc:
   - docs/guides/markdown/add-links-into-picture.md
   - docs/guides/markdown/show-tables.md
   - docs/guides/markdown/show-pictures.md
+  - docs/guides/markdown/hyperlink.md.md
+  - docs/guides/markdown/show-media.md
   - docs/guides/markdown/show-pages.md
   - docs/guides/markdown/choose.md
+  
 
 - title: Jekyll
   section: 
