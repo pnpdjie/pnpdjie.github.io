@@ -7,13 +7,16 @@ describe('js/jekyll-search-copy.js', function() {
     function triggerSearch() {
         document.getElementById("search-content-button").click();
     }
+        function appendContentSearchLink(container, condition) {
+            container.innerHTML += '<li><a href="/dosearch.html?queryString=' + condition + '" class="search-for"><span title="搜索‘' + condition + '’"><em>搜索‘' + condition + '’</em></span></a></li>';
+        }
     before(function() {
         document.getElementById('query-string').value = queryString;
     });
 
     describe('ContentJekyllSearch:init-validateOptions(_opt)', function() {
 
-        after(function(done) {
+        afterEach(function(done) {
             this.timeout(15000);
             setTimeout(function() {
                 ContentJekyllSearch.dispose();
@@ -107,7 +110,42 @@ describe('js/jekyll-search-copy.js', function() {
             try {
                 ContentJekyllSearch.init(_opt);
             } catch (e) {
-                assert.equal('You must specify a afterRender when not contain a searchButton'.toLowerCase(), e.message.toLowerCase());
+                assert.equal('SimpleJekyllSearch --- You must specify a afterRender when not contain a searchButton'.toLowerCase(), e.message.toLowerCase());
+            }
+        });
+        it('测试-不包含参数"searchButton"时"isLimit"必须为true', function() {
+            var _opt = {
+                dataSource: 'data/search.json',
+                searchInput: document.getElementById('query-string'),
+                resultsContainer: document.getElementById('results-content-container'),
+                searchResultTemplate: '<li><a href="{url}" title="Search configuration">{title}</a><div>{content}</div></li>',
+                noResultsText: 'No results found.',
+                fuzzy: true,
+                isLimit: false,
+            afterRender: appendContentSearchLink
+            };
+            try {
+                ContentJekyllSearch.init(_opt);
+            } catch (e) {
+                assert.equal('SimpleJekyllSearch --- You must specify true for isLimit when not contain a searchButton'.toLowerCase(), e.message.toLowerCase());
+            }
+        });
+        it('测试-包含参数"searchButton"时"isLimit"必须为false', function() {
+            var _opt = {
+                dataSource: 'data/search.json',
+                searchInput: document.getElementById('query-string'),
+                searchButton: document.getElementById('search-content-button'),
+                resultsContainer: document.getElementById('results-content-container'),
+                searchResultTemplate: '<li><a href="{url}" title="Search configuration">{title}</a><div>{content}</div></li>',
+                noResultsText: 'No results found.',
+                fuzzy: true,
+                isLimit: true,
+                afterInit: triggerSearch
+            };
+            try {
+                ContentJekyllSearch.init(_opt);
+            } catch (e) {
+                assert.equal('SimpleJekyllSearch --- You must specify false for isLimit when contain a searchButton'.toLowerCase(), e.message.toLowerCase());
             }
         });
     });

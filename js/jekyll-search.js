@@ -332,12 +332,22 @@
 
                     searcher.setLimit(opt['limit'], opt['isLimit']);
 
-                    if (!opt.searchButton && !opt.afterRender) {
-                        throwError("You must specify a afterRender when not contain a searchButton");
+                    if (!opt.searchButton) {
+                        if (!opt.afterRender) {
+                            throwError("You must specify a afterRender when not contain a searchButton");
+                        }
+                        if (!opt.isLimit) {
+                            throwError("You must specify true for isLimit when not contain a searchButton");
+                        }
                     }
 
-                    if (opt.searchButton && !opt.afterInit) {
-                        throwError("You must specify a afterInit when contain a searchButton");
+                    if (opt.searchButton) {
+                        if (!opt.afterInit) {
+                            throwError("You must specify a afterInit when contain a searchButton");
+                        }
+                        if (opt.isLimit) {
+                            throwError("You must specify false for isLimit when contain a searchButton");
+                        }
                     }
                 }
 
