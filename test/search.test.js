@@ -10,6 +10,11 @@ describe('js/jekyll-search-copy.js', function() {
     before(function() {
         document.getElementById('query-string').value = queryString;
     });
+    after(function() {
+        // while (ContentJekyllSearch.store.get().length > 0) {
+        //     ContentJekyllSearch.dispose();
+        // }
+    });
 
     describe('ContentJekyllSearch:init-validateOptions(_opt)', function() {
 
@@ -21,8 +26,7 @@ describe('js/jekyll-search-copy.js', function() {
                 dataSource: 'data/search.json',
                 searchResultTemplate: '<li><a href="{url}" title="Search configuration">{title}</a><div>{content}</div></li>',
                 noResultsText: 'No results found.',
-                fuzzy: true,
-                afterInit: triggerSearch
+                fuzzy: true
             };
             ContentJekyllSearch.init(_opt);
         });
@@ -33,8 +37,7 @@ describe('js/jekyll-search-copy.js', function() {
                 dataSource: 'data/search.json',
                 searchResultTemplate: '<li><a href="{url}" title="Search configuration">{title}</a><div>{content}</div></li>',
                 noResultsText: 'No results found.',
-                fuzzy: true,
-                afterInit: triggerSearch
+                fuzzy: true
             };
             try {
                 ContentJekyllSearch.init(_opt);
@@ -49,8 +52,7 @@ describe('js/jekyll-search-copy.js', function() {
                 dataSource: 'data/search.json',
                 searchResultTemplate: '<li><a href="{url}" title="Search configuration">{title}</a><div>{content}</div></li>',
                 noResultsText: 'No results found.',
-                fuzzy: true,
-                afterInit: triggerSearch
+                fuzzy: true
             };
             try {
                 ContentJekyllSearch.init(_opt);
@@ -65,8 +67,7 @@ describe('js/jekyll-search-copy.js', function() {
                 resultsContainer: document.getElementById('results-content-container'),
                 searchResultTemplate: '<li><a href="{url}" title="Search configuration">{title}</a><div>{content}</div></li>',
                 noResultsText: 'No results found.',
-                fuzzy: true,
-                afterInit: triggerSearch
+                fuzzy: true
             };
             try {
                 ContentJekyllSearch.init(_opt);
@@ -84,9 +85,13 @@ describe('js/jekyll-search-copy.js', function() {
             dataSource: 'data/search.json',
             searchResultTemplate: '<li><a href="{url}" title="Search configuration">{title}</a><div>{content}</div></li>',
             noResultsText: 'No results found.',
-            fuzzy: true,
-            afterInit: triggerSearch
+            fuzzy: true
         };
+        after(function() {
+            // while (ContentJekyllSearch.store.get().length > 0) {
+            //     ContentJekyllSearch.dispose();
+            // }
+        });
 
         it('测试-参数写入成功', function() {
             ContentJekyllSearch.init(_opt);
@@ -97,7 +102,6 @@ describe('js/jekyll-search-copy.js', function() {
             assert.equal(_opt["searchResultTemplate"], ContentJekyllSearch.opt["searchResultTemplate"]);
             assert.equal(_opt["noResultsText"], ContentJekyllSearch.opt["noResultsText"]);
             assert.equal(_opt["fuzzy"], ContentJekyllSearch.opt["fuzzy"]);
-            assert.equal(_opt["afterInit"], ContentJekyllSearch.opt["afterInit"]);
         });
     });
 
@@ -109,8 +113,7 @@ describe('js/jekyll-search-copy.js', function() {
             dataSource: 'data/search.json',
             searchResultTemplate: '<li><a href="{url}" title="Search configuration">{title}</a><div>{content}</div></li>',
             noResultsText: 'No results found.',
-            fuzzy: true,
-            afterInit: triggerSearch
+            fuzzy: true
         };
 
         it('测试-判断json', function() {
@@ -210,9 +213,14 @@ describe('js/jekyll-search-copy.js', function() {
             dataSource: 'data/search.json',
             searchResultTemplate: '<li><a href="{url}" title="Search configuration">{title}</a><div>{content}</div></li>',
             noResultsText: 'No results found.',
-            fuzzy: true,
-            afterInit: triggerSearch
+            fuzzy: true
         };
+
+        afterEach(function() {
+            // while (ContentJekyllSearch.store.get().length > 0) {
+            //     ContentJekyllSearch.dispose();
+            // }
+        });
 
         it('测试-空数据，非JSON数据，格式错误JSON数据', function() {
             _opt.dataSource = null;
@@ -274,6 +282,7 @@ describe('js/jekyll-search-copy.js', function() {
                 res = false;
             }
             assert.equal(true, res);
+            assert.equal(1, ContentJekyllSearch.store.get().length);
 
         });
 
@@ -286,7 +295,100 @@ describe('js/jekyll-search-copy.js', function() {
                 res = false;
             }
             assert.equal(true, res);
+            //assert.equal(2, ContentJekyllSearch.store.get().length);
+        });
+    });
 
+    describe('ContentJekyllSearch:搜索', function() {
+        var _opt = {
+            searchInput: document.getElementById('query-string'),
+            searchButton: document.getElementById('search-content-button'),
+            resultsContainer: document.getElementById('results-content-container'),
+            dataSource: 'data/search.json',
+            searchResultTemplate: '<li><a href="{url}" title="Search configuration">{title}</a><div>{content}</div></li>',
+            noResultsText: 'No results found.',
+            fuzzy: true,
+            afterInit: triggerSearch
+        };
+        before(function(done) {
+            this.timeout(15000);
+            setTimeout(function() {
+                ContentJekyllSearch.dispose();
+                ContentJekyllSearch.init(_opt);
+                done();
+            }, 3000);
+        });
+
+        it('测试-正常搜索', function(done) {
+            this.timeout(15000);
+
+            setTimeout(function() {
+                var res = ContentJekyllSearch.searcher.search(ContentJekyllSearch.store, 'Jekyll');
+                assert.equal(1, res.length);
+
+                res = ContentJekyllSearch.searcher.search(ContentJekyllSearch.store, 'the');
+                assert.equal(2, res.length);
+
+                done();
+            }, 3000);
+        });
+
+        it('测试-搜索空格', function(done) {
+            this.timeout(15000);
+
+            setTimeout(function() {
+                var res = ContentJekyllSearch.searcher.search(ContentJekyllSearch.store, ' ');
+                assert.equal(0, res.length);
+
+                res = ContentJekyllSearch.searcher.search(ContentJekyllSearch.store, '  ');
+                assert.equal(0, res.length);
+
+                done();
+            }, 3000);
+        });
+
+        it.only('测试-搜索特殊字符\
+          \' 单引号\
+\"  双引号\
+\&  和号\
+\\  反斜杠\
+\n  换行符\
+\r  回车符\
+\t  制表符\
+\b  退格符\
+\f  换页符', function(done) {
+            this.timeout(15000);
+
+            setTimeout(function() {
+                var res = ContentJekyllSearch.searcher.search(ContentJekyllSearch.store, '\'');
+                assert.equal(1, res.length, '\' 单引号');
+
+                res = ContentJekyllSearch.searcher.search(ContentJekyllSearch.store, '\"');
+                assert.equal(1, res.length, '\"  双引号');
+
+                var res = ContentJekyllSearch.searcher.search(ContentJekyllSearch.store, '\&');
+                assert.equal(1, res.length, '\&  和号');
+
+                res = ContentJekyllSearch.searcher.search(ContentJekyllSearch.store, '\\');
+                assert.equal(1, res.length, '\\  反斜杠');
+
+                var res = ContentJekyllSearch.searcher.search(ContentJekyllSearch.store, '\n');
+                assert.equal(0, res.length, '\n  换行符');
+
+                res = ContentJekyllSearch.searcher.search(ContentJekyllSearch.store, '\r');
+                assert.equal(0, res.length, '\r  回车符');
+
+                var res = ContentJekyllSearch.searcher.search(ContentJekyllSearch.store, '\t');
+                assert.equal(0, res.length, '\t  制表符');
+
+                res = ContentJekyllSearch.searcher.search(ContentJekyllSearch.store, '\b');
+                assert.equal(1, res.length, '\b  退格符');
+
+                res = ContentJekyllSearch.searcher.search(ContentJekyllSearch.store, '\f');
+                assert.equal(0, res.length, '\f  换页符');
+
+                done();
+            }, 3000);
         });
     });
 });
