@@ -83,7 +83,7 @@
         $.getJSON("{{site.github_commits}}{{page.path}}", function(json) {
             $.each(json, function(i, n) {
                 if (i == 0) {
-                    $('.history').append('<span>' + n.commit.author.date + '</span>');
+                    $('.history').append('<span datetime="' + n.commit.author.date + '">' + new Date(n.commit.author.date).toLocaleString() + '</span>');
                 }
                 if (i > 4) {
                     return false;
