@@ -1,6 +1,6 @@
 {% for current_toc in site.tocs %} {% if found_toc %} {% break %} {% else %} {% assign toc=site.data[current_toc] %} {% include tocsearch.html tree=toc.toc toc=toc %} {% endif %} {% endfor %}
 <!DOCTYPE html>
-<html id="docs" lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html id="docs" lang="{{ page.lang | default: site.lang | default: " en " }}">
 {% include head.html %}
 
 <body>
@@ -13,7 +13,6 @@
                     <a href="/docs/home" {% if toc.bigheader=="Documentation Home" %}class="page-link nc" {% else %}class="page-link" {% endif %}>HOME</a>
                     <a href="/docs/setup/" {% if toc.bigheader=="Setup" %}class="page-link nc" {% else %}class="page-link" {% endif %}>SETUP</a>
                     <a href="/docs/guides/" {% if toc.bigheader=="Guides" %}class="page-link nc" {% else %}class="page-link" {% endif %}>GUIDES</a>
-                    
                 </div>
             </nav>
         </div>
@@ -26,6 +25,7 @@
             <button class="push-menu-close-button" onclick="kub.toggleToc()"></button>
         </div>
         <div id="docsContent">
+            <div class="history"></div>
             <p><a href="{{ site.github_url }}{{ page.path }}" id="editPageButton">Edit This Page</a></p>
             {% unless page.notitle %}
             <h1>{{ page.title }}</h1> {% endunless %} {{ content }}
@@ -79,6 +79,18 @@
                 }
             }
         }
+
+        $.getJSON("{{site.github_commits}}{{page.path}}", function(json) {
+            $.each(json, function(i, n) {
+                if (i == 0) {
+                    $('.history').append('<span>' + n.commit.author.date + '</span>');
+                }
+                if (i > 4) {
+                    return false;
+                }
+                $('.history').append('<a href="' + n.author.html_url + '"><img alt="' + n.author.name + '" src="https://avatars2.githubusercontent.com/u/' + n.author.id + '?v=3&amp;s=40" ></a>');
+            });
+        });
     })();
     </script>
 </body>

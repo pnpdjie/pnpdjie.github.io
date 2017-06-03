@@ -38,6 +38,7 @@ gems:
   - jekyll-seo-tag
   - jekyll-include-cache
   - jekyll-avatar
+  - jekyll-github-metadata
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -59,3 +60,5 @@ tocs:
   - empty
 
 github_url: https://github.com/pnpdjie/pnpdjie.github.io/edit/master/
+repository: pnpdjie/pnpdjie.github.io
+github_commits: https://api.github.com/repos/pnpdjie/pnpdjie.github.io/commits?path=
