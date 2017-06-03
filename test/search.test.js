@@ -10,13 +10,16 @@ describe('js/jekyll-search-copy.js', function() {
     before(function() {
         document.getElementById('query-string').value = queryString;
     });
-    after(function() {
-        // while (ContentJekyllSearch.store.get().length > 0) {
-        //     ContentJekyllSearch.dispose();
-        // }
-    });
 
     describe('ContentJekyllSearch:init-validateOptions(_opt)', function() {
+
+        after(function(done) {
+            this.timeout(15000);
+            setTimeout(function() {
+                ContentJekyllSearch.dispose();
+                done();
+            }, 3000);
+        });
 
         it('测试-包含必要参数["searchInput", "resultsContainer", "dataSource"]', function() {
             var _opt = {
@@ -87,10 +90,13 @@ describe('js/jekyll-search-copy.js', function() {
             noResultsText: 'No results found.',
             fuzzy: true
         };
-        after(function() {
-            // while (ContentJekyllSearch.store.get().length > 0) {
-            //     ContentJekyllSearch.dispose();
-            // }
+
+        after(function(done) {
+            this.timeout(15000);
+            setTimeout(function() {
+                ContentJekyllSearch.dispose();
+                done();
+            }, 3000);
         });
 
         it('测试-参数写入成功', function() {
@@ -216,10 +222,12 @@ describe('js/jekyll-search-copy.js', function() {
             fuzzy: true
         };
 
-        afterEach(function() {
-            // while (ContentJekyllSearch.store.get().length > 0) {
-            //     ContentJekyllSearch.dispose();
-            // }
+        after(function(done) {
+            this.timeout(15000);
+            setTimeout(function() {
+                ContentJekyllSearch.dispose();
+                done();
+            }, 3000);
         });
 
         it('测试-空数据，非JSON数据，格式错误JSON数据', function() {
@@ -285,17 +293,49 @@ describe('js/jekyll-search-copy.js', function() {
             assert.equal(1, ContentJekyllSearch.store.get().length);
 
         });
+    });
 
-        it('测试-URL读取JSON数据', function() {
-            _opt.dataSource = 'data/search.json';
-            try {
-                ContentJekyllSearch.init(_opt);
-                res = true;
-            } catch (e) {
-                res = false;
-            }
-            assert.equal(true, res);
-            //assert.equal(2, ContentJekyllSearch.store.get().length);
+    describe('ContentJekyllSearch:init-读取JSON数据', function() {
+        var _opt = {
+            searchInput: document.getElementById('query-string'),
+            searchButton: document.getElementById('search-content-button'),
+            resultsContainer: document.getElementById('results-content-container'),
+            dataSource: 'data/search.json',
+            searchResultTemplate: '<li><a href="{url}" title="Search configuration">{title}</a><div>{content}</div></li>',
+            noResultsText: 'No results found.',
+            fuzzy: true
+        };
+
+        before(function(done) {
+            this.timeout(15000);
+            setTimeout(function() {
+                try {
+                    ContentJekyllSearch.init(_opt);
+                    res = true;
+                } catch (e) {
+                    res = false;
+                }
+                assert.equal(true, res);
+
+                done();
+            }, 3000);
+        });
+
+        after(function(done) {
+            this.timeout(15000);
+            setTimeout(function() {
+                ContentJekyllSearch.dispose();
+                done();
+            }, 3000);
+        });
+
+        it('测试-URL读取JSON数据', function(done) {
+            this.timeout(15000);
+
+            setTimeout(function() {
+                assert.equal(2, ContentJekyllSearch.store.get().length);
+                done();
+            }, 3000);
         });
     });
 
@@ -313,8 +353,14 @@ describe('js/jekyll-search-copy.js', function() {
         before(function(done) {
             this.timeout(15000);
             setTimeout(function() {
-                ContentJekyllSearch.dispose();
                 ContentJekyllSearch.init(_opt);
+                done();
+            }, 3000);
+        });
+        after(function(done) {
+            this.timeout(15000);
+            setTimeout(function() {
+                ContentJekyllSearch.dispose();
                 done();
             }, 3000);
         });
@@ -387,6 +433,43 @@ describe('js/jekyll-search-copy.js', function() {
                 res = ContentJekyllSearch.searcher.search(ContentJekyllSearch.store, '\f');
                 assert.equal(0, res.length, '\f  换页符');
 
+                done();
+            }, 3000);
+        });
+    });
+
+    describe('ContentJekyllSearch:dispose', function() {
+        var _opt = {
+            searchInput: document.getElementById('query-string'),
+            searchButton: document.getElementById('search-content-button'),
+            resultsContainer: document.getElementById('results-content-container'),
+            dataSource: 'data/search.json',
+            searchResultTemplate: '<li><a href="{url}" title="Search configuration">{title}</a><div>{content}</div></li>',
+            noResultsText: 'No results found.',
+            fuzzy: true
+        };
+
+        before(function(done) {
+            this.timeout(15000);
+            setTimeout(function() {
+                ContentJekyllSearch.init(_opt);
+                done();
+            }, 3000);
+        });
+        after(function(done) {
+            this.timeout(15000);
+            setTimeout(function() {
+                ContentJekyllSearch.dispose();
+                done();
+            }, 3000);
+        });
+
+        it('测试-数据是否清空', function(done) {
+
+            this.timeout(15000);
+            setTimeout(function() {
+                ContentJekyllSearch.dispose();
+            assert.equal(0, ContentJekyllSearch.store.get().length);
                 done();
             }, 3000);
         });
