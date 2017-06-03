@@ -27,3 +27,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "jekyll-include-cache", "~> 0.1"
+
+gem 'jekyll-avatar'

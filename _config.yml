@@ -37,6 +37,7 @@ gems:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-include-cache
+  - jekyll-avatar
 exclude:
   - Gemfile
   - Gemfile.lock

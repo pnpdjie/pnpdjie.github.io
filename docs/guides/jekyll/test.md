@@ -4,6 +4,11 @@ title: 创建新页面
 
 {% capture article %}
 
+{% assign employees = "yaosha|pnpdjie" | split:"|" %}
+{% for employee in employees %}
+  {% avatar user=employee %}
+{% endfor %}
+
 {% include partial/page-layout-configuration.md %}
 
 ## 选择标题和文件名

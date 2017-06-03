@@ -29,7 +29,8 @@ describe('js/jekyll-search-copy.js', function() {
                 dataSource: 'data/search.json',
                 searchResultTemplate: '<li><a href="{url}" title="Search configuration">{title}</a><div>{content}</div></li>',
                 noResultsText: 'No results found.',
-                fuzzy: true
+                fuzzy: true,
+                afterInit: triggerSearch
             };
             ContentJekyllSearch.init(_opt);
         });
@@ -78,6 +79,37 @@ describe('js/jekyll-search-copy.js', function() {
                 assert.equal('SimpleJekyllSearch --- You must specify a dataSource'.toLowerCase(), e.message.toLowerCase());
             }
         });
+        it('测试-包含参数"searchButton"时必须包含"afterInit"', function() {
+            var _opt = {
+                dataSource: 'data/search.json',
+                searchInput: document.getElementById('query-string'),
+                searchButton: document.getElementById('search-content-button'),
+                resultsContainer: document.getElementById('results-content-container'),
+                searchResultTemplate: '<li><a href="{url}" title="Search configuration">{title}</a><div>{content}</div></li>',
+                noResultsText: 'No results found.',
+                fuzzy: true
+            };
+            try {
+                ContentJekyllSearch.init(_opt);
+            } catch (e) {
+                assert.equal('SimpleJekyllSearch --- You must specify a afterInit when contain a searchButton'.toLowerCase(), e.message.toLowerCase());
+            }
+        });
+        it('测试-不包含参数"searchButton"时必须包含"afterRender"', function() {
+            var _opt = {
+                dataSource: 'data/search.json',
+                searchInput: document.getElementById('query-string'),
+                resultsContainer: document.getElementById('results-content-container'),
+                searchResultTemplate: '<li><a href="{url}" title="Search configuration">{title}</a><div>{content}</div></li>',
+                noResultsText: 'No results found.',
+                fuzzy: true
+            };
+            try {
+                ContentJekyllSearch.init(_opt);
+            } catch (e) {
+                assert.equal('You must specify a afterRender when not contain a searchButton'.toLowerCase(), e.message.toLowerCase());
+            }
+        });
     });
 
     describe('ContentJekyllSearch:init-assignOptions(_opt)', function() {
@@ -88,7 +120,8 @@ describe('js/jekyll-search-copy.js', function() {
             dataSource: 'data/search.json',
             searchResultTemplate: '<li><a href="{url}" title="Search configuration">{title}</a><div>{content}</div></li>',
             noResultsText: 'No results found.',
-            fuzzy: true
+            fuzzy: true,
+            afterInit: triggerSearch
         };
 
         after(function(done) {
@@ -219,7 +252,8 @@ describe('js/jekyll-search-copy.js', function() {
             dataSource: 'data/search.json',
             searchResultTemplate: '<li><a href="{url}" title="Search configuration">{title}</a><div>{content}</div></li>',
             noResultsText: 'No results found.',
-            fuzzy: true
+            fuzzy: true,
+            afterInit: triggerSearch
         };
 
         after(function(done) {
@@ -283,6 +317,7 @@ describe('js/jekyll-search-copy.js', function() {
                 "content": "This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at jekyllrb.comYou can find the source code for the Jekyll new theme at:    jekyll /minimaYou can find the source code for Jekyll at    jekyll /jekyll"
             }];
             _opt.dataSource = data;
+            _opt.afterInit = triggerSearch;
             try {
                 ContentJekyllSearch.init(_opt);
                 res = true;
@@ -303,7 +338,8 @@ describe('js/jekyll-search-copy.js', function() {
             dataSource: 'data/search.json',
             searchResultTemplate: '<li><a href="{url}" title="Search configuration">{title}</a><div>{content}</div></li>',
             noResultsText: 'No results found.',
-            fuzzy: true
+            fuzzy: true,
+            afterInit: triggerSearch
         };
 
         before(function(done) {
@@ -339,6 +375,44 @@ describe('js/jekyll-search-copy.js', function() {
         });
     });
 
+    describe('ContentJekyllSearch:dispose', function() {
+        var _opt = {
+            searchInput: document.getElementById('query-string'),
+            searchButton: document.getElementById('search-content-button'),
+            resultsContainer: document.getElementById('results-content-container'),
+            dataSource: 'data/search.json',
+            searchResultTemplate: '<li><a href="{url}" title="Search configuration">{title}</a><div>{content}</div></li>',
+            noResultsText: 'No results found.',
+            fuzzy: true,
+            afterInit: triggerSearch
+        };
+
+        before(function(done) {
+            this.timeout(15000);
+            setTimeout(function() {
+                ContentJekyllSearch.init(_opt);
+                done();
+            }, 3000);
+        });
+        after(function(done) {
+            this.timeout(15000);
+            setTimeout(function() {
+                ContentJekyllSearch.dispose();
+                done();
+            }, 3000);
+        });
+
+        it('测试-数据是否清空', function(done) {
+
+            this.timeout(15000);
+            setTimeout(function() {
+                ContentJekyllSearch.dispose();
+                assert.equal(0, ContentJekyllSearch.store.get().length);
+                done();
+            }, 3000);
+        });
+    });
+
     describe('ContentJekyllSearch:搜索', function() {
         var _opt = {
             searchInput: document.getElementById('query-string'),
@@ -357,13 +431,13 @@ describe('js/jekyll-search-copy.js', function() {
                 done();
             }, 3000);
         });
-        after(function(done) {
-            this.timeout(15000);
-            setTimeout(function() {
-                ContentJekyllSearch.dispose();
-                done();
-            }, 3000);
-        });
+        // after(function(done) {
+        //     this.timeout(15000);
+        //     setTimeout(function() {
+        //         ContentJekyllSearch.dispose();
+        //         done();
+        //     }, 3000);
+        // });
 
         it('测试-正常搜索', function(done) {
             this.timeout(15000);
@@ -433,43 +507,6 @@ describe('js/jekyll-search-copy.js', function() {
                 res = ContentJekyllSearch.searcher.search(ContentJekyllSearch.store, '\f');
                 assert.equal(0, res.length, '\f  换页符');
 
-                done();
-            }, 3000);
-        });
-    });
-
-    describe('ContentJekyllSearch:dispose', function() {
-        var _opt = {
-            searchInput: document.getElementById('query-string'),
-            searchButton: document.getElementById('search-content-button'),
-            resultsContainer: document.getElementById('results-content-container'),
-            dataSource: 'data/search.json',
-            searchResultTemplate: '<li><a href="{url}" title="Search configuration">{title}</a><div>{content}</div></li>',
-            noResultsText: 'No results found.',
-            fuzzy: true
-        };
-
-        before(function(done) {
-            this.timeout(15000);
-            setTimeout(function() {
-                ContentJekyllSearch.init(_opt);
-                done();
-            }, 3000);
-        });
-        after(function(done) {
-            this.timeout(15000);
-            setTimeout(function() {
-                ContentJekyllSearch.dispose();
-                done();
-            }, 3000);
-        });
-
-        it('测试-数据是否清空', function(done) {
-
-            this.timeout(15000);
-            setTimeout(function() {
-                ContentJekyllSearch.dispose();
-            assert.equal(0, ContentJekyllSearch.store.get().length);
                 done();
             }, 3000);
         });

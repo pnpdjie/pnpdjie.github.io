@@ -195,8 +195,8 @@
                             var regContent = new RegExp(condition, "gi");
 
                             res = res.replace(regContent, function(match, prop) {
-                                var beforeFrom = prop > 20?prop - 20:0;
-                                var afterTo =  res.length - (prop + match.length)> 20?prop + match.length+20:res.length;
+                                var beforeFrom = prop > 20 ? prop - 20 : 0;
+                                var afterTo = res.length - (prop + match.length) > 20 ? prop + match.length + 20 : res.length;
                                 cutedContent += '...' + res.substring(beforeFrom, prop) + '<strong>' + match + '</strong>' + res.substring(prop + match.length, afterTo) + '...';
                                 return '<strong>' + match + '</strong>';
                             });
@@ -331,6 +331,14 @@
                     for (var option in opt) { opt[option] = _opt[option] || opt[option]; }
 
                     searcher.setLimit(opt['limit'], opt['isLimit']);
+
+                    if (!opt.searchButton && !opt.afterRender) {
+                        throwError("You must specify a afterRender when not contain a searchButton");
+                    }
+
+                    if (opt.searchButton && !opt.afterInit) {
+                        throwError("You must specify a afterInit when contain a searchButton");
+                    }
                 }
 
                 var isJSON = function(json) {
@@ -355,7 +363,7 @@
                 };
                 var parseCondition = function(key) {
                     key = key.trim();
-                    key = key.replace('\\','\\\\');
+                    key = key.replace('\\', '\\\\');
                     return key;
                 };
 
