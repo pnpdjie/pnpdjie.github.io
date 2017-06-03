@@ -347,7 +347,7 @@ describe('js/jekyll-search-copy.js', function() {
             }, 3000);
         });
 
-        it.only('测试-搜索特殊字符\
+        it('测试-搜索特殊字符\
           \' 单引号\
 \"  双引号\
 \&  和号\

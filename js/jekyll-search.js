@@ -195,7 +195,9 @@
                             var regContent = new RegExp(condition, "gi");
 
                             res = res.replace(regContent, function(match, prop) {
-                                cutedContent += '...' + res.substr(prop - 20, 20) + '<strong>' + match + '</strong>' + res.substr(prop + match.length, 20) + '...';
+                                var beforeFrom = prop > 20?prop - 20:0;
+                                var afterTo =  res.length - (prop + match.length)> 20?prop + match.length+20:res.length;
+                                cutedContent += '...' + res.substring(beforeFrom, prop) + '<strong>' + match + '</strong>' + res.substring(prop + match.length, afterTo) + '...';
                                 return '<strong>' + match + '</strong>';
                             });
                             return cutedContent;
@@ -249,25 +251,42 @@
 
                 function registerInput() {
                     if (!opt.searchButton) {
-                        opt.searchInput.addEventListener("keyup", function(e) {
-                            condition = e.target.value.trim();
+                        // opt.searchInput.addEventListener("keyup", function(e) {
+                        //     condition = parseCondition(e.target.value);
+                        //     return 0 === condition.length ? void emptyResultsContainer() : void render(searcher.search(store, condition));
+                        // });
+                        opt.searchInput.onkeyup = function(e) {
+                            condition = parseCondition(e.target.value);
                             return 0 === condition.length ? void emptyResultsContainer() : void render(searcher.search(store, condition));
-                        });
+                        };
                     } else {
-                        opt.searchInput.addEventListener("keydown", function(e) {
+                        // opt.searchInput.addEventListener("keydown", function(e) {
+                        //     switch (e.which) {
+                        //         case 13:
+                        //             {
+                        //                 condition = parseCondition(e.target.value);
+                        //                 return 0 === condition.length ? void emptyResultsContainer() : void render(searcher.search(store, condition));
+                        //             }
+                        //     }
+                        // });
+                        opt.searchInput.onkeydown = function(e) {
                             switch (e.which) {
                                 case 13:
                                     {
-                                        condition = e.target.value.trim();
+                                        condition = parseCondition(e.target.value);
                                         return 0 === condition.length ? void emptyResultsContainer() : void render(searcher.search(store, condition));
                                     }
                             }
-                        });
+                        };
 
-                        opt.searchButton.addEventListener("click", function() {
-                            condition = opt.searchInput.value.trim();
+                        // opt.searchButton.addEventListener("click", function() {
+                        //     condition = parseCondition(opt.searchInput.value);
+                        //     return 0 === condition.length ? void emptyResultsContainer() : void render(searcher.search(store, condition));
+                        // });
+                        opt.searchButton.onclick = function() {
+                            condition = parseCondition(opt.searchInput.value);
                             return 0 === condition.length ? void emptyResultsContainer() : void render(searcher.search(store, condition));
-                        });
+                        };
 
                         if (opt.afterInit) {
                             opt.afterInit();
@@ -333,6 +352,11 @@
                         return false;
                     }
                     return true;
+                };
+                var parseCondition = function(key) {
+                    key = key.trim();
+                    key = key.replace('\\','\\\\');
+                    return key;
                 };
 
                 self.init = function(_opt) {
