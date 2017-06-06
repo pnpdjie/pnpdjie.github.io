@@ -3,7 +3,7 @@ var assert = chai.assert;
 var queryString = 'jekyll';
 var obj;
 
-describe('js/jekyll-search-copy.js', function() {
+describe('js/jekyll-search.js', function() {
     function triggerSearch() {
         document.getElementById("search-content-button").click();
     }

@@ -136,7 +136,7 @@ var kub = (function() {
             window.removeEventListener('scroll', resetTheView);
         };
 
-        setInterval(setFooterType, 10);
+        setInterval(setFooterType, 100);
     });
 
     return {
