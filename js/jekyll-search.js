@@ -1,6 +1,7 @@
 (function e(t, n, r) {
     'use strict';
 
+    /* execute all modules */
     function s(o, u) {
         if (!n[o]) {
             if (!t[o]) {
@@ -28,13 +29,16 @@
     }
     return s;
 }({
-    1: [function(require, module) {
+    1: [function(require, module) { /* load json from url */
         'use strict';
+
         module.exports = function() {
+            /* check response is successful */
             function receivedResponse(xhr) {
                 return 200 === xhr.status && 4 === xhr.readyState;
             }
 
+            /* handle response */
             function handleResponse(xhr, callback) {
                 xhr.onreadystatechange = function() {
                     if (receivedResponse(xhr)) {
@@ -47,6 +51,7 @@
                 };
             }
             var self = this;
+            /* execute request */
             self.load = function(location, callback) {
                 var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
                 xhr.open("GET", location, !0);
@@ -58,6 +63,7 @@
     2: [function(require, module) {
         'use strict';
 
+        /* fuzzy search */
         function FuzzySearchStrategy() {
             function createFuzzyRegExpFromString(string) {
                 return new RegExp(string.split("").join(".*?"), "gi");
@@ -72,6 +78,7 @@
     3: [function(require, module) {
         'use strict';
 
+        /* literal search */
         function LiteralSearchStrategy() {
             function doMatch(string, crit) {
                 return string.toLowerCase().indexOf(crit.toLowerCase()) >= 0;
@@ -83,7 +90,7 @@
         }
         module.exports = new LiteralSearchStrategy();
     }, {}],
-    4: [function(require, module) {
+    4: [function(require, module) { /* execute search */
         'use strict';
         module.exports = function() {
             var self = this,
@@ -94,14 +101,14 @@
                 fuzzySearchStrategy = require("./SearchStrategies/fuzzy"),
                 literalSearchStrategy = require("./SearchStrategies/literal");
 
+            /* push matched data to array */
             function findMatchesInObject(obj, crit, strategy) {
-                //for (var key in obj)
                 if (strategy.matches(obj['all'], crit)) {
                     matches.push(obj);
-                    //break
                 }
             }
 
+            /* loop find matches in data */
             function findMatches(store, crit, strategy) {
                 for (var data = store.get(), i = 0; i < data.length && (isLimit ? (matches.length < limit) : true); i++) {
                     findMatchesInObject(data[i], crit, strategy);
@@ -109,6 +116,7 @@
                 return matches;
             }
 
+            /* get search strategy */
             function getSearchStrategy() {
                 return fuzzy ? fuzzySearchStrategy : literalSearchStrategy;
             }
@@ -134,28 +142,30 @@
             var self = this,
                 store = [];
 
+            /* check is object */
             function isObject(obj) {
                 return !!obj && "[object Object]" === Object.prototype.toString.call(obj);
             }
 
+            /* check is array */
             function isArray(obj) {
                 return !!obj && "[object Array]" === Object.prototype.toString.call(obj);
             }
 
+            /* store object*/
             function addObject(data) {
                 return store.push(data), data;
             }
 
+            /* store array */
             function addArray(data) {
                 for (var added = [], i = 0; i < data.length; i++) {
-                    //isObject(data[i]) && added.push(addObject(data[i]));
                     if (isObject(data[i])) {
                         added.push(addObject(data[i]));
                     }
                 }
                 return added;
             }
-            //isArray(_store) && addArray(_store);
             if (isArray(_store)) { addArray(_store); }
             self.clear = function() {
                 return store.length = 0, store;
@@ -174,13 +184,9 @@
             var self = this,
                 templatePattern = /\{(.*?)\}/g;
             self.setTemplatePattern = function(newTemplatePattern) { templatePattern = newTemplatePattern; };
+
+            /* replace placeholder to matched data */
             self.render = function(t, data, condition) {
-                // var res = t.replace(templatePattern, function(match, prop) {
-                //     return data[prop] || match
-                // });
-                // return res.replace(condition), function(match, prop) {
-                //     return data[prop] || match
-                // });
                 return t.replace(templatePattern, function(match, prop) {
                     if (data[prop]) {
                         var res = data[prop];
@@ -228,14 +234,17 @@
                     requiredOptions = ["searchInput", "resultsContainer", "dataSource"],
                     opt = { searchInput: null, resultsContainer: null, dataSource: [], searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>', noResultsText: "No results found", limit: 10, fuzzy: !1, isLimit: !1, searchButton: null, afterInit: null, afterRender: null };
 
+                /* clear search results in container */
                 function emptyResultsContainer() {
                     opt.resultsContainer.innerHTML = "";
                 }
 
+                /* append search result to container */
                 function appendToResultsContainer(text) {
                     opt.resultsContainer.innerHTML += text;
                 }
 
+                /* put search results to container */
                 function render(results) {
                     if (emptyResultsContainer(), 0 === results.length) {
                         appendToResultsContainer(opt.noResultsText);
@@ -249,26 +258,14 @@
                     }
                 }
 
+                /* add event listener to search input and search button*/
                 function registerInput() {
                     if (!opt.searchButton) {
-                        // opt.searchInput.addEventListener("keyup", function(e) {
-                        //     condition = parseCondition(e.target.value);
-                        //     return 0 === condition.length ? void emptyResultsContainer() : void render(searcher.search(store, condition));
-                        // });
                         opt.searchInput.onkeyup = function(e) {
                             condition = parseCondition(e.target.value);
                             return 0 === condition.length ? void emptyResultsContainer() : void render(searcher.search(store, condition));
                         };
                     } else {
-                        // opt.searchInput.addEventListener("keydown", function(e) {
-                        //     switch (e.which) {
-                        //         case 13:
-                        //             {
-                        //                 condition = parseCondition(e.target.value);
-                        //                 return 0 === condition.length ? void emptyResultsContainer() : void render(searcher.search(store, condition));
-                        //             }
-                        //     }
-                        // });
                         opt.searchInput.onkeydown = function(e) {
                             switch (e.which) {
                                 case 13:
@@ -279,10 +276,6 @@
                             }
                         };
 
-                        // opt.searchButton.addEventListener("click", function() {
-                        //     condition = parseCondition(opt.searchInput.value);
-                        //     return 0 === condition.length ? void emptyResultsContainer() : void render(searcher.search(store, condition));
-                        // });
                         opt.searchButton.onclick = function() {
                             condition = parseCondition(opt.searchInput.value);
                             return 0 === condition.length ? void emptyResultsContainer() : void render(searcher.search(store, condition));
@@ -294,19 +287,21 @@
                     }
                 }
 
+                /* init store with json */
                 var initWithJSON = function() {
                     validateJSON(opt.dataSource);
                     store.put(opt.dataSource);
                     registerInput();
                 };
 
+                /* throw error */
                 function throwError(message) {
                     throw new Error("SimpleJekyllSearch --- " + message);
                 }
 
+                /* init store with url */
                 var initWithURL = function(url) {
                     jsonLoader.load(url, function(err, json) {
-                        //err ? throwError("failed to get JSON (" + url + ")") : (store.put(json), registerInput());
                         if (err) {
                             throwError("failed to get JSON (" + url + ")");
                         } else {
@@ -317,16 +312,17 @@
                     });
                 };
 
+                /* validate init options */
                 function validateOptions(_opt) {
                     for (var i = 0; i < requiredOptions.length; i++) {
                         var req = requiredOptions[i];
-                        //_opt[req] || throwError("You must specify a " + req);
                         if (!_opt[req]) {
                             throwError("You must specify a " + req);
                         }
                     }
                 }
 
+                /* read init options */
                 function assignOptions(_opt) {
                     for (var option in opt) { opt[option] = _opt[option] || opt[option]; }
 
@@ -351,6 +347,7 @@
                     }
                 }
 
+                /* check opt.json is json */
                 var isJSON = function(json) {
                     try {
                         if (json instanceof Object) {
@@ -359,11 +356,12 @@
                         } else {
                             return false;
                         }
-                        // return json instanceof Object && JSON.parse(JSON.stringify(json));
                     } catch (e) {
                         return !1;
                     }
                 };
+
+                /* validate json data */
                 var validateJSON = function(json) {
                     if (json.length === 0 || !json[0].hasOwnProperty("title") || !json[0].hasOwnProperty("content") || !json[0].hasOwnProperty("all") || !json[0].hasOwnProperty("url")) {
                         throwError("JSON data must have data and fields(title,url,content,all).");
@@ -371,22 +369,25 @@
                     }
                     return true;
                 };
+
+                /* parse search term */
                 var parseCondition = function(key) {
                     key = key.trim();
                     key = key.replace('\\', '\\\\');
                     return key;
                 };
 
+                /* init SimpleJekyllSearch */
                 self.init = function(_opt) {
                     validateOptions(_opt);
                     assignOptions(_opt);
-                    //isJSON(opt.dataSource) ? initWithJSON(opt.dataSource) : initWithURL(opt.dataSource);
                     if (isJSON(opt.dataSource)) {
                         initWithJSON(opt.dataSource);
                     } else {
                         initWithURL(opt.dataSource);
                     }
                 };
+                /* dispose SimpleJekyllSearch */
                 self.dispose = function() {
                     condition = '';
                     opt = { searchInput: null, resultsContainer: null, dataSource: [], searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>', noResultsText: "No results found", limit: 10, fuzzy: !1, isLimit: !1, searchButton: null, afterInit: null, afterRender: null };
