@@ -32,7 +32,7 @@ markdown: kramdown
 #incremental: true
 
 gems:
-  - jekyll-redirect-from
+#  - jekyll-redirect-from
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
@@ -62,3 +62,5 @@ tocs:
 github_url: https://github.com/pnpdjie/pnpdjie.github.io/edit/master/
 repository: pnpdjie/pnpdjie.github.io
 github_commits: https://api.github.com/repos/pnpdjie/pnpdjie.github.io/commits?path=
+
+encoding: utf-8
