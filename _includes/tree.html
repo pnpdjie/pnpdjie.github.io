@@ -1,6 +1,6 @@
 {% for item in include.tree %} {% if item.section %}
 <div class="item" data-title="{{ item.title }}">
-    <div class="container">
+    <div class="pi-container">
         {% include_cached tree.html tree=item.section %}
     </div>
 </div>

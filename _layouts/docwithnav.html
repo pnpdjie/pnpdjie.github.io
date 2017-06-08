@@ -50,7 +50,7 @@
             }
 
             var rightToc = document.querySelector('#markdown-toc');
-            var container = toc.querySelector('.container');
+            var container = toc.querySelector('.pi-container');
 
             if (rightToc) { //right toc is exist
                 // container is built dynamically, so it may not be present on the first runloop
@@ -70,7 +70,11 @@
                         toc.style.display = 'none';
                         document.getElementById('docsContent').style.width = '100%';
                     } else {
-                        document.getElementById('docsContent').style.width = document.getElementById('docsContent').clientWidth + 150 + "px";
+                        if ($('#docsToc').css('position') !== 'fixed') {
+                            document.getElementById('docsContent').style.width = document.getElementById('docsContent').clientWidth +180+ "px";
+                        } else {
+                            document.getElementById('docsContent').style.width = '100%';
+                        }
                     }
                 } else {
                     requestAnimationFrame(function() {
