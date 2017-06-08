@@ -8,7 +8,10 @@ choose: true
 ## 过滤属性
 
  {% raw %}
- 
+ ---
+title: Markdown属性过滤
+choose: true
+---
  {% if page.choose%}
  
  要显示的内容
