@@ -295,4 +295,8 @@ var kub = (function() {
             yah = false;
         }, 500);
     });
+
+    $(document).ready(function() {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
 })();

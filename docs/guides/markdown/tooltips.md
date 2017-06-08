@@ -5,53 +5,61 @@ choose: true
 
 {% capture article %}
 
-## Font Awesome
+Bootstrap可以在任意文字上添加提示信息，适用于缩写和专用术语。[引入Bootstrap](icons.html#引入bootstrap)即可使用。
 
-Font Awesome是一个Font icon库，不需要图片就可以使用。
+## 定义术语库
 
-下载地址：[http://fontawesome.io/](http://fontawesome.io/)
+在`_data`目录创建文件`glossary.yml`，在其中定义所有术语。写法如下：
 
-所有可用icon：[http://fontawesome.io/icons/](http://fontawesome.io/icons/)
-
-## 部署Font Awesome
-
-将下载的Font Awesome库文件放到`css`目录，并以`font-awesome`重命名。
-
-在`_includes/head.html中`加入代码：
-
-```html
-<link rel="stylesheet" href="/css/font-awesome/css/font-awesome.css">
+{% raw %}
+```liquid
+ONAP: Open Network Automation Platform
+HTTP: HyperText Transfer Protocol
 ```
+{% endraw %}
 
-## 使用Font Awesome
+冒号前是术语，冒号后是术语描述，冒号和描述中间必须加一个空格。
 
-使用Font Awesome需要用`i`标签，例如：
+## 创建include文件
 
+在`_includes`目录创建文件`glossary.html`，内容如下：
+
+{% raw %}
 ```html
-<i class="fa fa-search"></i>
+<span class="glossary" data-toggle="tooltip" data-original-title="{{site.data.glossary[include.glossary]}}">{{include.glossary}}</span>
 ```
+{% endraw %}
 
-展示效果：<i class="fa fa-search"></i>
+{% raw %}`{{include.glossary}}` {% endraw %}是传到`glossary.html`的术语名词。
 
-在`class`中加入`fa-lg`、`fa-2x`、`fa-3x`、`fa-4x`、`fa-5x`可以使Font icon放大，例如：
+{% raw %}`{{site.data.glossary[include.glossary]}}`{% endraw %}取`glossary.yml`中定义好的术语描述。
 
+## 定义术语样式
 
-```html
-<i class="fa fa-search fa-lg fa-lg"></i>
-<i class="fa fa-search fa-lg fa-2x"></i>
-<i class="fa fa-search fa-lg fa-3x"></i>
-<i class="fa fa-search fa-lg fa-4x"></i>
-<i class="fa fa-search fa-lg fa-5x"></i>
+在`_sass/_base.sass`文件中加入术语样式，内容如下：
+
+```sass
+.glossary
+  color: #649345
+  font-style: italic
+  cursor: pointer
 ```
+## 使用术语
 
-展示效果：
-<i class="fa fa-search fa-lg fa-lg"></i>
-<i class="fa fa-search fa-lg fa-2x"></i>
-<i class="fa fa-search fa-lg fa-3x"></i>
-<i class="fa fa-search fa-lg fa-4x"></i>
-<i class="fa fa-search fa-lg fa-5x"></i>
+术语使用方法如下：
 
-只要使用这种格式，可以在任意地方使用Font Awesome的icon。
+{% raw %}
+```liquid
+{% include glossary.html glossary="ONAP" %} is an open source software platform that delivers capabilities for the design, creation, orchestration, monitoring.
+```
+{% endraw %}
+
+`glossary="ONAP"`表示将`glossary`参数传到`glossary.html`，其值为`ONAP`。
+
+展示效果：{% include glossary.html glossary="ONAP" %} is an open source software platform that delivers capabilities for the design, creation, orchestration, monitoring.
+
+
+
 
 {% endcapture %}
 
