@@ -1,0 +1,19 @@
+{% if page.simple_map == true %}
+<div class="user-map"><div class="container">
+  {% for item in include.tree %}
+    {% if item.workflow == true and item.title == page.parent_map and item.section %}
+      {% for subitem in item.section %}
+          {% assign found_page = site.pages | where: "path", subitem.path | first %} 
+          {% assign url = found_page.url %} 
+          <div class="content">
+          <a href="{{url}}">
+          <div {% if found_page.path==page.path %}class="box active" {% else %}class="box" {% endif %}>{{subitem.flow_title}}</div>
+          </a>
+          </div>
+          {% unless forloop.last %}<div class="arrow">→</div>{% endunless %}
+      {% endfor %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+</div></div>
+{% endif %}

@@ -18,10 +18,27 @@ toc:
   - docs/guides/markdown/icons.md
   - docs/guides/markdown/tooltips.md
   
-
 - title: Jekyll
   section: 
   - docs/guides/jekyll/install-jekyll-in-linux.md
   - docs/guides/jekyll/page-layout-configuration.md
   - docs/guides/jekyll/create-new-page.md
-  
+
+- title: Simple Workflow
+  workflow: true
+  section: 
+  - flow_title: Step 1
+    path: docs/guides/workflow/simple/sample1.md
+    order: 1
+  - flow_title: Step 2
+    path: docs/guides/workflow/simple/sample2.md
+    order: 2
+  - flow_title: Step 3
+    path: docs/guides/workflow/simple/sample3.md
+    order: 3
+  - flow_title: Step 4
+    path: docs/guides/workflow/simple/sample4.md
+    order: 4
+  - flow_title: Step 5
+    path: docs/guides/workflow/simple/sample5.md
+    order: 5

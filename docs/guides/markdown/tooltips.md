@@ -58,8 +58,7 @@ HTTP: HyperText Transfer Protocol
 
 展示效果：{% include glossary.html glossary="ONAP" %} is an open source software platform that delivers capabilities for the design, creation, orchestration, monitoring.
 
-
-
+如果术语没有提示信息，可能是因为在`_data/glossary.yml`中没有定义该术语。
 
 {% endcapture %}
 
