@@ -1,5 +1,6 @@
 {% if page.simple_map == true %}
-<div class="user-map"><div class="container">
+<div class="user-map">
+<div class="map-container">
   {% for item in include.tree %}
     {% if item.workflow == true and item.title == page.parent_map and item.section %}
       {% for subitem in item.section %}
@@ -15,5 +16,40 @@
       {% break %}
     {% endif %}
   {% endfor %}
-</div></div>
+</div>
+</div>
+{% endif %}
+
+{% if page.complex_map == true %}
+<div class="user-map">
+<div class="map-container">
+  {% for item in include.tree %}
+    {% if item.workflow == true and item.title == page.parent_map and item.section %}
+      {% for subitem in item.section %}
+        {% assign first_url = "" %} 
+        {% assign active_item = false %} 
+        <ul style="display:none;">
+        {% for children_subitem in subitem.section %}
+          {% assign found_page = site.pages | where: "path", children_subitem | first %} 
+          {% if forloop.first %}
+            {% assign first_url = found_page.url %} 
+          {% endif %}
+          {% if found_page.path==page.path %}
+            {% assign active_item = true %} 
+          {% endif %}
+          <li><a href="{{found_page.url}}">{{found_page.title}}</a></li>
+        {% endfor %}
+        </ul>
+        <div class="content">
+        <a href="{{first_url}}">
+        <div {% if active_item %}class="box active" {% else %}class="box" {% endif %}>{{subitem.title}}</div>
+        </a>
+        </div>
+        {% unless forloop.last %}<div class="arrow">→</div>{% endunless %}
+      {% endfor %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+</div>
+</div>
 {% endif %}

@@ -29,16 +29,30 @@ toc:
   section: 
   - flow_title: Step 1
     path: docs/guides/workflow/simple/sample1.md
-    order: 1
   - flow_title: Step 2
     path: docs/guides/workflow/simple/sample2.md
-    order: 2
   - flow_title: Step 3
     path: docs/guides/workflow/simple/sample3.md
-    order: 3
   - flow_title: Step 4
     path: docs/guides/workflow/simple/sample4.md
-    order: 4
   - flow_title: Step 5
     path: docs/guides/workflow/simple/sample5.md
-    order: 5
+
+- title: Complex Workflow
+  workflow: true
+  section: 
+  - title: Step 1
+    section:
+    - docs/guides/workflow/complex/sample6.md
+    - docs/guides/workflow/complex/sample7.md
+    - docs/guides/workflow/complex/sample8.md
+  - title: Step 2
+    section:
+    - docs/guides/workflow/complex/sample9.md
+    - docs/guides/workflow/complex/sample10.md
+    - docs/guides/workflow/complex/sample11.md
+  - title: Step 3
+    section:
+    - docs/guides/workflow/complex/sample12.md
+    - docs/guides/workflow/complex/sample13.md
+    - docs/guides/workflow/complex/sample14.md
