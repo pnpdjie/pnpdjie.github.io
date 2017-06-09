@@ -1,6 +1,5 @@
 ---
 title: 术语展示
-choose: true
 ---
 
 {% capture article %}
