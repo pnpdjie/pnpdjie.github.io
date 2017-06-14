@@ -276,7 +276,7 @@ button
       font-weight: 700
       content: '目录'
       color: $grey
-      text-align: center
+      text-align: left
       width: 70px
 
     ul, li
@@ -291,12 +291,21 @@ button
       padding: 0
       line-height: 1.5em
       margin-bottom: 0
-
+	  
+    li.active > a
+      color: #09c
+	  
+      
     a
       position: relative
       color: $grey
       font-weight: 700
       text-decoration: none
+	  
+      &:focus
+        color: #09c
+      &:hover
+        color: #09c
 
   img
     max-width: 100%
@@ -305,8 +314,8 @@ button
     //font-weight: 700
     text-decoration: underline
 
-  a:visited
-    color: $blueviolet
+  //a:visited
+    //color: $blueviolet
 
   a.button
     border-radius: 2px

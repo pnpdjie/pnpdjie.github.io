@@ -299,4 +299,22 @@ var kub = (function() {
     $(document).ready(function() {
         $('[data-toggle="tooltip"]').tooltip();
     });
+	
+	//add class for toc
+	$(document).ready(function() {
+		var toc_right = $("#markdown-toc");
+		toc_right.wrap("<div id='navbar-example'></div>")
+		
+		$("#markdown-toc").addClass("nav nav-tabs");
+		$("#markdown-toc ul").addClass("nav nav-tabs");
+	});
+	//add listener
+	$(document).ready(function(){
+		$('[data-spy="scroll"]').each(function () {
+			var $spy = $(this).scrollspy('refresh')
+		})
+	});
+	
+	
 })();
+
