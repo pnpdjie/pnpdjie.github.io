@@ -54,10 +54,9 @@ defaults:
       layout: docwithnav
       showedit: true
 tocs:
-  - docs-home
+  - home
   - guides
   - setup
-  - empty
 
 github_url: https://github.com/pnpdjie/pnpdjie.github.io/edit/master/
 repository: pnpdjie/pnpdjie.github.io

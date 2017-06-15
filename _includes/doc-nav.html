@@ -1,0 +1,5 @@
+{% for item in site.tocs %} 
+  {% assign toc_name = item|upcase %}
+  {% assign nav_name = include.toc.bigheader|upcase %}
+  <a href="/docs/{{item|downcase}}" {% if toc_name==nav_name %}class="page-link nc" {% else %}class="page-link" {% endif %}>{{toc_name}}</a>
+{% endfor %}

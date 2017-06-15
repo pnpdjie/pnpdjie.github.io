@@ -7,12 +7,11 @@
     {% include header.html %}
     <section class="site-sub-section">
         <div class="wrapper">
-            <h2>{{toc.bigheader}}</h2>
+            <h2>{{toc.abstract}}</h2>
             <nav class="site-sub-nav" style="float:left">
                 <div class="trigger highlight">
-                    <a href="/docs/home" {% if toc.bigheader=="Documentation Home" %}class="page-link nc" {% else %}class="page-link" {% endif %}>HOME</a>
-                    <a href="/docs/setup/" {% if toc.bigheader=="Setup" %}class="page-link nc" {% else %}class="page-link" {% endif %}>SETUP</a>
-                    <a href="/docs/guides/" {% if toc.bigheader=="Guides" %}class="page-link nc" {% else %}class="page-link" {% endif %}>GUIDES</a>
+                    
+                {% include doc-nav.html toc=toc %}
                 </div>
             </nav>
         </div>
