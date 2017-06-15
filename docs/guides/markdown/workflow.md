@@ -4,6 +4,8 @@ title: 流程图
 
 {% capture article %}
 
+流程图的展示由左侧导航数据决定。
+
 ## 左侧导航
 
 在导航数据文件中加入导航数据，以`Documentation-Guides`为例，在`_data/guides.yml`中加入导航数据。
@@ -161,7 +163,8 @@ parent_map: Simple Workflow
 {% endraw %}
 
 `simple_map`：为true表示使用简单流程
-`parent_map`：[流程导航数据](#左侧导航)最上级导航title
+
+`parent_map`：[流程导航数据](#左侧导航)最上级导航title，定位当前页面所属流程的数据。
 
 ### 复杂流程
 
@@ -177,7 +180,6 @@ parent_map: Complex Workflow
 {% endraw %}
 
 `complex_map`：为true表示使用复杂流程
-`parent_map`：[流程导航数据](#左侧导航)最上级导航title
 
 
 {% endcapture %}
