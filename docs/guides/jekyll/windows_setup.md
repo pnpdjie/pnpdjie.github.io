@@ -1,34 +1,31 @@
 ---
 title: 内网Windows安装Jekyll
 ---
-
-{% capture article %}
-
 本文记录在华为内网Windows环境中安装Jekyll的流程。
 
 ## 安装Ruby
 
 ### 下载
 
-- 下载地址：http://rubyinstaller.org/downloads/
-- 版本选择2.3.3因为内网镜像缺少最新的一些依赖包
-- 根据电脑64位或32位选择 如64位的Ruby 2.3.3 (x64)
+- 下载地址：http://rubyinstaller.org/downloads/。
+- 版本选择2.3.3因为内网镜像缺少最新的一些依赖包。
+- 根据电脑64位或32位选择 如64位的Ruby 2.3.3 (x64)。
 
 ### 安装
 
-1. 安装所有选项都勾选上以免出现未知情况，安装地址推荐C盘          ----------图----------
-2. 右键Git Bash Here
-3. 输入 ruby –v 查看已经安装的ruby版本
+1. 安装所有选项都勾选上以免出现未知情况，安装地址推荐C盘。          ----------图----------
+2. 右键Git Bash Here。
+3. 输入 ruby –v 查看已经安装的ruby版本。
 
 ## 安装Ruby Development Kit
 ### 下载
-- 下载地址：http://rubyinstaller.org/downloads/
+- 下载地址：http://rubyinstaller.org/downloads/。
 - 版本选择最新版本并根据电脑64位或32位选择。如64位的。
 
 ### 安装
-1. 在Ruby Development Kit安装目录下 右键Git Bash Here
-2. ruby dk.rb init生成config.yml文件
-3. ruby dk.rb install 初始化
+1. 在Ruby Development Kit安装目录下 右键Git Bash Here。
+2. ruby dk.rb init生成config.yml文件。
+3. ruby dk.rb install 初始化。
 
 ### 安装FAQ
 #### ruby dk.rb install 初始化报错
@@ -47,13 +44,13 @@ title: 内网Windows安装Jekyll
 3. (可选)删除外网下载地址。gem resources --remove https://rubygems.org/
 
 ## 安装bundler & Jekyll
-1. gem install bundler
-2. gem install jekyll
+1. 执行gem install bundler。
+2. 执行gem install jekyll。
 
 ## 新生成文件启动Jekyll服务
-1. 在你想生成文件的文件夹下 右键Git Bash Here
+1. 在你想生成文件的文件夹下 右键Git Bash Here。
 2. Jekyll new blog。
-3. 在blog目录下右键Git Bash Here
+3. 在blog目录下右键Git Bash Here。
 4. Jekyll serve。
 5. 查看本地发布效果：直接访问localhost:4000。
 
@@ -67,7 +64,7 @@ title: 内网Windows安装Jekyll
 3. 手工下载jemoji文件。
   -----图-----
     1. 下载网址：https://rubygems.org/gems/jemoji。
-    2. 单机网站右下角*download*。
+    2. 单机网站右下角**download**。
     3. 下载并复制到Ruby安装目录。如：C:\Ruby23-x64\lib\ruby\gems\2.3.0\cache下。
 4. 再次执行 bundler update。
 5. 更新完后执行jekyll serve。
