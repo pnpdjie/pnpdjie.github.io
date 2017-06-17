@@ -31,6 +31,7 @@ title: 内网Windows安装Jekyll
 ### 安装FAQ
 #### ruby dk.rb install 初始化报错
 ![Links](/images/docs/guides/jekyll/image003.png)
+
 解决方法：
 1. 编辑Ruby Development Kit安装目录下的config.yml文件末尾添加新的一行。
     例如：“- C:\Ruby200-x64” 。
@@ -57,10 +58,13 @@ title: 内网Windows安装Jekyll
 
 ### 新文件启动Jekyll FAQ
 ![Links](/images/docs/guides/jekyll/image005.png)
+
     解决方法：gem install minima
 ![Links](/images/docs/guides/jekyll/image007.png)
+
     解决方法： gem install Jekyll-feed
 ![Links](/images/docs/guides/jekyll/image009.png)
+
     解决方法：gem install tzinfo-data x64-mingw32
 
 ## 基于本地样机源文件启动Jekyll服务
@@ -75,9 +79,10 @@ title: 内网Windows安装Jekyll
 5. 更新完后执行jekyll serve。
 如果报错如下图所示：
    ![Links](/images/docs/guides/jekyll/image015.png)
+   
 执行命令启动服务：bundle exec jekyll serve。
 
-  
+{% include templates/home.md %} 
   
 
 
