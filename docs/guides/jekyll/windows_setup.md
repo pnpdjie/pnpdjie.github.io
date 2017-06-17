@@ -1,6 +1,8 @@
 ---
 title: 内网Windows安装Jekyll
 ---
+
+{% capture article %}
 本文记录在华为内网Windows环境中安装Jekyll的流程。
 
 ## 安装Ruby
@@ -81,6 +83,8 @@ title: 内网Windows安装Jekyll
    ![Links](/images/docs/guides/jekyll/image015.png)
    
 执行命令启动服务：bundle exec jekyll serve。
+
+{% endcapture %}
 
 {% include templates/home.md %} 
   
