@@ -52,7 +52,7 @@ toc:
     - docs/guides/workflow/complex/sample13.md
     - docs/guides/workflow/complex/sample14.md
     
- - title: Jekyll
+- title: Jekyll
   section: 
   - docs/guides/jekyll/windows_setup.md
   - docs/guides/jekyll/install-jekyll-in-linux.md
