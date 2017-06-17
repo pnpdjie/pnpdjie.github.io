@@ -19,12 +19,6 @@ toc:
   - docs/guides/markdown/tooltips.md
   - docs/guides/markdown/workflow.md
   
-- title: Jekyll
-  section: 
-  - docs/guides/jekyll/install-jekyll-in-linux.md
-  - docs/guides/jekyll/page-layout-configuration.md
-  - docs/guides/jekyll/create-new-page.md
-
 - title: Simple Workflow
   workflow: true
   section: 
@@ -57,3 +51,10 @@ toc:
     - docs/guides/workflow/complex/sample12.md
     - docs/guides/workflow/complex/sample13.md
     - docs/guides/workflow/complex/sample14.md
+    
+ - title: Jekyll
+  section: 
+  - docs/guides/jekyll/windows_setup.md
+  - docs/guides/jekyll/install-jekyll-in-linux.md
+  - docs/guides/jekyll/page-layout-configuration.md
+  - docs/guides/jekyll/create-new-page.md
