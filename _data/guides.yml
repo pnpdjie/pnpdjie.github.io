@@ -61,6 +61,6 @@ toc:
     
 - title: 模板生成工具
   section: 
-  - docs/guides/jekyll/template-generator-install.md
-  - docs/guides/jekyll/template-generator-guides.md
+  - docs/guides/generator/template-generator-install.md
+  - docs/guides/generator/template-generator-guides.md
 

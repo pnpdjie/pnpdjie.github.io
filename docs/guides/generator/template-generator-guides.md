@@ -1,5 +1,5 @@
 ---
-title: 模板生成工具使用说明
+title: 使用说明
 ---
 
 {% capture article %}
@@ -55,6 +55,8 @@ title: 模板生成工具使用说明
 打开菜单`创建-导航类型`，在工作区显示创建导航类型界面。
 
 ![创建导航类型](/images/docs/guides/jekyll/template-generator-create-menutype.png)
+
+输入导航名称
 
 {% endcapture %}
 

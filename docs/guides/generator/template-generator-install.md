@@ -1,5 +1,5 @@
 ---
-title: 模板生成工具安装说明
+title: 安装说明
 ---
 
 {% capture article %}
