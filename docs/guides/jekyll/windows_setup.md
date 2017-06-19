@@ -62,12 +62,18 @@ title: 内网Windows安装Jekyll
 ![Links](/images/docs/guides/jekyll/image005.png)
 
     解决方法：gem install minima
+    
+    
 ![Links](/images/docs/guides/jekyll/image007.png)
 
     解决方法： gem install Jekyll-feed
+    
+    
 ![Links](/images/docs/guides/jekyll/image009.png)
 
     解决方法：gem install tzinfo-data x64-mingw32
+    
+    
 
 ## 基于本地样机源文件启动Jekyll服务
 1. 修改本地样机demo中的Gemfile文件。将第一行改为source "http://rnd-mirrors.huawei.com/rubygems/" ，把下载源路径切换为内网镜像地址。
