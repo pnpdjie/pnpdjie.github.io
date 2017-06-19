@@ -58,6 +58,9 @@ toc:
   - docs/guides/jekyll/install-jekyll-in-linux.md
   - docs/guides/jekyll/page-layout-configuration.md
   - docs/guides/jekyll/create-new-page.md
+    
+- title: 模板生成工具
+  section: 
   - docs/guides/jekyll/template-generator-install.md
   - docs/guides/jekyll/template-generator-guides.md
 
