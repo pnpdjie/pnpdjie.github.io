@@ -76,7 +76,7 @@ title: 内网Windows安装Jekyll
     
 
 ## 基于本地样机源文件启动Jekyll服务
-1.从github拷贝"https://github.com/pnpdjie/pnpdjie.github.io" 项目源代码到本地，注意本地路径不能包含中文否则发布时会出现异常。
+1. 从github拷贝"https://github.com/pnpdjie/pnpdjie.github.io" 项目源代码到本地，注意本地路径不能包含中文否则发布时会出现异常。
 2. 修改本地样机demo中的Gemfile文件。将第一行改为source "http://rnd-mirrors.huawei.com/rubygems/" ，把下载源路径切换为内网镜像地址。
 3. 在样机demo文件夹下，右键Git Bash Here。
 4. 输入命令bundler update，更新环境下的依赖包。
