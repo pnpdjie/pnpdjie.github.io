@@ -76,15 +76,16 @@ title: 内网Windows安装Jekyll
     
 
 ## 基于本地样机源文件启动Jekyll服务
-1. 修改本地样机demo中的Gemfile文件。将第一行改为source "http://rnd-mirrors.huawei.com/rubygems/" ，把下载源路径切换为内网镜像地址。
-2. 在样机demo文件夹下，右键Git Bash Here。
-2. 输入命令bundler update，更新环境下的依赖包。
-3. 手工下载jemoji文件。
+1. 从github拷贝"https://github.com/pnpdjie/pnpdjie.github.io" 项目源代码到本地，注意本地路径不能包含中文否则发布时会出现异常。
+2. 修改本地样机demo中的Gemfile文件。将第一行改为source "http://rnd-mirrors.huawei.com/rubygems/" ，把下载源路径切换为内网镜像地址。
+3. 在样机demo文件夹下，右键Git Bash Here。
+4. 输入命令bundler update，更新环境下的依赖包。
+5. 手工下载jemoji文件。
     1. 下载网址https://rubygems.org/gems/jemoji。
     2. 单机网站右下角**download**。
     3. 下载并复制到Ruby安装目录。如：C:\Ruby23-x64\lib\ruby\gems\2.3.0\cache下。
-4. 再次执行 bundler update。
-5. 更新完后执行jekyll serve。
+6. 再次执行 bundler update。
+7. 更新完后执行jekyll serve。
 如果报错如下图所示：
    ![Links](/images/docs/guides/jekyll/image015.png)
    

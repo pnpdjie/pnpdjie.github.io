@@ -122,15 +122,15 @@ button
     padding-right: 60px
 
   h2
-    font-size: 28px
+    font-size: 24px
 
   h3
-    font-size: 24px
+    font-size: 20px
     font-weight: 300
     margin-bottom: 5px
 
   h4
-    font-size: 20px
+    font-size: 16px
     margin-bottom: 0
 
   h5, h6
@@ -275,13 +275,14 @@ button
     &::before 
       font-weight: 700
       content: '目录'
-      color: $grey
+      color: #09c
       text-align: left
       width: 70px
 
     ul, li
       list-style: disc
       color: $grey
+      font-size: 13px
 
     ul
       padding: 0 15px
@@ -291,15 +292,18 @@ button
       padding: 0
       line-height: 1.5em
       margin-bottom: 0
+      
 	  
     li.active > a
       color: #09c
-      display: block 
+      display: block
+      
       
     a
+      font-family: 'Microsoft Yahei', Helvetica
       position: relative
       color: $grey
-      font-weight: 700
+      //font-weight: 700
       text-decoration: none
 	  
       &:focus
