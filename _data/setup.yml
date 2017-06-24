@@ -1,6 +1,6 @@
 bigheader: "Setup"
 abstract: "Setup"
 toc:
-- docs/setup/index.md
+- title:
+  path: docs/setup/index.md
 
- 
