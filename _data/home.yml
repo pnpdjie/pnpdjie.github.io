@@ -1,7 +1,8 @@
 bigheader: "Home"
 abstract: "Documentation Home"
 toc:
-- docs/home/index.md
+- title:
+  path: docs/home/index.md
 
 - title: ONAP Github
   path: https://github.com/ONAP
