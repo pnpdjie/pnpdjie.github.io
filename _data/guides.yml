@@ -1,23 +1,34 @@
 bigheader: "Guides"
 abstract: "User Guides"
 toc: 
-- docs/guides/index.md
+- title:
+  path: docs/guides/index.md
 
 - title: Markdown语法解读
   path: https://github.com/guodongxiaren/README
 
 - title: Markdown
   section: 
-  - docs/guides/markdown/add-links-into-picture.md
-  - docs/guides/markdown/show-tables.md
-  - docs/guides/markdown/show-pictures.md
-  - docs/guides/markdown/hyperlink.md
-  - docs/guides/markdown/show-media.md
-  - docs/guides/markdown/show-pages.md
-  - docs/guides/markdown/choose.md
-  - docs/guides/markdown/icons.md
-  - docs/guides/markdown/tooltips.md
-  - docs/guides/markdown/workflow.md
+  - title:
+    path: docs/guides/markdown/add-links-into-picture.md
+  - title:
+    path: docs/guides/markdown/show-tables.md
+  - title:
+    path: docs/guides/markdown/show-pictures.md
+  - title:
+    path: docs/guides/markdown/hyperlink.md
+  - title:
+    path: docs/guides/markdown/show-media.md
+  - title:
+    path: docs/guides/markdown/show-pages.md
+  - title:
+    path: docs/guides/markdown/choose.md
+  - title:
+    path: docs/guides/markdown/icons.md
+  - title:
+    path: docs/guides/markdown/tooltips.md
+  - title:
+    path: docs/guides/markdown/workflow.md
   
 - title: Simple Workflow
   workflow: true
@@ -38,29 +49,44 @@ toc:
   section: 
   - title: Step 1
     section:
-    - docs/guides/workflow/complex/sample6.md
-    - docs/guides/workflow/complex/sample7.md
-    - docs/guides/workflow/complex/sample8.md
+    - title:
+      path: docs/guides/workflow/complex/sample6.md
+    - title:
+      path: docs/guides/workflow/complex/sample7.md
+    - title:
+      path: docs/guides/workflow/complex/sample8.md
   - title: Step 2
     section:
-    - docs/guides/workflow/complex/sample9.md
-    - docs/guides/workflow/complex/sample10.md
-    - docs/guides/workflow/complex/sample11.md
+    - title:
+      path: docs/guides/workflow/complex/sample9.md
+    - title:
+      path: docs/guides/workflow/complex/sample10.md
+    - title:
+      path: docs/guides/workflow/complex/sample11.md
   - title: Step 3
     section:
-    - docs/guides/workflow/complex/sample12.md
-    - docs/guides/workflow/complex/sample13.md
-    - docs/guides/workflow/complex/sample14.md
+    - title:
+      path: docs/guides/workflow/complex/sample12.md
+    - title:
+      path: docs/guides/workflow/complex/sample13.md
+    - title:
+      path: docs/guides/workflow/complex/sample14.md
     
 - title: Jekyll
   section: 
-  - docs/guides/jekyll/windows_setup.md
-  - docs/guides/jekyll/install-jekyll-in-linux.md
-  - docs/guides/jekyll/page-layout-configuration.md
-  - docs/guides/jekyll/create-new-page.md
+  - title:
+    path: docs/guides/jekyll/windows_setup.md
+  - title:
+    path: docs/guides/jekyll/install-jekyll-in-linux.md
+  - title:
+    path: docs/guides/jekyll/page-layout-configuration.md
+  - title:
+    path: docs/guides/jekyll/create-new-page.md
     
 - title: 模板生成工具
   section: 
-  - docs/guides/generator/template-generator-install.md
-  - docs/guides/generator/template-generator-guides.md
+  - title:
+    path: docs/guides/generator/template-generator-install.md
+  - title:
+    path: docs/guides/generator/template-generator-guides.md
 
