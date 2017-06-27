@@ -15,4 +15,15 @@ layout: default
         {{ content }}
     </div>
     {% if site.disqus.shortname %} {% include disqus_comments.html %} {% endif %}
+	
+	  <ul>
+    {% for format in site.pandoc.outputs %}
+    {% capture extension %}{{ format | first }}{% endcapture %}
+    <li>
+      <a href="{{ page.url | remove:'.html' }}.{{ extension }}">
+        {{ extension }}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
 </article>
