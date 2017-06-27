@@ -305,8 +305,16 @@ var kub = (function() {
 		var toc_right = $("#markdown-toc");
 		toc_right.wrap("<div id='navbar-example'></div>")
 		
-		$("#markdown-toc").addClass("nav nav-tabs");
-		$("#markdown-toc ul").addClass("nav nav-tabs");
+		$("#markdown-toc").addClass("nav");
+		$("#markdown-toc ul").addClass("nav");
+		
+		//hidden ul
+		$("#markdown-toc >  li ul").attr("style","display:none");
+		setInterval(function(){
+			$("#markdown-toc >  li ul").attr("style","display:none");
+			$(".active >ul").attr("style","display:block");
+		},300);
+		
 	});
 	//add listener
 	$(document).ready(function(){
@@ -314,7 +322,7 @@ var kub = (function() {
 			var $spy = $(this).scrollspy('refresh')
 		})
 	});
-	
+	//style="display:none"
 	
 })();
 

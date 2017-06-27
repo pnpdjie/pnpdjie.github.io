@@ -96,7 +96,7 @@ RVM是Ruby的版本管理工具。
 
 npm模块安装路径：/usr/local/node/6.10.3/lib/node_modules/
 
-### 安装JekyII
+### 安装Jekyll
 
 	gem install jekyll
 

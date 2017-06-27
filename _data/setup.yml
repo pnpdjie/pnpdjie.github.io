@@ -1,6 +1,5 @@
 bigheader: "Setup"
-abstract: "Documentation for using and learning about ONAP."
+abstract: "Setup"
 toc:
 - path: docs/setup/index.md
 
- 

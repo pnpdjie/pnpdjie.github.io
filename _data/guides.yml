@@ -1,6 +1,11 @@
 bigheader: "Guides"
+<<<<<<< HEAD
 abstract: "Documentation for using and learning about ONAP."
 toc:
+=======
+abstract: "User Guides"
+toc: 
+>>>>>>> 1a54953fa503fce24186395373b4abcff99535b9
 - path: docs/guides/index.md
 
 - title: Markdown语法解读
@@ -19,12 +24,15 @@ toc:
   - path: docs/guides/markdown/tooltips.md
   - path: docs/guides/markdown/workflow.md
   
+<<<<<<< HEAD
 - title: Jekyll
   section: 
   - path: docs/guides/jekyll/install-jekyll-in-linux.md
   - path: docs/guides/jekyll/page-layout-configuration.md
   - path: docs/guides/jekyll/create-new-page.md
 
+=======
+>>>>>>> 1a54953fa503fce24186395373b4abcff99535b9
 - title: Simple Workflow
   workflow: true
   section: 
@@ -57,3 +65,19 @@ toc:
     - path: docs/guides/workflow/complex/sample12.md
     - path: docs/guides/workflow/complex/sample13.md
     - path: docs/guides/workflow/complex/sample14.md
+<<<<<<< HEAD
+=======
+    
+- title: Jekyll
+  section: 
+  - path: docs/guides/jekyll/windows_setup.md
+  - path: docs/guides/jekyll/install-jekyll-in-linux.md
+  - path: docs/guides/jekyll/page-layout-configuration.md
+  - path: docs/guides/jekyll/create-new-page.md
+    
+- title: 模板生成工具
+  section: 
+  - path: docs/guides/generator/template-generator-install.md
+  - path: docs/guides/generator/template-generator-guides.md
+
+>>>>>>> 1a54953fa503fce24186395373b4abcff99535b9
