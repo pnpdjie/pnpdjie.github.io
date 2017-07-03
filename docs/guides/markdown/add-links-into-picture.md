@@ -64,7 +64,7 @@ title: 图片添加热点链接
 下图为已经添加好热点链接的实例，大图最左上角的4个头像分别添加了不同的热点链接，可以点击查看。
 
 
-<font color="#ff0000" >注意：由于热点链接区域采用绝对坐标的形式表示，所以如果图片因为页面尺寸问题而发生拉伸、缩放等情况，热点链接区域是不会随原图一起拉伸的，这会导致热点链接区域和预想结果发生偏移。</font>
+<font color="#ff0000" >注意：**由于热点链接区域采用绝对坐标的形式表示，所以如果图片因为页面尺寸问题而发生拉伸、缩放等情况，热点链接区域是不会随原图一起拉伸的，这会导致热点链接区域和预想结果发生偏移**。</font>
 
 <img src="http://a3.qpic.cn/psb?/V13f2fdp4IPomM/QLqAgn1mvNf7OVISB7qCsitXsKjhqkrhrcCcqhhcdzs!/b/dBkBAAAAAAAA&bo=sARUA7AEVAMRADc!&rf=viewer_4" width="600" height="426" usemap="#Map" border="0">
 <map name="Map">
