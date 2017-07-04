@@ -64,3 +64,9 @@ toc:
   - path: docs/guides/generator/template-generator-install.md
   - path: docs/guides/generator/template-generator-guides.md
 
+- title: 发布工具
+  section: 
+  - path: docs/guides/releasetool/windows-java-installl.md
+  - path: docs/guides/releasetool/wkhtmltopdf-install.md
+  - path: docs/guides/releasetool/MDFilesCheckUtils-guides.md
+  - path: docs/guides/releasetool/createPdfUtils-guides.md
