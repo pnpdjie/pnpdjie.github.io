@@ -6,7 +6,10 @@
 {% if item.section %} 
 {% include tocsearch.html tree=item.section toc=include.toc %} 
 {% else %} 
-{% if item == page.path or item.path == page.path %} 
+{% assign _item = item | downcase %} 
+{% assign item_path = item.path | downcase %} 
+{% assign page_path = page.path | downcase %} 
+{% if _item == page_path or item_path == page_path %} 
 {% assign found_toc = include.toc %} 
 {% break %} 
 {% endif %} 
