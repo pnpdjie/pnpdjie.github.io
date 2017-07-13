@@ -79,7 +79,7 @@ article：文档内容变量，在使用此模板的文档中定义。
 
 ## 在目录文件中添加入口
 
-模板文件/\_includes/templates/home.md对应的目录文件为/_data/docs-home.yml，内容如下:
+模板文件/\_includes/templates/home.md对应的目录文件为/_data/home.yml，内容如下:
     
 	{% raw %}
 	
@@ -110,7 +110,7 @@ path：页面路径
 
 sedtion：子目录
 
-根据文档模板，在/_data/docs-home.yml文件中添加入口，将你的文档存放路径添加到目录文件中。例如：
+根据文档模板，在/_data/home.yml文件中添加入口，将你的文档存放路径添加到目录文件中。例如：
 
 	- docs/home/contribute/write-new-topic.md
 
