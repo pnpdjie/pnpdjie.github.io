@@ -30,11 +30,11 @@ Documentation下所有页面目前布局模板`_layouts/docwithnav.html`。
 示例如下：
 
 	tocs:
-	  - docs-home
+	  - home
 	  - setup
 	  - guides
 
-`docs-home`对应的文件是`_data/docs-home.yml`。
+`home`对应的文件是`_data/home.yml`。
 
 ### 数据
 
